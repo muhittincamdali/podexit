@@ -8,8 +8,8 @@ import {
   summaryLines,
   swiftPackageLabel,
   updatesLabel,
-  withoutControlCharacters,
 } from './labels.js';
+import { withoutControlCharacters } from './escape.js';
 
 export interface TtyOptions {
   /** ANSI colours; the CLI turns them on for terminals unless NO_COLOR is set. */

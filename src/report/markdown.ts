@@ -9,8 +9,8 @@ import {
   summaryLines,
   swiftPackageLabel,
   updatesLabel,
-  withoutControlCharacters,
 } from './labels.js';
+import { withoutControlCharacters } from './escape.js';
 
 // GitHub needs `\|` inside table cells, code spans included.
 const escapeCell = (text: string) => text.replace(/\|/g, '\\|');
