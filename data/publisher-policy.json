@@ -1,0 +1,41 @@
+{
+  "$schema": "./publisher-policy.schema.json",
+  "dataVersion": "2026.10.14",
+  "publishers": [
+    {
+      "id": "firebase",
+      "name": "Firebase",
+      "pods": [
+        "Firebase",
+        "FirebaseABTesting",
+        "FirebaseAI",
+        "FirebaseAILogic",
+        "FirebaseAnalytics",
+        "FirebaseAppCheck",
+        "FirebaseAppDistribution",
+        "FirebaseAuth",
+        "FirebaseCore",
+        "FirebaseCrashlytics",
+        "FirebaseDatabase",
+        "FirebaseFirestore",
+        "FirebaseFunctions",
+        "FirebaseInAppMessaging",
+        "FirebaseInstallations",
+        "FirebaseMLModelDownloader",
+        "FirebaseMessaging",
+        "FirebasePerformance",
+        "FirebaseRemoteConfig",
+        "FirebaseStorage"
+      ],
+      "lastMajorOnCocoaPods": 12,
+      "stoppedPublishing": "2026-10",
+      "summary": "Firebase 12 is the final major version published to CocoaPods, and Firebase stops publishing new versions there in October 2026. Version 12 and earlier stay installable.",
+      "swiftPackage": {
+        "url": "https://github.com/firebase/firebase-ios-sdk",
+        "note": "All Firebase libraries are products of the firebase-ios-sdk package."
+      },
+      "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation",
+      "checked": "2026-10-14"
+    }
+  ]
+}
