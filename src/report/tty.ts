@@ -8,6 +8,7 @@ import {
   summaryLines,
   swiftPackageLabel,
   updatesLabel,
+  withoutControlCharacters,
 } from './labels.js';
 
 export interface TtyOptions {
@@ -132,7 +133,8 @@ function lockfileSection(lockfile: LockfileReport, options: TtyOptions, paint: P
 }
 
 /** Plain-text table for terminals. Colours are optional; the text is the same either way. */
-export function renderTty(report: Report, options: TtyOptions): string {
+export function renderTty(input: Report, options: TtyOptions): string {
+  const report = withoutControlCharacters(input);
   const paint = painter(options.color);
   const { timeline } = report;
   const lines = [

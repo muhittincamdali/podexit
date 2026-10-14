@@ -7,6 +7,13 @@ All notable changes to podexit are listed here. The format follows
 
 ## [Unreleased]
 
+### Fixed
+
+- The terminal and Markdown reports replace control characters (C0, DEL and C1, escape sequences
+  included) in pod names, versions, paths and registry answers with U+FFFD instead of printing
+  them. A crafted `Podfile.lock` could otherwise recolour or rewrite the terminal. The JSON report
+  was not affected.
+
 ## [0.1.0] - 2026-10-14
 
 ### Added

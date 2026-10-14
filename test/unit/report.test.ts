@@ -152,6 +152,27 @@ describe('render', async () => {
     expect(text).toMatchSnapshot();
   });
 
+  it('replaces control characters from the lockfile instead of printing them', () => {
+    const tampered = structuredClone(report);
+    const pod = tampered.lockfiles[0]?.pods.find((item) => item.name === 'Stale');
+    if (!pod) throw new Error('Stale is missing from the sample report');
+    pod.name = 'Stale\u001b[31m\u009b2J';
+    pod.version = '0.4.0\n\u0007';
+    for (const text of [
+      render(tampered, 'tty', { color: false, all: true }),
+      render(tampered, 'markdown'),
+    ]) {
+      for (const control of ['\u001b', '\u009b', '\u0007']) expect(text).not.toContain(control);
+      expect(text).toContain('Stale\ufffd[31m\ufffd2J');
+      expect(text).toContain('0.4.0\ufffd\ufffd');
+    }
+    const colored = render(tampered, 'tty', { color: true, all: false });
+    expect(stripVTControlCharacters(colored)).toBe(
+      render(tampered, 'tty', { color: false, all: false }),
+    );
+    expect(tampered.lockfiles[0]?.pods.some((item) => item.name.includes('\u001b'))).toBe(true);
+  });
+
   it('writes the report object as JSON', () => {
     const parsed = JSON.parse(render(report, 'json')) as Report;
     expect(parsed).toEqual(JSON.parse(JSON.stringify(report)));
