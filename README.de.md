@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
+<!-- i18n-source: README.md@b014c05397ff44788b1d848270e2b125a0e85870 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,8 +53,10 @@ cd path/to/YourApp
 **2. Starte podexit:**
 
 ```sh
-npx podexit
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
 ```
+
+podexit ist noch nicht auf npm (die Veröffentlichung ist geplant), deshalb funktioniert `npx podexit` noch nicht. Der Befehl oben führt das Release 0.1.0 von GitHub aus; nutze ihn überall, wo in dieser README `npx podexit` steht.
 
 **3. Lies die Tabelle.** Zeilen mit **capped** hören zuerst auf (Firebase veröffentlicht ab Oktober 2026 nicht mehr auf CocoaPods); Zeilen mit **frozen after Dec 2** bekommen nach dem 2. Dezember keine neuen Versionen. Wo die Spalte Swift package **yes** zeigt, lässt sich der Pod schon jetzt umstellen. Die letzte Zeile verlinkt die Anleitung für deine Projektart.
 
@@ -70,7 +72,14 @@ Mehr dazu in [Was sich am 2. Dezember ändert](docs/guides/what-changes.md).
 
 ## Installation
 
-Eine Installation ist nicht nötig: `npx podexit` lädt die neueste Version herunter und führt sie aus. So legst du die Version in einem Projekt oder in CI fest:
+podexit ist noch nicht auf npm; die Veröffentlichung dort ist geplant. Bis dahin führst du das Release 0.1.0 wie oben gezeigt direkt von GitHub aus oder fügst es einem Projekt hinzu:
+
+```sh
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx podexit
+```
+
+Sobald podexit auf npm ist, lädt `npx podexit` ohne Installation die neueste Version herunter und führt sie aus. So legst du die Version in einem Projekt oder in CI fest:
 
 ```sh
 npm install --save-dev podexit

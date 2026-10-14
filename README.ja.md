@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
+<!-- i18n-source: README.md@b014c05397ff44788b1d848270e2b125a0e85870 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,8 +53,10 @@ cd path/to/YourApp
 **2. podexit を実行します。**
 
 ```sh
-npx podexit
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
 ```
+
+podexit はまだ npm に公開されていないため（公開予定）、`npx podexit` は現時点では動きません。上のコマンドは GitHub から 0.1.0 リリースを実行します。この README で `npx podexit` と書かれている箇所では、このコマンドを使ってください。
 
 **3. 表を読みます。** **capped** と表示された行が最初に止まります（Firebase は 2026年10月に CocoaPods への公開を終了します）。**frozen after Dec 2** と表示された行は、12月2日以降は新しいバージョンが出ません。Swift package 列が **yes** の pod は、今すぐ移行できます。最後の行には、お使いのプロジェクトの種類に合ったガイドへのリンクが表示されます。
 
@@ -70,7 +72,14 @@ npx podexit
 
 ## インストール
 
-インストールは不要です。`npx podexit` が最新バージョンをダウンロードして実行します。プロジェクトや CI でバージョンを固定するには、次のようにします。
+podexit はまだ npm に公開されていません（公開予定）。それまでは、上のように GitHub から 0.1.0 リリースを実行するか、プロジェクトに追加します。
+
+```sh
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx podexit
+```
+
+npm に公開されたら、`npx podexit` はインストールなしで最新バージョンをダウンロードして実行します。プロジェクトや CI でバージョンを固定するには、次のようにします。
 
 ```sh
 npm install --save-dev podexit
