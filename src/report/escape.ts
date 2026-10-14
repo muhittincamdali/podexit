@@ -27,3 +27,38 @@ export function withoutControlCharacters<T>(value: T): T {
     Object.entries(value).map(([key, item]) => [key, withoutControlCharacters(item)]),
   ) as T;
 }
+
+const BACKTICK_RUNS = /`+/g;
+
+/**
+ * Markdown code span for text from the lockfile or the registries. Nothing inside a code span is
+ * markup (no HTML, links, autolinks or @mentions), so the text only has to keep the span closed:
+ * the fence is one backtick longer than the longest run of backticks in the text, and a space pads
+ * text that starts or ends with a backtick or a space (Markdown strips one from each side).
+ */
+export function markdownCode(text: string): string {
+  if (!text) return '';
+  const longestRun = Math.max(0, ...(text.match(BACKTICK_RUNS) ?? []).map((run) => run.length));
+  const fence = '`'.repeat(longestRun + 1);
+  const padding = /^[ `]|[ `]$/.test(text) && text.trim() !== '' ? ' ' : '';
+  return `${fence}${padding}${text}${padding}${fence}`;
+}
+
+/** GitHub splits table rows on `|` before anything else, code spans included. */
+export const escapeTableCell = (text: string) => text.replace(/\|/g, '\\|');
+
+// Characters a link destination may keep. The rest is percent-encoded, so a URL cannot close the
+// link with `)`, open a new one, start an HTML tag or bring an entity such as `&#47;`.
+const URL_UNSAFE = /[^A-Za-z0-9\-._~:/?#@!$+,;=%]/g;
+
+const percentEncode = (character: string) =>
+  [...new TextEncoder().encode(character)]
+    .map((byte) => `%${byte.toString(16).toUpperCase().padStart(2, '0')}`)
+    .join('');
+
+/** An http(s) URL that is safe as a Markdown link destination, or null for anything else. */
+export function markdownUrl(text: string): string | null {
+  const url = URL.parse(text);
+  if (url?.protocol !== 'https:' && url?.protocol !== 'http:') return null;
+  return url.href.replace(URL_UNSAFE, percentEncode);
+}

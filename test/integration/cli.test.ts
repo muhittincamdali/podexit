@@ -137,7 +137,7 @@ describe('podexit', () => {
     expect(stderr).toBe('Wrote out.md\n');
     const markdown = await readFile(join(root, 'out.md'), 'utf8');
     expect(markdown).toContain(
-      '| `Alamofire` | 5.9.1 | 5.10.2 (2024-11-25) | frozen after Dec 2 |',
+      '| `Alamofire` | `5.9.1` | `5.10.2` (2024-11-25) | frozen after Dec 2 |',
     );
   });
 

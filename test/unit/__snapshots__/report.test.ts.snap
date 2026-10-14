@@ -36,19 +36,19 @@ Flutter app, 7 pods, 5 in the Podfile.
 
 | Pod | Locked | Latest on trunk | Updates | Swift package | Pulled in by |
 | --- | --- | --- | --- | --- | --- |
-| \`FirebaseAnalytics\` | 11.15.0 |  | capped at 12.x | [yes (Firebase)](https://github.com/firebase/firebase-ios-sdk) |  |
-| \`FirebaseCore\` | 11.15.0 |  | capped at 12.x | [yes (Firebase)](https://github.com/firebase/firebase-ios-sdk) | \`FirebaseAnalytics\` |
-| \`nanopb\` | 3.30910.0 |  | capped with Firebase | unknown | \`FirebaseCore\` |
-| \`Alamofire\` | 5.9.1 | 5.12.2 (2026-09-10) | frozen after Dec 2 | [yes](https://github.com/Alamofire/Alamofire) |  |
-| \`Pipe\\|Pod\` | 1.0.0 |  | frozen after Dec 2 | unknown |  |
-| \`Stale\` | 0.4.0 |  | frozen after Dec 2 | [no](https://github.com/acme/Stale) |  |
+| \`FirebaseAnalytics\` | \`11.15.0\` |  | capped at 12.x | [yes (Firebase)](https://github.com/firebase/firebase-ios-sdk) |  |
+| \`FirebaseCore\` | \`11.15.0\` |  | capped at 12.x | [yes (Firebase)](https://github.com/firebase/firebase-ios-sdk) | \`FirebaseAnalytics\` |
+| \`nanopb\` | \`3.30910.0\` |  | capped with Firebase | unknown | \`FirebaseCore\` |
+| \`Alamofire\` | \`5.9.1\` | \`5.12.2\` (2026-09-10) | frozen after Dec 2 | [yes](https://github.com/Alamofire/Alamofire) |  |
+| \`Pipe\\|Pod\` | \`1.0.0\` |  | frozen after Dec 2 | unknown |  |
+| \`Stale\` | \`0.4.0\` |  | frozen after Dec 2 | [no](https://github.com/acme/Stale) |  |
 
 <details>
 <summary>1 pod from local paths, git or private specs (not affected)</summary>
 
 | Pod | Locked | Latest on trunk | Updates | Swift package | Pulled in by |
 | --- | --- | --- | --- | --- | --- |
-| \`Flutter\` | 1.0.0 |  | not affected | - |  |
+| \`Flutter\` | \`1.0.0\` |  | not affected | - |  |
 
 </details>
 

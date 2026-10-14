@@ -12,18 +12,18 @@ Flutter plugin example app, 6 pods, 3 in the Podfile.
 
 | Pod | Locked | Latest on trunk | Updates | Swift package | Pulled in by |
 | --- | --- | --- | --- | --- | --- |
-| `libwebp` | 1.6.0 | 1.6.0 (2026-07-31) | frozen after Dec 2 | [no](https://github.com/webmproject/libwebp) | `SDWebImageWebPCoder` |
-| `SDWebImage` | 5.21.7 | 5.21.7 (2026-02-26) | frozen after Dec 2 | [yes](https://github.com/SDWebImage/SDWebImage) | `SDWebImageWebPCoder +1` |
-| `SDWebImageWebPCoder` | 0.15.0 | 0.15.0 (2025-11-03) | frozen after Dec 2 | [yes](https://github.com/SDWebImage/SDWebImageWebPCoder) | `image_cache_plugin` |
+| `libwebp` | `1.6.0` | `1.6.0` (2026-07-31) | frozen after Dec 2 | [no](https://github.com/webmproject/libwebp) | `SDWebImageWebPCoder` |
+| `SDWebImage` | `5.21.7` | `5.21.7` (2026-02-26) | frozen after Dec 2 | [yes](https://github.com/SDWebImage/SDWebImage) | `SDWebImageWebPCoder +1` |
+| `SDWebImageWebPCoder` | `0.15.0` | `0.15.0` (2025-11-03) | frozen after Dec 2 | [yes](https://github.com/SDWebImage/SDWebImageWebPCoder) | `image_cache_plugin` |
 
 <details>
 <summary>3 pods from local paths, git or private specs (not affected)</summary>
 
 | Pod | Locked | Latest on trunk | Updates | Swift package | Pulled in by |
 | --- | --- | --- | --- | --- | --- |
-| `Flutter` | 1.0.0 |  | not affected | - |  |
-| `image_cache_plugin` | 0.0.1 |  | not affected | - |  |
-| `integration_test` | 0.0.1 |  | not affected | - |  |
+| `Flutter` | `1.0.0` |  | not affected | - |  |
+| `image_cache_plugin` | `0.0.1` |  | not affected | - |  |
+| `integration_test` | `0.0.1` |  | not affected | - |  |
 
 </details>
 
