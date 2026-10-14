@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 0,
+  "tool": {
+    "name": "podexit",
+    "version": "0.0.0-snapshot"
+  },
+  "generatedAt": "2026-10-14T12:00:00.000Z",
+  "offline": true,
+  "timeline": {
+    "trialRun": {
+      "from": "2026-11-01",
+      "to": "2026-11-07"
+    },
+    "readOnly": "2026-12-02",
+    "source": "https://blog.cocoapods.org/CocoaPods-Specs-Repo/"
+  },
+  "policyDataVersion": "2026.10.14",
+  "notes": [
+    "Builds keep working: pods already on trunk stay installable after December 2, 2026. Trunk only stops accepting new versions."
+  ],
+  "lockfiles": [
+    {
+      "path": "flutter-plugin/example/ios/Podfile.lock",
+      "project": "flutter-plugin",
+      "guide": {
+        "title": "Flutter apps and plugins",
+        "path": "docs/guides/flutter.md"
+      },
+      "cocoapodsVersion": "1.16.2",
+      "summary": {
+        "pods": 6,
+        "direct": 3,
+        "frozenOnTrunk": 3,
+        "capped": 0,
+        "notAffected": 3,
+        "unknown": 0,
+        "spmAvailable": 2,
+        "noSpm": 1,
+        "spmUnknown": 0
+      },
+      "pods": [
+        {
+          "name": "Flutter",
+          "version": "1.0.0",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "image_cache_plugin",
+            "integration_test"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "Flutter"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (Flutter); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "image_cache_plugin",
+          "version": "0.0.1",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": ".symlinks/plugins/image_cache_plugin/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (.symlinks/plugins/image_cache_plugin/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "integration_test",
+          "version": "0.0.1",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": ".symlinks/plugins/integration_test/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (.symlinks/plugins/integration_test/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "libwebp",
+          "version": "1.6.0",
+          "subspecs": [
+            "demux",
+            "mux",
+            "sharpyuv",
+            "webp"
+          ],
+          "direct": false,
+          "requiredBy": [
+            "SDWebImageWebPCoder"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "1.6.0",
+            "latestReleasedAt": "2026-07-31T08:53:47.000Z",
+            "lockedReleasedAt": "2026-07-31T08:53:47.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "no-spm",
+            "summary": "https://github.com/webmproject/libwebp has no Package.swift on its default branch.",
+            "repository": "https://github.com/webmproject/libwebp",
+            "atLockedVersion": null,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "SDWebImage",
+          "version": "5.21.7",
+          "subspecs": [
+            "Core"
+          ],
+          "direct": false,
+          "requiredBy": [
+            "SDWebImageWebPCoder",
+            "image_cache_plugin"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "5.21.7",
+            "latestReleasedAt": "2026-02-26T07:41:49.000Z",
+            "lockedReleasedAt": "2026-02-26T07:41:49.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/SDWebImage/SDWebImage has a Package.swift on its default branch. It is also there at 5.21.7, the version you use.",
+            "repository": "https://github.com/SDWebImage/SDWebImage",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "SDWebImageWebPCoder",
+          "version": "0.15.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "image_cache_plugin"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "0.15.0",
+            "latestReleasedAt": "2025-11-03T06:40:01.000Z",
+            "lockedReleasedAt": "2025-11-03T06:40:01.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/SDWebImage/SDWebImageWebPCoder has a Package.swift on its default branch. It is also there at 0.15.0, the version you use.",
+            "repository": "https://github.com/SDWebImage/SDWebImageWebPCoder",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        }
+      ]
+    }
+  ]
+}

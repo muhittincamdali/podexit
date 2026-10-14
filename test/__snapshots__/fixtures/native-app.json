@@ -1,0 +1,936 @@
+{
+  "schemaVersion": 0,
+  "tool": {
+    "name": "podexit",
+    "version": "0.0.0-snapshot"
+  },
+  "generatedAt": "2026-10-14T12:00:00.000Z",
+  "offline": true,
+  "timeline": {
+    "trialRun": {
+      "from": "2026-11-01",
+      "to": "2026-11-07"
+    },
+    "readOnly": "2026-12-02",
+    "source": "https://blog.cocoapods.org/CocoaPods-Specs-Repo/"
+  },
+  "policyDataVersion": "2026.10.14",
+  "notes": [
+    "Builds keep working: pods already on trunk stay installable after December 2, 2026. Trunk only stops accepting new versions."
+  ],
+  "lockfiles": [
+    {
+      "path": "native-app/Podfile.lock",
+      "project": "native",
+      "guide": {
+        "title": "Native iOS: CocoaPods to SwiftPM",
+        "path": "docs/guides/native-ios.md"
+      },
+      "cocoapodsVersion": "1.16.2",
+      "summary": {
+        "pods": 28,
+        "direct": 10,
+        "frozenOnTrunk": 11,
+        "capped": 15,
+        "notAffected": 2,
+        "unknown": 0,
+        "spmAvailable": 25,
+        "noSpm": 0,
+        "spmUnknown": 2
+      },
+      "pods": [
+        {
+          "name": "Alamofire",
+          "version": "5.12.2",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "5.12.2",
+            "latestReleasedAt": "2026-09-10T01:47:20.000Z",
+            "lockedReleasedAt": "2026-09-10T01:47:20.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/Alamofire/Alamofire has a Package.swift on its default branch. It is also there at 5.12.2, the version you use.",
+            "repository": "https://github.com/Alamofire/Alamofire",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "AppAuth",
+          "version": "2.1.0",
+          "subspecs": [
+            "Core",
+            "ExternalUserAgent"
+          ],
+          "direct": false,
+          "requiredBy": [
+            "GTMAppAuth",
+            "GoogleSignIn"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "3.0.0",
+            "latestReleasedAt": "2026-08-24T23:20:15.000Z",
+            "lockedReleasedAt": "2026-06-12T18:06:57.000Z",
+            "behindTrunk": true
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/openid/AppAuth-iOS has a Package.swift on its default branch. It is also there at 2.1.0, the version you use.",
+            "repository": "https://github.com/openid/AppAuth-iOS",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "AppCheckCore",
+          "version": "11.3.2",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "GoogleSignIn"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "11.3.2",
+            "latestReleasedAt": "2026-09-14T15:22:47.000Z",
+            "lockedReleasedAt": "2026-09-14T15:22:47.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/google/app-check has a Package.swift on its default branch. It is also there at CocoaPods-11.3.2, the version you use.",
+            "repository": "https://github.com/google/app-check",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "AppCore",
+          "version": "0.1.0",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../AppCore"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../AppCore); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "FirebaseAnalytics",
+          "version": "12.19.0",
+          "subspecs": [
+            "Default"
+          ],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Firebase stopped at 12.x on CocoaPods (2026-10); newer versions ship through Swift Package Manager.",
+            "latestOnTrunk": "12.19.0",
+            "latestReleasedAt": "2026-09-09T17:09:18.000Z",
+            "lockedReleasedAt": "2026-09-09T17:09:18.000Z",
+            "behindTrunk": false,
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "All Firebase libraries are products of the firebase-ios-sdk package. (https://firebase.google.com/docs/ios/cocoapods-deprecation)",
+            "repository": "https://github.com/firebase/firebase-ios-sdk",
+            "atLockedVersion": null,
+            "via": "publisher"
+          }
+        },
+        {
+          "name": "FirebaseCore",
+          "version": "12.19.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "FirebaseAnalytics",
+            "FirebaseCoreExtension",
+            "FirebaseCrashlytics",
+            "FirebaseInstallations",
+            "FirebaseSessions"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Firebase stopped at 12.x on CocoaPods (2026-10); newer versions ship through Swift Package Manager.",
+            "latestOnTrunk": "12.19.0",
+            "latestReleasedAt": "2026-09-09T16:38:52.000Z",
+            "lockedReleasedAt": "2026-09-09T16:38:52.000Z",
+            "behindTrunk": false,
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "All Firebase libraries are products of the firebase-ios-sdk package. (https://firebase.google.com/docs/ios/cocoapods-deprecation)",
+            "repository": "https://github.com/firebase/firebase-ios-sdk",
+            "atLockedVersion": null,
+            "via": "publisher"
+          }
+        },
+        {
+          "name": "FirebaseCoreExtension",
+          "version": "12.19.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "FirebaseSessions"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseCrashlytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "12.19.0",
+            "latestReleasedAt": "2026-09-09T16:42:39.000Z",
+            "lockedReleasedAt": "2026-09-09T16:42:39.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseCrashlytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/firebase/firebase-ios-sdk has a Package.swift on its default branch. It is also there at CocoaPods-12.19.0, the version you use.",
+            "repository": "https://github.com/firebase/firebase-ios-sdk",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "FirebaseCoreInternal",
+          "version": "12.19.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "FirebaseCore"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseCore: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "12.19.0",
+            "latestReleasedAt": "2026-09-09T16:33:16.000Z",
+            "lockedReleasedAt": "2026-09-09T16:33:16.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseCore",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/firebase/firebase-ios-sdk has a Package.swift on its default branch. It is also there at CocoaPods-12.19.0, the version you use.",
+            "repository": "https://github.com/firebase/firebase-ios-sdk",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "FirebaseCrashlytics",
+          "version": "12.19.0",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Firebase stopped at 12.x on CocoaPods (2026-10); newer versions ship through Swift Package Manager.",
+            "latestOnTrunk": "12.19.0",
+            "latestReleasedAt": "2026-09-09T17:38:23.000Z",
+            "lockedReleasedAt": "2026-09-09T17:38:23.000Z",
+            "behindTrunk": false,
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "All Firebase libraries are products of the firebase-ios-sdk package. (https://firebase.google.com/docs/ios/cocoapods-deprecation)",
+            "repository": "https://github.com/firebase/firebase-ios-sdk",
+            "atLockedVersion": null,
+            "via": "publisher"
+          }
+        },
+        {
+          "name": "FirebaseInstallations",
+          "version": "12.19.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "FirebaseAnalytics",
+            "FirebaseCrashlytics",
+            "FirebaseSessions"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Firebase stopped at 12.x on CocoaPods (2026-10); newer versions ship through Swift Package Manager.",
+            "latestOnTrunk": "12.19.0",
+            "latestReleasedAt": "2026-09-09T16:56:43.000Z",
+            "lockedReleasedAt": "2026-09-09T16:56:43.000Z",
+            "behindTrunk": false,
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "All Firebase libraries are products of the firebase-ios-sdk package. (https://firebase.google.com/docs/ios/cocoapods-deprecation)",
+            "repository": "https://github.com/firebase/firebase-ios-sdk",
+            "atLockedVersion": null,
+            "via": "publisher"
+          }
+        },
+        {
+          "name": "FirebaseRemoteConfigInterop",
+          "version": "12.19.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "FirebaseCrashlytics"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseCrashlytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "12.19.0",
+            "latestReleasedAt": "2026-09-09T17:03:08.000Z",
+            "lockedReleasedAt": "2026-09-09T17:03:08.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseCrashlytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/firebase/firebase-ios-sdk has a Package.swift on its default branch. It is also there at CocoaPods-12.19.0, the version you use.",
+            "repository": "https://github.com/firebase/firebase-ios-sdk",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "FirebaseSessions",
+          "version": "12.19.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "FirebaseCrashlytics"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseCrashlytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "12.19.0",
+            "latestReleasedAt": "2026-09-09T17:00:20.000Z",
+            "lockedReleasedAt": "2026-09-09T17:00:20.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseCrashlytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/firebase/firebase-ios-sdk has a Package.swift on its default branch. It is also there at CocoaPods-12.19.0, the version you use.",
+            "repository": "https://github.com/firebase/firebase-ios-sdk",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "GoogleAdsOnDeviceConversion",
+          "version": "3.7.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "GoogleAppMeasurement"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseAnalytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "3.7.0",
+            "latestReleasedAt": "2026-09-01T23:40:43.000Z",
+            "lockedReleasedAt": "2026-09-01T23:40:43.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseAnalytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "unknown",
+            "summary": "The podspec points to dl.google.com, not a GitHub repository.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "GoogleAppMeasurement",
+          "version": "12.19.0",
+          "subspecs": [
+            "Core",
+            "Default",
+            "IdentitySupport"
+          ],
+          "direct": false,
+          "requiredBy": [
+            "FirebaseAnalytics"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseAnalytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "12.19.0",
+            "latestReleasedAt": "2026-09-09T17:05:40.000Z",
+            "lockedReleasedAt": "2026-09-09T17:05:40.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseAnalytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "unknown",
+            "summary": "The podspec points to dl.google.com, not a GitHub repository.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "GoogleDataTransport",
+          "version": "10.1.1",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "FirebaseCrashlytics",
+            "FirebaseSessions"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseCrashlytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "10.1.1",
+            "latestReleasedAt": "2026-07-31T15:17:24.000Z",
+            "lockedReleasedAt": "2026-07-31T15:17:24.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseCrashlytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/google/GoogleDataTransport has a Package.swift on its default branch. It is also there at CocoaPods-10.1.1, the version you use.",
+            "repository": "https://github.com/google/GoogleDataTransport",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "GoogleSignIn",
+          "version": "9.2.0",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "10.0.0",
+            "latestReleasedAt": "2026-09-04T00:14:53.000Z",
+            "lockedReleasedAt": "2026-06-15T18:37:16.000Z",
+            "behindTrunk": true
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/google/GoogleSignIn-iOS has a Package.swift on its default branch. It is also there at 9.2.0, the version you use.",
+            "repository": "https://github.com/google/GoogleSignIn-iOS",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "GoogleUtilities",
+          "version": "8.1.4",
+          "subspecs": [
+            "AppDelegateSwizzler",
+            "Environment",
+            "Logger",
+            "MethodSwizzler",
+            "NSData+zlib",
+            "Network",
+            "Privacy",
+            "Reachability",
+            "UserDefaults"
+          ],
+          "direct": false,
+          "requiredBy": [
+            "AppCheckCore",
+            "FirebaseAnalytics",
+            "FirebaseCore",
+            "FirebaseCoreInternal",
+            "FirebaseCrashlytics",
+            "FirebaseInstallations",
+            "FirebaseSessions",
+            "GoogleAdsOnDeviceConversion",
+            "GoogleAppMeasurement"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseAnalytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "8.1.5",
+            "latestReleasedAt": "2026-10-14T16:51:13.000Z",
+            "lockedReleasedAt": "2026-09-30T19:59:59.000Z",
+            "behindTrunk": true,
+            "via": "FirebaseAnalytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/google/GoogleUtilities has a Package.swift on its default branch. It is also there at CocoaPods-8.1.4, the version you use.",
+            "repository": "https://github.com/google/GoogleUtilities",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "GTMAppAuth",
+          "version": "5.0.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "GoogleSignIn"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "6.0.0",
+            "latestReleasedAt": "2026-08-28T00:22:08.000Z",
+            "lockedReleasedAt": "2025-05-01T22:45:11.000Z",
+            "behindTrunk": true
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/google/GTMAppAuth has a Package.swift on its default branch. It is also there at 5.0.0, the version you use.",
+            "repository": "https://github.com/google/GTMAppAuth",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "GTMSessionFetcher",
+          "version": "3.5.0",
+          "subspecs": [
+            "Core"
+          ],
+          "direct": false,
+          "requiredBy": [
+            "GTMAppAuth",
+            "GoogleSignIn"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "5.3.1",
+            "latestReleasedAt": "2026-08-04T14:16:12.000Z",
+            "lockedReleasedAt": "2024-06-27T14:49:33.000Z",
+            "behindTrunk": true
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/google/gtm-session-fetcher has a Package.swift on its default branch. It is also there at v3.5.0, the version you use.",
+            "repository": "https://github.com/google/gtm-session-fetcher",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "Kingfisher",
+          "version": "8.13.0",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "8.13.0",
+            "latestReleasedAt": "2026-09-23T01:58:15.000Z",
+            "lockedReleasedAt": "2026-09-23T01:58:15.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/onevcat/Kingfisher has a Package.swift on its default branch. It is also there at 8.13.0, the version you use.",
+            "repository": "https://github.com/onevcat/Kingfisher",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "lottie-ios",
+          "version": "4.6.1",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "4.6.1",
+            "latestReleasedAt": "2026-06-13T16:49:04.000Z",
+            "lockedReleasedAt": "2026-06-13T16:49:04.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/airbnb/lottie-ios has a Package.swift on its default branch. It is also there at 4.6.1, the version you use.",
+            "repository": "https://github.com/airbnb/lottie-ios",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "MBProgressHUD",
+          "version": "1.2.0",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "1.2.0",
+            "latestReleasedAt": "2020-01-13T21:47:56.000Z",
+            "lockedReleasedAt": "2020-01-13T21:47:56.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/matej/MBProgressHUD has a Package.swift on its default branch. It is also there at 1.2.0, the version you use.",
+            "repository": "https://github.com/matej/MBProgressHUD",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "nanopb",
+          "version": "3.30910.0",
+          "subspecs": [
+            "decode",
+            "encode"
+          ],
+          "direct": false,
+          "requiredBy": [
+            "FirebaseAnalytics",
+            "FirebaseCrashlytics",
+            "FirebaseSessions",
+            "GoogleAdsOnDeviceConversion",
+            "GoogleAppMeasurement",
+            "GoogleDataTransport"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseAnalytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "3.30910.0",
+            "latestReleasedAt": "2024-07-09T15:09:10.000Z",
+            "lockedReleasedAt": "2024-07-09T15:09:10.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseAnalytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/nanopb/nanopb has a Package.swift on its default branch. It is also there at 0.3.9.10, the version you use.",
+            "repository": "https://github.com/nanopb/nanopb",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "PromisesObjC",
+          "version": "2.4.1",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "AppCheckCore",
+            "FirebaseCrashlytics",
+            "FirebaseInstallations",
+            "GoogleDataTransport",
+            "PromisesSwift"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseCrashlytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "2.4.1",
+            "latestReleasedAt": "2026-06-09T18:20:34.000Z",
+            "lockedReleasedAt": "2026-06-09T18:20:34.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseCrashlytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/google/promises has a Package.swift on its default branch. It is also there at 2.4.1, the version you use.",
+            "repository": "https://github.com/google/promises",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "PromisesSwift",
+          "version": "2.4.1",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "AppCheckCore",
+            "FirebaseSessions"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "capped",
+            "summary": "Subdependency of FirebaseCrashlytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).",
+            "latestOnTrunk": "2.4.1",
+            "latestReleasedAt": "2026-06-09T18:21:19.000Z",
+            "lockedReleasedAt": "2026-06-09T18:21:19.000Z",
+            "behindTrunk": false,
+            "via": "FirebaseCrashlytics",
+            "publisher": {
+              "id": "firebase",
+              "name": "Firebase",
+              "lastMajorOnCocoaPods": 12,
+              "source": "https://firebase.google.com/docs/ios/cocoapods-deprecation"
+            }
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/google/promises has a Package.swift on its default branch. It is also there at 2.4.1, the version you use.",
+            "repository": "https://github.com/google/promises",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "RecaptchaInterop",
+          "version": "101.0.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "AppCheckCore"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "101.0.0",
+            "latestReleasedAt": "2024-12-06T19:21:04.000Z",
+            "lockedReleasedAt": "2024-12-06T19:21:04.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/google/interop-ios-for-google-sdks has a Package.swift on its default branch. It is also there at CocoaPods-101.0.0, the version you use.",
+            "repository": "https://github.com/google/interop-ios-for-google-sdks",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "SnapKit",
+          "version": "5.7.1",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "5.7.1",
+            "latestReleasedAt": "2024-02-18T08:39:39.000Z",
+            "lockedReleasedAt": "2024-02-18T08:39:39.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/SnapKit/SnapKit has a Package.swift on its default branch. It is also there at 5.7.1, the version you use.",
+            "repository": "https://github.com/SnapKit/SnapKit",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "SwiftyJSON",
+          "version": "5.0.2",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "git",
+            "url": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+            "tag": "5.0.2"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Git repository (https://github.com/SwiftyJSON/SwiftyJSON.git); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/SwiftyJSON/SwiftyJSON has a Package.swift on its default branch. It is also there at 5.0.2, the version you use.",
+            "repository": "https://github.com/SwiftyJSON/SwiftyJSON",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        }
+      ]
+    }
+  ]
+}
