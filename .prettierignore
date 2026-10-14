@@ -5,6 +5,9 @@ site/
 fixtures/
 test/__snapshots__/
 .github/brand/
+# Written by the repository kit (apply.mjs); reformatting them would make every re-run a change.
+.github/workflows/ci.yml
+.github/workflows/quality.yml
 docs/media/
 package-lock.json
 CHANGELOG.md
