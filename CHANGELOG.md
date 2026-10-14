@@ -11,10 +11,10 @@ All notable changes to podexit are listed here. The format follows
 
 ### Added
 
-- `podexit [paths...]` finds `Podfile.lock`, `ios/Podfile.lock`, `macos/Podfile.lock` and
-  `example/ios/Podfile.lock`, and reports each pod's update status (`frozen-on-trunk`, `capped`,
-  `not-affected`, `unknown`) and Swift package status (`spm-available`, `no-spm`, `unknown`,
-  `not-checked`).
+- `podexit [paths...]` finds `Podfile.lock`, `ios/Podfile.lock`, `macos/Podfile.lock`,
+  `example/ios/Podfile.lock` and `example/macos/Podfile.lock`, and reports each pod's update
+  status (`frozen-on-trunk`, `capped`, `not-affected`, `unknown`) and Swift package status
+  (`spm-available`, `no-spm`, `unknown`, `not-checked`).
 - Lookups on cdn.cocoapods.org (versions, podspec), trunk.cocoapods.org (release dates) and
   raw.githubusercontent.com (`Package.swift` on the default branch and at the locked tag).
 - Publisher policy data with Firebase capped at 12.x from October 2026, including the
@@ -22,8 +22,8 @@ All notable changes to podexit are listed here. The format follows
 - Project detection for native iOS, Flutter apps, Flutter plugins, React Native and Expo, with a
   link to the matching guide.
 - Terminal, Markdown and JSON reports (`schemaVersion` 0); `--all`, `--output`, `--no-color`.
-- A disk cache with a 24-hour lifetime, `--offline` and `--refresh`; `GITHUB_TOKEN` or `GH_TOKEN`
-  is sent to GitHub hosts only.
+- A disk cache with a 24-hour lifetime in `--cache-dir` or `PODEXIT_CACHE_DIR`, `--offline` and
+  `--refresh`; `GITHUB_TOKEN` or `GH_TOKEN` is sent to GitHub hosts only.
 - Programmatic API: `analyzeLockfile`, `buildReport`, `render` and the building blocks behind them.
 - Five fixtures from real native, Flutter app, Flutter plugin, Expo and React Native projects
   with recorded answers, snapshot tests and terminal demos recorded from the CLI.
