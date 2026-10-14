@@ -9,24 +9,25 @@ import {
   summaryLines,
   swiftPackageLabel,
   updatesLabel,
-  withoutControlCharacters,
 } from './labels.js';
+import { escapeTableCell, markdownCode, markdownUrl } from './escape.js';
 
-// GitHub needs `\|` inside table cells, code spans included.
-const escapeCell = (text: string) => text.replace(/\|/g, '\\|');
-const code = (text: string) => (text ? `\`${escapeCell(text)}\`` : '');
+// Names, versions and paths come from the lockfile and the registries, so they go into code spans,
+// where Markdown and HTML have no effect. Labels and links are podexit's own text.
+const code = (text: string) => escapeTableCell(markdownCode(text));
+const DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 function latestCell(pod: PodReport): string {
   const { latestOnTrunk, latestReleasedAt } = pod.updates;
   if (!latestOnTrunk) return '';
-  return latestReleasedAt ? `${latestOnTrunk} (${latestReleasedAt.slice(0, 10)})` : latestOnTrunk;
+  const date = latestReleasedAt?.slice(0, 10) ?? '';
+  return DATE.test(date) ? `${code(latestOnTrunk)} (${date})` : code(latestOnTrunk);
 }
 
 function swiftPackageCell(pod: PodReport): string {
   const label = swiftPackageLabel(pod);
-  return pod.swiftPackage.repository && pod.swiftPackage.status !== 'not-checked'
-    ? `[${label}](${pod.swiftPackage.repository})`
-    : label;
+  const url = pod.swiftPackage.repository ? markdownUrl(pod.swiftPackage.repository) : null;
+  return url && pod.swiftPackage.status !== 'not-checked' ? `[${label}](${url})` : label;
 }
 
 function podTable(pods: readonly PodReport[]): string[] {
@@ -36,8 +37,8 @@ function podTable(pods: readonly PodReport[]): string[] {
     ...pods.map((pod) =>
       [
         code(pod.name),
-        escapeCell(pod.version),
-        escapeCell(latestCell(pod)),
+        code(pod.version),
+        latestCell(pod),
         updatesLabel(pod),
         swiftPackageCell(pod),
         code(requiredByLabel(pod)),
@@ -55,7 +56,7 @@ function lockfileSection(lockfile: LockfileReport): string[] {
   const other = ordered.filter((pod) => pod.updates.status === 'not-affected');
   const [updates, packages] = summaryLines(lockfile.summary);
   const lines = [
-    `## \`${lockfile.path}\``,
+    `## ${markdownCode(lockfile.path)}`,
     '',
     `${PROJECT_LABELS[lockfile.project]}, ${podsHeadline(lockfile.summary)}.`,
     '',
@@ -79,9 +80,11 @@ function lockfileSection(lockfile: LockfileReport): string[] {
   return lines;
 }
 
-/** GitHub-flavoured Markdown, for pull request comments, issues and MIGRATION notes. */
-export function renderMarkdown(input: Report): string {
-  const report = withoutControlCharacters(input);
+/**
+ * GitHub-flavoured Markdown, for pull request comments, issues and MIGRATION notes. Called through
+ * `render`, which has already replaced control characters in the report.
+ */
+export function renderMarkdown(report: Report): string {
   const { timeline } = report;
   const lines = [
     '# podexit report',

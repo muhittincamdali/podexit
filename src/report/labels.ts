@@ -3,26 +3,6 @@ import type { UpdateStatus } from '../core/classify.js';
 
 export const REPOSITORY_URL = 'https://github.com/muhittincamdali/podexit';
 
-// C0 controls (tab and newline included), DEL and C1 controls. Pod names, versions and paths come
-// from the lockfile, the file system and the registries; an escape sequence in one of them would
-// otherwise reach the terminal as is and could recolour or rewrite what is on screen.
-// biome-ignore lint/suspicious/noControlCharactersInRegex: matching control characters is the point.
-const CONTROL_CHARACTERS = /[\u0000-\u001f\u007f-\u009f]/g;
-
-/** Replaces control characters with U+FFFD, so they show up instead of acting on the terminal. */
-export const replaceControlCharacters = (text: string) =>
-  text.replace(CONTROL_CHARACTERS, '\ufffd');
-
-/** A copy of a report (or any part of one) with every string passed through replaceControlCharacters. */
-export function withoutControlCharacters<T>(value: T): T {
-  if (typeof value === 'string') return replaceControlCharacters(value) as T;
-  if (Array.isArray(value)) return value.map(withoutControlCharacters) as T;
-  if (value === null || typeof value !== 'object') return value;
-  return Object.fromEntries(
-    Object.entries(value).map(([key, item]) => [key, withoutControlCharacters(item)]),
-  ) as T;
-}
-
 /** Short label for the UPDATES column. */
 export function updatesLabel(pod: PodReport): string {
   switch (pod.updates.status) {

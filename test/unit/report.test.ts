@@ -1,7 +1,8 @@
 import { stripVTControlCharacters } from 'node:util';
 import { describe, expect, it } from 'vitest';
-import { analyzeLockfile, buildReport, type Report } from '../../src/analyze.js';
+import { analyzeLockfile, buildReport, type PodReport, type Report } from '../../src/analyze.js';
 import { podspecUrl, trunkPodUrl, versionsIndexUrl } from '../../src/net/cocoapods.js';
+import { markdownCode, markdownUrl } from '../../src/report/escape.js';
 import { render } from '../../src/report/index.js';
 import { orderPods, requiredByLabel, summaryLines, updatesLabel } from '../../src/report/labels.js';
 import { FakeFetcher, ok } from '../helpers/fake-fetcher.js';
@@ -173,6 +174,92 @@ describe('render', async () => {
     expect(tampered.lockfiles[0]?.pods.some((item) => item.name.includes('\u001b'))).toBe(true);
   });
 
+  it('replaces DEL and C1 controls in the JSON report, which JSON.stringify leaves raw', () => {
+    const tampered = structuredClone(report);
+    const pod = tampered.lockfiles[0]?.pods.find((item) => item.name === 'Stale');
+    if (!pod) throw new Error('Stale is missing from the sample report');
+    // U+009B is CSI and U+009D is OSC in their 8-bit form; U+009C ends the OSC.
+    pod.name = 'Stale\u009b2J\u009d52;c;cm0gLXJmIH4K\u009c\u007f\u001b[31m';
+    const text = render(tampered, 'json');
+    // biome-ignore lint/suspicious/noControlCharactersInRegex: looking for raw control characters.
+    expect(text).not.toMatch(/[\u0000-\u0009\u000b-\u001f\u007f-\u009f]/);
+    const parsed = JSON.parse(text) as Report;
+    expect(parsed.lockfiles[0]?.pods.map((item) => item.name)).toContain(
+      'Stale\ufffd2J\ufffd52;c;cm0gLXJmIH4K\ufffd\ufffd\ufffd[31m',
+    );
+  });
+
+  describe('Markdown injection', () => {
+    const tamperedMarkdown = (change: (pod: PodReport, report: Report) => void) => {
+      const tampered = structuredClone(report);
+      const pod = tampered.lockfiles[0]?.pods.find((item) => item.name === 'Stale');
+      if (!pod) throw new Error('Stale is missing from the sample report');
+      change(pod, tampered);
+      return render(tampered, 'markdown');
+    };
+    const row = (text: string, name: string) =>
+      text.split('\n').find((line) => line.startsWith(`| ${name}`)) ?? '';
+
+    it('keeps a pod name with backticks inside its code span', () => {
+      const text = tamperedMarkdown((pod) => {
+        pod.name = 'Stale` <img src="https:&#47;&#47;evil.example&#47;p.png"> [Update](x) `x';
+      });
+      expect(text).toContain(
+        '| ``Stale` <img src="https:&#47;&#47;evil.example&#47;p.png"> [Update](x) `x`` |',
+      );
+    });
+
+    it('puts versions in code spans, so HTML, links and mentions stay text', () => {
+      const version = '0.4.0 <a href="https://evil.example">fix</a> @someone https://evil.example';
+      const text = tamperedMarkdown((pod) => {
+        pod.version = version;
+        pod.updates.latestOnTrunk = '9.9.9 ![x](https://evil.example/p.png)';
+        pod.updates.latestReleasedAt = '2026-01-01T00:00:00.000Z';
+      });
+      expect(row(text, '`Stale`')).toContain(
+        `| \`${version}\` | \`9.9.9 ![x](https://evil.example/p.png)\` (2026-01-01) |`,
+      );
+    });
+
+    it('drops a release date that is not a date', () => {
+      const text = tamperedMarkdown((pod) => {
+        pod.updates.latestOnTrunk = '1.0.0';
+        pod.updates.latestReleasedAt = '<img src=x>';
+      });
+      expect(row(text, '`Stale`')).toContain('| `1.0.0` |');
+      expect(text).not.toContain('<img src=x>');
+    });
+
+    it('percent-encodes a repository URL that tries to close the link', () => {
+      const text = tamperedMarkdown((pod) => {
+        pod.swiftPackage.status = 'unknown';
+        pod.swiftPackage.repository =
+          'https://github.com/x)[Update](https:&#47;&#47;evil.example&#47;fix)(/Stale';
+      });
+      expect(row(text, '`Stale`')).toContain(
+        '[unknown](https://github.com/x%29%5BUpdate%5D%28https:%26#47;%26#47;evil.example%26#47;fix%29%28/Stale) |',
+      );
+    });
+
+    it('links only http and https URLs', () => {
+      for (const repository of ['javascript:alert(1)', 'data:text/html,x', 'not a url']) {
+        const text = tamperedMarkdown((pod) => {
+          pod.swiftPackage.status = 'unknown';
+          pod.swiftPackage.repository = repository;
+        });
+        expect(row(text, '`Stale`')).toMatch(/\| unknown \| {2}\|$/);
+      }
+    });
+
+    it('keeps a lockfile path with backticks inside the heading code span', () => {
+      const text = tamperedMarkdown((_pod, tampered) => {
+        const lockfile = tampered.lockfiles[0];
+        if (lockfile) lockfile.path = 'ios` <img src=x> `/Podfile.lock';
+      });
+      expect(text).toContain('## ``ios` <img src=x> `/Podfile.lock``\n');
+    });
+  });
+
   it('writes the report object as JSON', () => {
     const parsed = JSON.parse(render(report, 'json')) as Report;
     expect(parsed).toEqual(JSON.parse(JSON.stringify(report)));
@@ -183,5 +270,38 @@ describe('render', async () => {
     const text = render(await sampleReport(true), 'tty', { color: false, all: false });
     expect(text).toContain('Offline: answers come from the cache');
     expect(render(await sampleReport(true), 'markdown')).toContain('2026-10-14, offline');
+  });
+});
+
+describe('markdownCode', () => {
+  it('uses a fence longer than any run of backticks in the text', () => {
+    expect(markdownCode('Alamofire')).toBe('`Alamofire`');
+    expect(markdownCode('a`b')).toBe('``a`b``');
+    expect(markdownCode('a``b`c')).toBe('```a``b`c```');
+  });
+
+  it('pads text that starts or ends with a backtick or a space', () => {
+    expect(markdownCode('`a')).toBe('`` `a ``');
+    expect(markdownCode(' a ')).toBe('`  a  `');
+    expect(markdownCode('')).toBe('');
+  });
+});
+
+describe('markdownUrl', () => {
+  it('keeps ordinary GitHub URLs as they are', () => {
+    expect(markdownUrl('https://github.com/Alamofire/Alamofire')).toBe(
+      'https://github.com/Alamofire/Alamofire',
+    );
+  });
+
+  it('percent-encodes characters that could end the link or start markup', () => {
+    expect(markdownUrl("https://github.com/a/b)<x>[y]&z'*|`")).toBe(
+      'https://github.com/a/b%29%3Cx%3E%5By%5D%26z%27%2A%7C%60',
+    );
+  });
+
+  it('refuses other schemes', () => {
+    expect(markdownUrl('javascript:alert(1)')).toBeNull();
+    expect(markdownUrl('//evil.example')).toBeNull();
   });
 });

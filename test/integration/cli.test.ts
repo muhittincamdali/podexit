@@ -137,7 +137,7 @@ describe('podexit', () => {
     expect(stderr).toBe('Wrote out.md\n');
     const markdown = await readFile(join(root, 'out.md'), 'utf8');
     expect(markdown).toContain(
-      '| `Alamofire` | 5.9.1 | 5.10.2 (2024-11-25) | frozen after Dec 2 |',
+      '| `Alamofire` | `5.9.1` | `5.10.2` (2024-11-25) | frozen after Dec 2 |',
     );
   });
 
@@ -182,6 +182,30 @@ describe('podexit', () => {
     expect(stderr).toBe(
       'podexit: README.md: This file has no PODS section, so it is not a Podfile.lock.\n',
     );
+  });
+
+  it('replaces control characters in a lockfile entry quoted on stderr', async () => {
+    // OSC 52 (write the clipboard), CSI 2J (clear the screen), an OSC 8 link and an 8-bit CSI.
+    await writeFile(
+      join(root, 'ios', 'Podfile.lock'),
+      'PODS:\n  - "\\e]52;c;cm0gLXJmIH4K\\a\\e[2J\\e]8;;https://evil.example/\\aClick\\e]8;;\\a\\x9b31m"\n',
+    );
+    const { code, stderr } = await cli(['--offline']);
+    expect(code).toBe(EXIT.usage);
+    // biome-ignore lint/suspicious/noControlCharactersInRegex: looking for raw control characters.
+    expect(stderr).not.toMatch(/[\u0000-\u0009\u000b-\u001f\u007f-\u009f]/);
+    expect(stderr).toBe(
+      'podexit: ios/Podfile.lock: Unexpected PODS entry: \ufffd]52;c;cm0gLXJmIH4K\ufffd\ufffd[2J\ufffd]8;;https://evil.example/\ufffdClick\ufffd]8;;\ufffd\ufffd31m\n',
+    );
+  });
+
+  it('replaces control characters in a folder name in the progress line', async () => {
+    await record();
+    const folder = 'app\u001b[2J\u009b31m';
+    await mkdir(join(root, folder, 'ios'), { recursive: true });
+    await writeFile(join(root, folder, 'ios', 'Podfile.lock'), LOCKFILE);
+    const { stderr } = await cli([folder], { stderrIsTty: true });
+    expect(stderr).toBe('Checking app\ufffd[2J\ufffd31m/ios/Podfile.lock…\n');
   });
 
   it('exits with 2 for an unknown format or option', async () => {

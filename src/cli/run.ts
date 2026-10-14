@@ -6,6 +6,7 @@ import { LockfileError } from '../core/lockfile.js';
 import { loadPublisherPolicy } from '../data.js';
 import { CachedFetcher, defaultCacheDirectory } from '../net/cache.js';
 import { type Fetcher, HttpFetcher, OfflineFetcher } from '../net/fetcher.js';
+import { replaceControlCharactersExceptNewlines } from '../report/escape.js';
 import { FORMATS, type Format, render } from '../report/index.js';
 import { REPOSITORY_URL } from '../report/labels.js';
 import { VERSION } from '../version.js';
@@ -142,7 +143,13 @@ async function analyzeAll(
 }
 
 /** Runs the CLI with the given arguments (without `node` and the script) and returns the exit code. */
-export async function run(argv: readonly string[], io: CliEnvironment): Promise<number> {
+export async function run(argv: readonly string[], environment: CliEnvironment): Promise<number> {
+  // Messages quote paths, arguments and lockfile entries ("Unexpected PODS entry: ..."); an escape
+  // sequence in one of them must not reach the terminal, so every write to stderr is cleaned here.
+  const io: CliEnvironment = {
+    ...environment,
+    stderr: (text) => environment.stderr(replaceControlCharactersExceptNewlines(text)),
+  };
   const command = program(io);
   try {
     await command.parseAsync([...argv], { from: 'user' });
