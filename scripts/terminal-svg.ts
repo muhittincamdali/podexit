@@ -183,7 +183,7 @@ export function terminalSvg(session: Session, themeName: 'light' | 'dark'): stri
   const end = start + output.length * LINE_SECONDS + 0.2;
   lines.push(
     `<text class="t" x="${x}" y="${y}" style="${delay(end)}"><tspan fill="${theme.prompt}" font-weight="700">${prompt}</tspan></text>`,
-    `<rect class="cursor" x="${x + prompt.length * CHAR_WIDTH}" y="${y - FONT_SIZE + 1}" width="${CHAR_WIDTH.toFixed(2)}" height="${FONT_SIZE + 3}" fill="${theme.prompt}" style="${delay(end)}"/>`,
+    `<rect class="caret" x="${x + prompt.length * CHAR_WIDTH}" y="${y - FONT_SIZE + 1}" width="${CHAR_WIDTH.toFixed(2)}" height="${FONT_SIZE + 3}" fill="${theme.prompt}" style="${delay(end)}"/>`,
   );
 
   const [first, second, third] = theme.dots;
@@ -192,10 +192,10 @@ export function terminalSvg(session: Session, themeName: 'light' | 'dark'): stri
 <style>
 text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:${FONT_SIZE}px;white-space:pre}
 .t{opacity:0;animation:show 0.01s linear forwards}
-.cursor{opacity:0;animation:blink 1.1s step-end infinite}
+.caret{opacity:0;animation:blink 1.1s step-end infinite}
 @keyframes show{to{opacity:1}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-@media (prefers-reduced-motion:reduce){.t{animation:none;opacity:1}.cursor{animation:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.t{animation:none;opacity:1}.caret{animation:none;opacity:1}}
 </style>
 <rect width="${width}" height="${height}" fill="${theme.page}"/>
 <rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="10" fill="${theme.window}" stroke="${theme.border}"/>
