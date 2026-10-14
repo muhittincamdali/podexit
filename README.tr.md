@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@b014c05397ff44788b1d848270e2b125a0e85870 status=reviewed -->
+<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -9,7 +9,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml/badge.svg" alt="CI durumu"></a>
-<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="Son sürüm: v0.1.0"></picture></a>
+<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="Son sürüm: v0.1.1"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/package.json"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg" alt="Dil sürümü: Node.js 22.12+"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg" alt="Lisans: MIT"></picture></a>
 </p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. podexit'i çalıştırın:**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 ```
 
-podexit henüz npm'de yok (yayımlanması planlanıyor), bu yüzden `npx podexit` şimdilik çalışmaz. Yukarıdaki komut 0.1.0 sürümünü GitHub'dan çalıştırır; bu README'de `npx podexit` geçen her yerde onu kullanın.
+podexit henüz npm'de yok (yayımlanması planlanıyor), bu yüzden `npx podexit` şimdilik çalışmaz. Yukarıdaki komut 0.1.1 sürümünü GitHub'dan çalıştırır; bu README'de `npx podexit` geçen her yerde onu kullanın.
 
 **3. Tabloyu okuyun.** **capped** işaretli satırlar ilk önce durur (Firebase, CocoaPods'a yayımlamayı Ekim 2026'da bırakıyor); **frozen after Dec 2** işaretli satırlar 2 Aralık'tan sonra yeni sürüm almaz. Swift package sütununda **yes** yazıyorsa pod şimdiden taşınabilir. Son satır, proje türünüze uygun rehbere bağlantı verir.
 
@@ -72,10 +72,10 @@ Ayrıntılar için [2 Aralık'ta neler değişiyor](docs/guides/what-changes.md)
 
 ## Kurulum
 
-podexit henüz npm'de yok; yayımlanması planlanıyor. O zamana kadar 0.1.0 sürümünü yukarıdaki gibi GitHub'dan çalıştırın ya da bir projeye ekleyin:
+podexit henüz npm'de yok; yayımlanması planlanıyor. O zamana kadar 0.1.1 sürümünü yukarıdaki gibi GitHub'dan çalıştırın ya da bir projeye ekleyin:
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 npx podexit
 ```
 

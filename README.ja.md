@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@b014c05397ff44788b1d848270e2b125a0e85870 status=reviewed -->
+<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -9,7 +9,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml/badge.svg" alt="CI ステータス"></a>
-<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="最新バージョン: v0.1.0"></picture></a>
+<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="最新バージョン: v0.1.1"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/package.json"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg" alt="言語バージョン: Node.js 22.12+"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg" alt="ライセンス: MIT"></picture></a>
 </p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. podexit を実行します。**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 ```
 
-podexit はまだ npm に公開されていないため（公開予定）、`npx podexit` は現時点では動きません。上のコマンドは GitHub から 0.1.0 リリースを実行します。この README で `npx podexit` と書かれている箇所では、このコマンドを使ってください。
+podexit はまだ npm に公開されていないため（公開予定）、`npx podexit` は現時点では動きません。上のコマンドは GitHub から 0.1.1 リリースを実行します。この README で `npx podexit` と書かれている箇所では、このコマンドを使ってください。
 
 **3. 表を読みます。** **capped** と表示された行が最初に止まります（Firebase は 2026年10月に CocoaPods への公開を終了します）。**frozen after Dec 2** と表示された行は、12月2日以降は新しいバージョンが出ません。Swift package 列が **yes** の pod は、今すぐ移行できます。最後の行には、お使いのプロジェクトの種類に合ったガイドへのリンクが表示されます。
 
@@ -72,10 +72,10 @@ podexit はまだ npm に公開されていないため（公開予定）、`npx
 
 ## インストール
 
-podexit はまだ npm に公開されていません（公開予定）。それまでは、上のように GitHub から 0.1.0 リリースを実行するか、プロジェクトに追加します。
+podexit はまだ npm に公開されていません（公開予定）。それまでは、上のように GitHub から 0.1.1 リリースを実行するか、プロジェクトに追加します。
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 npx podexit
 ```
 

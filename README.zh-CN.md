@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@b014c05397ff44788b1d848270e2b125a0e85870 status=reviewed -->
+<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -9,7 +9,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml/badge.svg" alt="CI 状态"></a>
-<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="最新版本: v0.1.0"></picture></a>
+<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="最新版本: v0.1.1"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/package.json"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg" alt="语言版本: Node.js 22.12+"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg" alt="许可证: MIT"></picture></a>
 </p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. 运行 podexit：**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 ```
 
-podexit 尚未发布到 npm（已计划发布），因此 `npx podexit` 目前还无法使用。上面的命令会从 GitHub 运行 0.1.0 版本；本 README 中凡是写 `npx podexit` 的地方，都请改用这条命令。
+podexit 尚未发布到 npm（已计划发布），因此 `npx podexit` 目前还无法使用。上面的命令会从 GitHub 运行 0.1.1 版本；本 README 中凡是写 `npx podexit` 的地方，都请改用这条命令。
 
 **3. 阅读表格。** 标记为 **capped** 的行最先停止更新（Firebase 将在 2026 年 10 月停止向 CocoaPods 发布）；标记为 **frozen after Dec 2** 的行在 12 月 2 日之后不会再有新版本。Swift package 一列显示 **yes** 的 pod，现在就可以迁移。最后一行会链接到适合你项目类型的指南。
 
@@ -72,10 +72,10 @@ podexit 尚未发布到 npm（已计划发布），因此 `npx podexit` 目前�
 
 ## 安装
 
-podexit 尚未发布到 npm（已计划发布）。在此之前，可以像上面那样从 GitHub 运行 0.1.0 版本，或将其添加到项目中：
+podexit 尚未发布到 npm（已计划发布）。在此之前，可以像上面那样从 GitHub 运行 0.1.1 版本，或将其添加到项目中：
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 npx podexit
 ```
 
