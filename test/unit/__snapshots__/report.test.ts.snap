@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`render > prints a plain terminal table without colour codes 1`] = `
-"podexit 0.1.0 · CocoaPods trunk goes read-only on 2026-12-02 (trial run 2026-11-01 to 2026-11-07)
+"podexit 0.1.1 · CocoaPods trunk goes read-only on 2026-12-02 (trial run 2026-11-01 to 2026-11-07)
 Builds keep working: pods already on trunk stay installable after December 2, 2026. Trunk only stops accepting new versions.
 
 ios/Podfile.lock  Flutter app · 7 pods, 5 in the Podfile
@@ -52,6 +52,6 @@ Flutter app, 7 pods, 5 in the Podfile.
 
 </details>
 
-<sub>podexit 0.1.0, 2026-10-14, publisher data 2026.10.14</sub>
+<sub>podexit 0.1.1, 2026-10-14, publisher data 2026.10.14</sub>
 "
 `;
