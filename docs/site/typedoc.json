@@ -1,0 +1,44 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "podexit",
+  "entryPoints": [
+    "../../src/index.ts"
+  ],
+  "tsconfig": "./tsconfig.json",
+  "out": "../../site",
+  "readme": "./index.md",
+  "projectDocuments": [
+    "../guides/what-changes.md",
+    "../guides/native-ios.md",
+    "../guides/flutter.md",
+    "../guides/react-native-expo.md",
+    "../guides/firebase.md",
+    "../guides/pod-authors.md"
+  ],
+  "customCss": "./theme.css",
+  "navigationLinks": {
+    "GitHub": "https://github.com/muhittincamdali/podexit",
+    "npm": "https://www.npmjs.com/package/podexit"
+  },
+  "sourceLinkTemplate": "https://github.com/muhittincamdali/podexit/blob/{gitRevision}/{path}#L{line}",
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "validation": {
+    "notExported": true,
+    "invalidLink": true,
+    "notDocumented": false
+  },
+  "treatWarningsAsErrors": true,
+  "alwaysCreateEntryPointModule": false,
+  "highlightLanguages": [
+    "bash",
+    "sh",
+    "json",
+    "ruby",
+    "swift",
+    "text",
+    "ts",
+    "typescript",
+    "yaml"
+  ]
+}
