@@ -11,8 +11,16 @@ All notable changes to podexit are listed here. The format follows
 
 - The terminal and Markdown reports replace control characters (C0, DEL and C1, escape sequences
   included) in pod names, versions, paths and registry answers with U+FFFD instead of printing
-  them. A crafted `Podfile.lock` could otherwise recolour or rewrite the terminal. The JSON report
-  was not affected.
+  them. A crafted `Podfile.lock` could otherwise recolour or rewrite the terminal.
+- The JSON report does the same. `JSON.stringify` escapes only U+0000 to U+001F, so DEL and C1
+  controls such as U+009B (8-bit CSI) reached stdout as is.
+- Messages on stderr replace control characters too. A `Podfile.lock` entry quoted in
+  "Unexpected PODS entry" could send escape sequences to the terminal (OSC 52 clipboard writes,
+  OSC 8 links, screen clears), and so could a folder name in the "Checking" line.
+- The Markdown report puts pod names, versions, latest versions and the lockfile path in code
+  spans sized to the backticks they contain, and percent-encodes repository URLs in links. A
+  crafted `Podfile.lock` or podspec could otherwise add images, links, HTML and @mentions to a
+  pull request comment. Versions now show in code spans.
 
 ## [0.1.0] - 2026-10-14
 
