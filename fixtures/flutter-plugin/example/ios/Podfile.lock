@@ -1,0 +1,57 @@
+PODS:
+  - Flutter (1.0.0)
+  - image_cache_plugin (0.0.1):
+    - Flutter
+    - SDWebImage (~> 5.21)
+    - SDWebImageWebPCoder (~> 0.14)
+  - integration_test (0.0.1):
+    - Flutter
+  - libwebp (1.6.0):
+    - libwebp/demux (= 1.6.0)
+    - libwebp/mux (= 1.6.0)
+    - libwebp/sharpyuv (= 1.6.0)
+    - libwebp/webp (= 1.6.0)
+  - libwebp/demux (1.6.0):
+    - libwebp/webp
+  - libwebp/mux (1.6.0):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.6.0)
+  - libwebp/webp (1.6.0):
+    - libwebp/sharpyuv
+  - SDWebImage (5.21.7):
+    - SDWebImage/Core (= 5.21.7)
+  - SDWebImage/Core (5.21.7)
+  - SDWebImageWebPCoder (0.15.0):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.17)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - image_cache_plugin (from `.symlinks/plugins/image_cache_plugin/ios`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+
+SPEC REPOS:
+  trunk:
+    - libwebp
+    - SDWebImage
+    - SDWebImageWebPCoder
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  image_cache_plugin:
+    :path: ".symlinks/plugins/image_cache_plugin/ios"
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+
+SPEC CHECKSUMS:
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  image_cache_plugin: 29a1f2b84269e3ccc8851cbfe9e0dcaf68457bb8
+  integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
+  libwebp: af5937a13536ef73f3784d69cc342b98961acf33
+  SDWebImage: e9fc87c1aab89a8ab1bbd74eba378c6f53be8abf
+  SDWebImageWebPCoder: 0e06e365080397465cc73a7a9b472d8a3bd0f377
+
+PODFILE CHECKSUM: 3c63482e143d1b91d2d2560aee9fb04ecc74ac7e
+
+COCOAPODS: 1.16.2
