@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@7ceb4474cd77c1aee9f660b00e3bfcb024123574 status=reviewed -->
+<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -36,7 +36,7 @@ CocoaPods trunk は 2026年12月2日に読み取り専用になります。ビ�
 - **pod ごとに 2 つの答え**: アップデートが止まるかどうか（trunk で凍結、公開元によって早期に上限が設定、または影響なし）と、上流リポジトリに `Package.swift` があるかどうか。
 - **バージョンを考慮**: ロックしているタグ時点の `Package.swift` も確認し、Swift パッケージが新しいバージョンにしかない場合はそのことを知らせます。
 - **Firebase の上限を内蔵**: Firebase が挙げる 20 個の pod とその下位依存関係は 12.x に制限されます。根拠は Firebase のページを出典として示すデータファイルです。
-- **ネイティブ、Flutter、React Native、Expo**: `Podfile.lock`、`ios/Podfile.lock`、`example/ios/Podfile.lock` を探し、プロジェクトの種類を判別して、対応するガイドへのリンクを表示します。
+- **ネイティブ、Flutter、React Native、Expo**: フォルダ直下と `ios/`、`macos/`、`example/ios/`、`example/macos/` から `Podfile.lock` を探し、プロジェクトの種類を判別して、対応するガイドへのリンクを表示します。
 - **ターミナル、Markdown、JSON**: 自分で読むための表、pull request 用の Markdown、スクリプト用の JSON。
 - **オフラインでも動作**: 応答は `~/.cache/podexit` に 24 時間キャッシュされ、`--offline` ではキャッシュだけを使います。
 
@@ -98,6 +98,14 @@ podexit [paths...] [options]
 | `--concurrency <n>`     | pod の並列問い合わせ数。1 から 64（デフォルトは 8）                                    |
 
 終了コード: `0` はレポートを書き出した場合、`2` は引数が不正、`Podfile.lock` が見つからない、または `Podfile.lock` ではないファイルを指定した場合、`1` はそれ以外の予期しないエラーです。podexit はレポートを出すだけで、検出結果を理由にビルドを失敗させることはありません。
+
+パスを指定しない場合、podexit は `Podfile.lock`、`ios/Podfile.lock`、`macos/Podfile.lock`、`example/ios/Podfile.lock`、`example/macos/Podfile.lock` で見つかったロックファイルをすべて読み込みます。パスとして渡したフォルダも同じ方法で探します。
+
+| 環境変数                   | 動作                                                                      |
+| -------------------------- | ------------------------------------------------------------------------- |
+| `PODEXIT_CACHE_DIR`        | `--cache-dir` を指定しないときのキャッシュフォルダ                        |
+| `GITHUB_TOKEN`, `GH_TOKEN` | GitHub のホストにのみ送信されます。プライベートな上流リポジトリに必要です |
+| `NO_COLOR`, `FORCE_COLOR`  | ターミナルの色をオフまたはオンにする                                      |
 
 ### Markdown レポートをコードと一緒に保存する
 

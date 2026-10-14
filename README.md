@@ -40,8 +40,9 @@ with the trunk and GitHub answers saved on 14 October 2026 (<code>npm run demo</
   Swift package only exists in newer versions.
 - **Firebase cap built in**: Firebase's 20 listed pods are capped at 12.x and their
   subdependencies with them, from a sourced data file that cites the Firebase page.
-- **Native, Flutter, React Native and Expo**: finds `Podfile.lock`, `ios/Podfile.lock` or
-  `example/ios/Podfile.lock`, recognises the project kind and links the matching guide.
+- **Native, Flutter, React Native and Expo**: finds `Podfile.lock` in the folder or in `ios/`,
+  `macos/`, `example/ios/` or `example/macos/`, recognises the project kind and links the matching
+  guide.
 - **Terminal, Markdown or JSON**: a table for you, Markdown for a pull request, JSON for scripts.
 - **Works offline**: answers are cached for 24 hours in `~/.cache/podexit`; `--offline` uses only
   the cache.
@@ -118,6 +119,16 @@ podexit [paths...] [options]
 
 Exit codes: `0` report written, `2` bad arguments, no `Podfile.lock` found or a file that is not
 one, `1` anything unexpected. podexit reports; it does not fail a build because of what it finds.
+
+Without paths, podexit reads every lockfile it finds at `Podfile.lock`, `ios/Podfile.lock`,
+`macos/Podfile.lock`, `example/ios/Podfile.lock` and `example/macos/Podfile.lock`; a folder given
+as a path is searched the same way.
+
+| Environment variable       | What it does                                                        |
+| -------------------------- | ------------------------------------------------------------------- |
+| `PODEXIT_CACHE_DIR`        | Cache folder when `--cache-dir` is not given                        |
+| `GITHUB_TOKEN`, `GH_TOKEN` | Sent to GitHub hosts only; needed for private upstream repositories |
+| `NO_COLOR`, `FORCE_COLOR`  | Turn terminal colours off or on                                     |
 
 ### Keep a Markdown report with the code
 

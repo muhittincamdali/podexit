@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@7ceb4474cd77c1aee9f660b00e3bfcb024123574 status=reviewed -->
+<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -36,7 +36,7 @@ CocoaPods trunk는 2026년 12월 2일에 읽기 전용이 됩니다. 빌드는 �
 - **pod마다 두 가지 답**: 업데이트가 중단되는지(trunk에서 동결, 게시자가 일찍 상한을 둠, 또는 영향 없음)와 업스트림 저장소에 `Package.swift`가 있는지.
 - **버전 인식**: 잠가 둔 태그의 `Package.swift`도 확인하고, Swift 패키지가 더 새로운 버전에만 있으면 그 사실을 알려 줍니다.
 - **Firebase 상한 내장**: Firebase가 나열한 pod 20개와 그 하위 의존성은 12.x로 제한됩니다. 근거는 Firebase 페이지를 출처로 밝힌 데이터 파일입니다.
-- **네이티브, Flutter, React Native, Expo**: `Podfile.lock`, `ios/Podfile.lock`, `example/ios/Podfile.lock`을 찾고, 프로젝트 종류를 인식해 알맞은 가이드로 연결합니다.
+- **네이티브, Flutter, React Native, Expo**: 폴더 자체와 `ios/`, `macos/`, `example/ios/`, `example/macos/`에서 `Podfile.lock`을 찾고, 프로젝트 종류를 인식해 알맞은 가이드로 연결합니다.
 - **터미널, Markdown, JSON**: 직접 볼 표, pull request용 Markdown, 스크립트용 JSON.
 - **오프라인 동작**: 응답을 `~/.cache/podexit`에 24시간 캐시하며, `--offline`은 캐시만 사용합니다.
 
@@ -98,6 +98,14 @@ podexit [paths...] [options]
 | `--concurrency <n>`     | pod 병렬 조회 수, 1에서 64까지(기본값 8)                              |
 
 종료 코드: `0`은 보고서를 기록함, `2`는 잘못된 인자이거나 `Podfile.lock`을 찾지 못했거나 `Podfile.lock`이 아닌 파일, `1`은 그 밖의 예상하지 못한 오류입니다. podexit은 보고만 하며, 발견한 내용 때문에 빌드를 실패시키지 않습니다.
+
+경로를 지정하지 않으면 podexit은 `Podfile.lock`, `ios/Podfile.lock`, `macos/Podfile.lock`, `example/ios/Podfile.lock`, `example/macos/Podfile.lock`에서 찾은 잠금 파일을 모두 읽습니다. 경로로 넘긴 폴더도 같은 방식으로 찾습니다.
+
+| 환경 변수                  | 동작                                                            |
+| -------------------------- | --------------------------------------------------------------- |
+| `PODEXIT_CACHE_DIR`        | `--cache-dir`를 지정하지 않았을 때 쓰는 캐시 폴더               |
+| `GITHUB_TOKEN`, `GH_TOKEN` | GitHub 호스트로만 전송되며, 비공개 업스트림 저장소에 필요합니다 |
+| `NO_COLOR`, `FORCE_COLOR`  | 터미널 색상을 끄거나 켬                                         |
 
 ### Markdown 보고서를 코드와 함께 보관하기
 
