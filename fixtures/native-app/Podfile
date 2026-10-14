@@ -1,0 +1,16 @@
+platform :ios, '15.0'
+
+target 'App' do
+  use_frameworks!
+
+  pod 'Alamofire', '~> 5.10'
+  pod 'Kingfisher', '~> 8.0'
+  pod 'SnapKit', '~> 5.7'
+  pod 'lottie-ios', '~> 4.5'
+  pod 'MBProgressHUD', '~> 1.2'
+  pod 'FirebaseAnalytics', '~> 12.0'
+  pod 'FirebaseCrashlytics', '~> 12.0'
+  pod 'GoogleSignIn', '~> 9.0'
+  pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :tag => '5.0.2'
+  pod 'AppCore', :path => '../AppCore'
+end

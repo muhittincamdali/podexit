@@ -1,0 +1,7 @@
+{
+  "url": "https://cdn.cocoapods.org/Specs/f/8/0/GoogleAdsOnDeviceConversion/3.7.0/GoogleAdsOnDeviceConversion.podspec.json",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:36:02.859Z",
+  "body": "{\n  \"name\": \"GoogleAdsOnDeviceConversion\",\n  \"version\": \"3.7.0\",\n  \"summary\": \"On device conversion measurement plugin for FirebaseAnalytics and Google's\\nApp Attribution Partner (AAP) SDKs.\",\n  \"description\": \"On device conversion measurement plugin for FirebaseAnalytics and Google's\\nApp Attribution Partner (AAP) SDKs. This pod isn't intended for direct use\\nby App developers.\",\n  \"homepage\": \"https://developers.google.com/ios\",\n  \"license\": {\n    \"type\": \"Apache-2.0\",\n    \"file\": \"LICENSE\"\n  },\n  \"authors\": \"Google, Inc.\",\n  \"source\": {\n    \"http\": \"https://dl.google.com/firebase/ios/appads/3.7.0/GoogleAdsOnDeviceConversion-3.7.0.tar.gz\"\n  },\n  \"cocoapods_version\": \">= 1.12.0\",\n  \"platforms\": {\n    \"ios\": \"12.0\"\n  },\n  \"libraries\": \"c++\",\n  \"dependencies\": {\n    \"GoogleUtilities/Environment\": [\n      \"~> 8.1\"\n    ],\n    \"GoogleUtilities/Logger\": [\n      \"~> 8.1\"\n    ],\n    \"GoogleUtilities/Network\": [\n      \"~> 8.1\"\n    ],\n    \"nanopb\": [\n      \"~> 3.30910.0\"\n    ]\n  },\n  \"vendored_frameworks\": \"Frameworks/GoogleAdsOnDeviceConversion.xcframework\"\n}\n"
+}

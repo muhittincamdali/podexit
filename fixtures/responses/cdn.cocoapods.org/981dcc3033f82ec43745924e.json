@@ -1,0 +1,7 @@
+{
+  "url": "https://cdn.cocoapods.org/Specs/e/d/4/PromisesSwift/2.4.1/PromisesSwift.podspec.json",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:36:11.787Z",
+  "body": "{\n  \"name\": \"PromisesSwift\",\n  \"version\": \"2.4.1\",\n  \"authors\": \"Google Inc.\",\n  \"license\": {\n    \"type\": \"Apache-2.0\",\n    \"file\": \"LICENSE\"\n  },\n  \"homepage\": \"https://github.com/google/promises\",\n  \"source\": {\n    \"git\": \"https://github.com/google/promises.git\",\n    \"tag\": \"2.4.1\"\n  },\n  \"summary\": \"Synchronization construct for Swift\",\n  \"description\": \"Promises is a modern framework that provides a synchronization construct for\\nSwift to facilitate writing asynchronous code.\",\n  \"cocoapods_version\": \">= 1.12.0\",\n  \"platforms\": {\n    \"ios\": \"9.0\",\n    \"osx\": \"10.11\",\n    \"tvos\": \"9.0\",\n    \"watchos\": \"2.0\",\n    \"visionos\": \"1.0\"\n  },\n  \"swift_versions\": [\n    \"5.0\",\n    \"5.2\"\n  ],\n  \"module_name\": \"Promises\",\n  \"source_files\": \"Sources/Promises/*.{swift}\",\n  \"resource_bundles\": {\n    \"Promises_Privacy\": \"Sources/Promises/Resources/PrivacyInfo.xcprivacy\"\n  },\n  \"dependencies\": {\n    \"PromisesObjC\": [\n      \"2.4.1\"\n    ]\n  },\n  \"swift_version\": \"5.2\"\n}\n"
+}

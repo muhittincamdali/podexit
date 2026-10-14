@@ -1,0 +1,3543 @@
+{
+  "schemaVersion": 0,
+  "tool": {
+    "name": "podexit",
+    "version": "0.0.0-snapshot"
+  },
+  "generatedAt": "2026-10-14T12:00:00.000Z",
+  "offline": true,
+  "timeline": {
+    "trialRun": {
+      "from": "2026-11-01",
+      "to": "2026-11-07"
+    },
+    "readOnly": "2026-12-02",
+    "source": "https://blog.cocoapods.org/CocoaPods-Specs-Repo/"
+  },
+  "policyDataVersion": "2026.10.14",
+  "notes": [
+    "Builds keep working: pods already on trunk stay installable after December 2, 2026. Trunk only stops accepting new versions."
+  ],
+  "lockfiles": [
+    {
+      "path": "expo-app/ios/Podfile.lock",
+      "project": "expo",
+      "guide": {
+        "title": "React Native and Expo",
+        "path": "docs/guides/react-native-expo.md"
+      },
+      "cocoapodsVersion": "1.16.2",
+      "summary": {
+        "pods": 100,
+        "direct": 96,
+        "frozenOnTrunk": 4,
+        "capped": 0,
+        "notAffected": 96,
+        "unknown": 0,
+        "spmAvailable": 4,
+        "noSpm": 0,
+        "spmUnknown": 0
+      },
+      "pods": [
+        {
+          "name": "EXApplication",
+          "version": "57.0.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo-application/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo-application/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "EXConstants",
+          "version": "57.0.22",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo-constants/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo-constants/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "Expo",
+          "version": "57.0.29",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoAsset",
+          "version": "57.0.20",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo/node_modules/expo-asset/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo/node_modules/expo-asset/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoCamera",
+          "version": "57.0.6",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "ExpoCameraBarcodeScanning"
+          ],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/expo-camera/ios/ExpoCamera.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/expo-camera/ios/ExpoCamera.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoCameraBarcodeScanning",
+          "version": "57.0.6",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/expo-camera/ios/ExpoCameraBarcodeScanning.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/expo-camera/ios/ExpoCameraBarcodeScanning.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoDomWebView",
+          "version": "57.0.1",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo/node_modules/@expo/dom-webview/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo/node_modules/@expo/dom-webview/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoFileSystem",
+          "version": "57.0.7",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/expo/node_modules/expo-file-system/ios/ExpoFileSystem.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/expo/node_modules/expo-file-system/ios/ExpoFileSystem.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoFont",
+          "version": "57.0.4",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/expo/node_modules/expo-font/ios/ExpoFont.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/expo/node_modules/expo-font/ios/ExpoFont.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoImage",
+          "version": "57.0.5",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/expo-image/ios/ExpoImage.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/expo-image/ios/ExpoImage.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoKeepAwake",
+          "version": "57.0.2",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo/node_modules/expo-keep-awake/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo/node_modules/expo-keep-awake/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoLogBox",
+          "version": "57.0.4",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo/node_modules/@expo/log-box"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo/node_modules/@expo/log-box); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoModulesCore",
+          "version": "57.0.23",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "EXApplication",
+            "EXConstants",
+            "Expo",
+            "ExpoAsset",
+            "ExpoCamera",
+            "ExpoDomWebView",
+            "ExpoFileSystem",
+            "ExpoFont",
+            "ExpoImage",
+            "ExpoKeepAwake",
+            "ExpoModulesWorklets",
+            "ExpoNotifications",
+            "ExpoSecureStore"
+          ],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/expo-modules-core/ExpoModulesCore.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/expo-modules-core/ExpoModulesCore.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoModulesJSI",
+          "version": "57.1.2",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "ExpoModulesWorklets"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo-modules-jsi/apple"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo-modules-jsi/apple); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoModulesWorklets",
+          "version": "57.0.23",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/expo-modules-core/ExpoModulesWorklets.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/expo-modules-core/ExpoModulesWorklets.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoNotifications",
+          "version": "57.0.23",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo-notifications/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo-notifications/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ExpoSecureStore",
+          "version": "57.0.4",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/expo-secure-store/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/expo-secure-store/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "FBLazyVector",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "RCTTypeSafety"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/FBLazyVector"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/FBLazyVector); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "hermes-engine",
+          "version": "250829098.0.17",
+          "subspecs": [
+            "Pre-built"
+          ],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Core",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-NativeModulesApple",
+            "React-RCTAppDelegate",
+            "React-RCTBlob",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RCTRuntime",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-RuntimeHermes",
+            "React-cxxreact",
+            "React-defaultsnativemodule",
+            "React-domnativemodule",
+            "React-featureflagsnativemodule",
+            "React-graphics",
+            "React-hermes",
+            "React-idlecallbacksnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-jserrorhandler",
+            "React-jsi",
+            "React-jsiexecutor",
+            "React-jsinspector",
+            "React-jsinspectortracing",
+            "React-jsitooling",
+            "React-microtasksnativemodule",
+            "React-mutationobservernativemodule",
+            "React-performancecdpmetrics",
+            "React-runtimescheduler",
+            "React-utils",
+            "React-viewtransitionnativemodule",
+            "React-webperformancenativemodule",
+            "ReactCodegen",
+            "ReactCommon",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "lottie-ios",
+          "version": "4.6.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "lottie-react-native"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "4.6.1",
+            "latestReleasedAt": "2026-06-13T16:49:04.000Z",
+            "lockedReleasedAt": "2026-01-06T21:18:28.000Z",
+            "behindTrunk": true
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/airbnb/lottie-ios has a Package.swift on its default branch. It is also there at 4.6.0, the version you use.",
+            "repository": "https://github.com/airbnb/lottie-ios",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "lottie-react-native",
+          "version": "7.3.8",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/lottie-react-native"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/lottie-react-native); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "PurchasesHybridCommon",
+          "version": "19.11.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "RNPurchases"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "19.12.0",
+            "latestReleasedAt": "2026-10-13T13:12:09.000Z",
+            "lockedReleasedAt": "2026-10-12T17:59:47.000Z",
+            "behindTrunk": true
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/revenuecat/purchases-hybrid-common has a Package.swift on its default branch. It is also there at 19.11.0, the version you use.",
+            "repository": "https://github.com/revenuecat/purchases-hybrid-common",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "RCTDeprecation",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Core"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "RCTRequired",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RCTTypeSafety",
+            "RNSentry",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-RCTAppDelegate",
+            "React-RCTFBReactNativeSpec",
+            "ReactCodegen",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/Required"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/Required); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "RCTSwiftUI",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "RCTSwiftUIWrapper"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactApple/RCTSwiftUI"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactApple/RCTSwiftUI); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "RCTSwiftUIWrapper",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTFabric"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactApple/RCTSwiftUIWrapper"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactApple/RCTSwiftUIWrapper); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "RCTTypeSafety",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-RCTAnimation",
+            "React-RCTAppDelegate",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTImage",
+            "React-RCTNetwork",
+            "React-RCTSettings",
+            "ReactCodegen",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/TypeSafety"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/TypeSafety); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-callinvoker",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-NativeModulesApple",
+            "React-RuntimeApple",
+            "React-cxxreact",
+            "React-runtimescheduler",
+            "ReactCommon"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/callinvoker"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/callinvoker); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-Core",
+          "version": "0.86.3",
+          "subspecs": [
+            "CoreModulesHeaders",
+            "Default",
+            "DevSupport",
+            "RCTActionSheetHeaders",
+            "RCTAnimationHeaders",
+            "RCTBlobHeaders",
+            "RCTImageHeaders",
+            "RCTLinkingHeaders",
+            "RCTNetworkHeaders",
+            "RCTSettingsHeaders",
+            "RCTTextHeaders",
+            "RCTVibrationHeaders",
+            "RCTWebSocket"
+          ],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoLogBox",
+            "ExpoModulesCore",
+            "ExpoModulesJSI",
+            "RCTTypeSafety",
+            "RNPurchases",
+            "RNSentry",
+            "React",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-ImageManager",
+            "React-NativeModulesApple",
+            "React-RCTActionSheet",
+            "React-RCTAnimation",
+            "React-RCTAppDelegate",
+            "React-RCTBlob",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RCTImage",
+            "React-RCTLinking",
+            "React-RCTNetwork",
+            "React-RCTRuntime",
+            "React-RCTSettings",
+            "React-RCTText",
+            "React-RCTVibration",
+            "React-RuntimeApple",
+            "ReactCodegen",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-Core-prebuilt",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Core",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-ImageManager",
+            "React-Mapbuffer",
+            "React-NativeModulesApple",
+            "React-RCTAnimation",
+            "React-RCTAppDelegate",
+            "React-RCTBlob",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RCTImage",
+            "React-RCTNetwork",
+            "React-RCTRuntime",
+            "React-RCTSettings",
+            "React-RCTVibration",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-RuntimeHermes",
+            "React-cxxreact",
+            "React-defaultsnativemodule",
+            "React-domnativemodule",
+            "React-featureflags",
+            "React-featureflagsnativemodule",
+            "React-graphics",
+            "React-hermes",
+            "React-idlecallbacksnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-jserrorhandler",
+            "React-jsi",
+            "React-jsiexecutor",
+            "React-jsinspector",
+            "React-jsinspectorcdp",
+            "React-jsinspectornetwork",
+            "React-jsinspectortracing",
+            "React-jsitooling",
+            "React-logger",
+            "React-microtasksnativemodule",
+            "React-mutationobservernativemodule",
+            "React-networking",
+            "React-perflogger",
+            "React-performancecdpmetrics",
+            "React-performancetimeline",
+            "React-rendererdebug",
+            "React-runtimeexecutor",
+            "React-runtimescheduler",
+            "React-utils",
+            "React-viewtransitionnativemodule",
+            "React-webperformancenativemodule",
+            "ReactCodegen",
+            "ReactCommon",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/react-native/React-Core-prebuilt.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/react-native/React-Core-prebuilt.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-CoreModules",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTAppDelegate",
+            "React-RuntimeApple"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/React/CoreModules"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/React/CoreModules); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-cxxreact",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Core",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-NativeModulesApple",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-hermes",
+            "React-intersectionobservernativemodule",
+            "React-jserrorhandler",
+            "React-jsiexecutor",
+            "React-jsitooling",
+            "React-mutationobservernativemodule",
+            "React-runtimescheduler",
+            "React-webperformancenativemodule",
+            "ReactCommon"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/cxxreact"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/cxxreact); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-debug",
+          "version": "0.86.3",
+          "subspecs": [
+            "redbox"
+          ],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-ImageManager",
+            "React-Mapbuffer",
+            "React-NativeModulesApple",
+            "React-RCTAnimation",
+            "React-RCTAppDelegate",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RCTNetwork",
+            "React-RCTRuntime",
+            "React-cxxreact",
+            "React-jserrorhandler",
+            "React-jsiexecutor",
+            "React-jsitooling",
+            "React-renderercss",
+            "React-rendererdebug",
+            "React-runtimeexecutor",
+            "React-runtimescheduler",
+            "React-timing",
+            "React-utils",
+            "ReactCodegen",
+            "ReactCommon",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/debug"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/debug); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-defaultsnativemodule",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTAppDelegate"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/defaults"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/defaults); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-domnativemodule",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-defaultsnativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/dom"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/dom); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-Fabric",
+          "version": "0.86.3",
+          "subspecs": [
+            "animated",
+            "animationbackend",
+            "animations",
+            "attributedstring",
+            "bridging",
+            "componentregistry",
+            "componentregistrynative",
+            "components",
+            "components/legacyviewmanagerinterop",
+            "components/root",
+            "components/scrollview",
+            "components/view",
+            "consistency",
+            "core",
+            "dom",
+            "imagemanager",
+            "leakchecker",
+            "mounting",
+            "observers",
+            "observers/events",
+            "observers/intersection",
+            "observers/mutation",
+            "scheduler",
+            "telemetry",
+            "uimanager",
+            "uimanager/consistency",
+            "viewtransition"
+          ],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-ImageManager",
+            "React-RCTAppDelegate",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RuntimeCore",
+            "React-defaultsnativemodule",
+            "React-domnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-mutationobservernativemodule",
+            "React-viewtransitionnativemodule",
+            "ReactCodegen",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-FabricComponents",
+          "version": "0.86.3",
+          "subspecs": [
+            "components",
+            "components/inputaccessory",
+            "components/iostextinput",
+            "components/modal",
+            "components/rncore",
+            "components/safeareaview",
+            "components/scrollview",
+            "components/switch",
+            "components/text",
+            "components/textinput",
+            "components/unimplementedview",
+            "components/virtualview",
+            "textlayoutmanager"
+          ],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTFabric",
+            "React-domnativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-FabricImage",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTFabric",
+            "ReactCodegen"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-featureflags",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Core",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-NativeModulesApple",
+            "React-RCTAnimation",
+            "React-RCTAppDelegate",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RCTNetwork",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-RuntimeHermes",
+            "React-defaultsnativemodule",
+            "React-featureflagsnativemodule",
+            "React-graphics",
+            "React-jserrorhandler",
+            "React-jsinspector",
+            "React-mutationobservernativemodule",
+            "React-performancetimeline",
+            "React-runtimeexecutor",
+            "React-runtimescheduler",
+            "ReactCodegen",
+            "ReactCommon",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/featureflags"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/featureflags); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-featureflagsnativemodule",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-defaultsnativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/featureflags"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/featureflags); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-graphics",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-ImageManager",
+            "React-RCTAppDelegate",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-domnativemodule",
+            "React-intersectionobservernativemodule",
+            "ReactCodegen",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/renderer/graphics"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/renderer/graphics); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-hermes",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "RNSentry",
+            "React-Core",
+            "React-RCTAppDelegate",
+            "React-RuntimeHermes"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/hermes"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/hermes); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-idlecallbacksnativemodule",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-defaultsnativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/idlecallbacks"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/idlecallbacks); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-ImageManager",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-FabricImage",
+            "React-RCTFabric",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/renderer/imagemanager/platform/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/renderer/imagemanager/platform/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-intersectionobservernativemodule",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-defaultsnativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/intersectionobserver"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/intersectionobserver); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-jserrorhandler",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-jsiexecutor"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/jserrorhandler"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/jserrorhandler); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-jsi",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Core",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-NativeModulesApple",
+            "React-RCTAnimation",
+            "React-RCTBlob",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RCTImage",
+            "React-RCTLinking",
+            "React-RCTNetwork",
+            "React-RCTRuntime",
+            "React-RCTSettings",
+            "React-RCTVibration",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-RuntimeHermes",
+            "React-cxxreact",
+            "React-defaultsnativemodule",
+            "React-domnativemodule",
+            "React-featureflagsnativemodule",
+            "React-graphics",
+            "React-hermes",
+            "React-idlecallbacksnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-jserrorhandler",
+            "React-jsiexecutor",
+            "React-jsinspector",
+            "React-jsinspectortracing",
+            "React-jsitooling",
+            "React-jsitracing",
+            "React-microtasksnativemodule",
+            "React-mutationobservernativemodule",
+            "React-performancecdpmetrics",
+            "React-runtimeexecutor",
+            "React-runtimescheduler",
+            "React-utils",
+            "React-viewtransitionnativemodule",
+            "React-webperformancenativemodule",
+            "ReactCodegen",
+            "ReactCommon",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/jsi"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/jsi); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-jsiexecutor",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Core",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-defaultsnativemodule",
+            "React-domnativemodule",
+            "React-featureflagsnativemodule",
+            "React-graphics",
+            "React-hermes",
+            "React-idlecallbacksnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-microtasksnativemodule",
+            "React-mutationobservernativemodule",
+            "React-viewtransitionnativemodule",
+            "React-webperformancenativemodule",
+            "ReactCodegen"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/jsiexecutor"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/jsiexecutor); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-jsinspector",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "ExpoModulesCore",
+            "React-Core",
+            "React-CoreModules",
+            "React-NativeModulesApple",
+            "React-RCTBlob",
+            "React-RCTFabric",
+            "React-RCTRuntime",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-RuntimeHermes",
+            "React-cxxreact",
+            "React-hermes",
+            "React-jsiexecutor",
+            "React-jsitooling",
+            "React-performancetimeline"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/jsinspector-modern"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/jsinspector-modern); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-jsinspectorcdp",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Core",
+            "React-CoreModules",
+            "React-NativeModulesApple",
+            "React-RCTBlob",
+            "React-RCTFabric",
+            "React-RCTNetwork",
+            "React-RCTRuntime",
+            "React-RuntimeHermes",
+            "React-cxxreact",
+            "React-hermes",
+            "React-jsiexecutor",
+            "React-jsinspector",
+            "React-jsinspectornetwork",
+            "React-jsitooling"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/jsinspector-modern/cdp"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/jsinspector-modern/cdp); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-jsinspectornetwork",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTNetwork",
+            "React-jsinspector",
+            "React-jsinspectortracing",
+            "React-networking"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/jsinspector-modern/network"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/jsinspector-modern/network); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-jsinspectortracing",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-CoreModules",
+            "React-Fabric",
+            "React-RCTFabric",
+            "React-RCTRuntime",
+            "React-RuntimeHermes",
+            "React-cxxreact",
+            "React-hermes",
+            "React-jsiexecutor",
+            "React-jsinspector",
+            "React-jsitooling",
+            "React-networking",
+            "React-performancetimeline",
+            "React-runtimescheduler"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/jsinspector-modern/tracing"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/jsinspector-modern/tracing); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-jsitooling",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Core",
+            "React-RCTAppDelegate",
+            "React-RCTRuntime",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-RuntimeHermes",
+            "React-hermes",
+            "React-jsiexecutor"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/jsitooling"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/jsitooling); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-jsitracing",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RuntimeHermes"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/hermes/executor/"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/hermes/executor/); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-logger",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-cxxreact",
+            "ReactCommon"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/logger"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/logger); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-Mapbuffer",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RuntimeApple"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-microtasksnativemodule",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-defaultsnativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/microtasks); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-mutationobservernativemodule",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-defaultsnativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/mutationobserver"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/mutationobserver); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "react-native-maps",
+          "version": "1.27.2",
+          "subspecs": [
+            "Generated",
+            "Maps"
+          ],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native-maps"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native-maps); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-NativeModulesApple",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-CoreModules",
+            "React-RCTAnimation",
+            "React-RCTAppDelegate",
+            "React-RCTBlob",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTImage",
+            "React-RCTLinking",
+            "React-RCTNetwork",
+            "React-RCTSettings",
+            "React-RCTVibration",
+            "React-RuntimeApple",
+            "ReactCodegen",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-networking",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTFabric",
+            "React-RCTNetwork"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/networking"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/networking); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-oscompat",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-hermes",
+            "React-jsinspector",
+            "React-jsinspectortracing"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/oscompat"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/oscompat); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-perflogger",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Core",
+            "React-cxxreact",
+            "React-hermes",
+            "React-jsiexecutor",
+            "React-jsinspector",
+            "React-performancetimeline",
+            "ReactCommon"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/reactperflogger"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/reactperflogger); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-performancecdpmetrics",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Fabric",
+            "React-RCTFabric"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/performance/cdpmetrics"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/performance/cdpmetrics); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-performancetimeline",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Fabric",
+            "React-RCTFabric",
+            "React-RuntimeCore",
+            "React-networking",
+            "React-performancecdpmetrics",
+            "React-runtimescheduler",
+            "React-webperformancenativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/performance/timeline"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/performance/timeline); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTActionSheet",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/ActionSheetIOS"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/ActionSheetIOS); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTAnimation",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React",
+            "React-RCTFabric"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/NativeAnimation"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/NativeAnimation); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTAppDelegate",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ReactCodegen"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/AppDelegate"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/AppDelegate); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTBlob",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React",
+            "React-CoreModules"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/Blob"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/Blob); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTFabric",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-RCTAppDelegate",
+            "React-RuntimeApple",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/React"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/React); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTFBReactNativeSpec",
+          "version": "0.86.3",
+          "subspecs": [
+            "components"
+          ],
+          "direct": true,
+          "requiredBy": [
+            "React-CoreModules",
+            "React-FabricComponents",
+            "React-RCTAnimation",
+            "React-RCTAppDelegate",
+            "React-RCTBlob",
+            "React-RCTFabric",
+            "React-RCTImage",
+            "React-RCTLinking",
+            "React-RCTNetwork",
+            "React-RCTSettings",
+            "React-RCTVibration",
+            "React-RuntimeApple",
+            "React-defaultsnativemodule",
+            "React-domnativemodule",
+            "React-featureflagsnativemodule",
+            "React-idlecallbacksnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-microtasksnativemodule",
+            "React-mutationobservernativemodule",
+            "React-viewtransitionnativemodule",
+            "React-webperformancenativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/React"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/React); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTImage",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React",
+            "React-CoreModules",
+            "React-RCTAppDelegate",
+            "React-RCTFabric"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/Image"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/Image); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTLinking",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/LinkingIOS"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/LinkingIOS); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTNetwork",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React",
+            "React-RCTAppDelegate",
+            "React-RCTBlob",
+            "React-RCTImage"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/Network"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/Network); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTRuntime",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTAppDelegate"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/React/Runtime"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/React/Runtime); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTSettings",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/Settings"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/Settings); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTText",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React",
+            "React-RCTFabric"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/Text"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/Text); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RCTVibration",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/Libraries/Vibration"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/Libraries/Vibration); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-rendererconsistency",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Fabric",
+            "React-RCTFabric",
+            "React-runtimescheduler"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/renderer/consistency"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/renderer/consistency); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-renderercss",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Fabric",
+            "React-RCTFabric",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/renderer/css"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/renderer/css); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-rendererdebug",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-ImageManager",
+            "React-RCTAppDelegate",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-graphics",
+            "React-runtimescheduler",
+            "ReactCodegen",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/renderer/debug"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/renderer/debug); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RuntimeApple",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTAppDelegate",
+            "React-RCTRuntime"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/runtime/platform/ios"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/runtime/platform/ios); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RuntimeCore",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTAppDelegate",
+            "React-RCTRuntime",
+            "React-RuntimeApple",
+            "React-RuntimeHermes"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/runtime"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/runtime); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-runtimeexecutor",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Core",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-NativeModulesApple",
+            "React-RCTAppDelegate",
+            "React-RCTFabric",
+            "React-RCTRuntime",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-RuntimeHermes",
+            "React-cxxreact",
+            "React-domnativemodule",
+            "React-hermes",
+            "React-idlecallbacksnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-jsiexecutor",
+            "React-jsinspector",
+            "React-jsitooling",
+            "React-mutationobservernativemodule",
+            "React-performancecdpmetrics",
+            "React-runtimescheduler",
+            "React-viewtransitionnativemodule",
+            "React-webperformancenativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/runtimeexecutor"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/runtimeexecutor); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-RuntimeHermes",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-RCTRuntime",
+            "React-RuntimeApple"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/runtime"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/runtime); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-runtimescheduler",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-Core",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-RCTAppDelegate",
+            "React-RCTFabric",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-idlecallbacksnativemodule",
+            "React-intersectionobservernativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-timing",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-cxxreact",
+            "React-jsinspectortracing",
+            "React-networking",
+            "React-performancecdpmetrics",
+            "React-performancetimeline",
+            "React-runtimescheduler"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/timing"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/timing); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-utils",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Core",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-ImageManager",
+            "React-RCTAppDelegate",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RCTRuntime",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-RuntimeHermes",
+            "React-cxxreact",
+            "React-graphics",
+            "React-jsiexecutor",
+            "React-jsinspector",
+            "React-jsinspectortracing",
+            "React-jsitooling",
+            "React-renderercss",
+            "React-runtimeexecutor",
+            "React-runtimescheduler",
+            "ReactCodegen",
+            "ReactCommon",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/utils"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/utils); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-viewtransitionnativemodule",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-defaultsnativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/viewtransition"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/viewtransition); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "React-webperformancenativemodule",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "React-defaultsnativemodule"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/react/nativemodule/webperformance"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/react/nativemodule/webperformance); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ReactAppDependencyProvider",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "build/generated/ios/ReactAppDependencyProvider"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (build/generated/ios/ReactAppDependencyProvider); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ReactCodegen",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "ReactAppDependencyProvider",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "build/generated/ios/ReactCodegen"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (build/generated/ios/ReactCodegen); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ReactCommon",
+          "version": "0.86.3",
+          "subspecs": [
+            "turbomodule",
+            "turbomodule/bridging",
+            "turbomodule/core"
+          ],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "ExpoModulesJSI",
+            "RNSentry",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-NativeModulesApple",
+            "React-RCTAnimation",
+            "React-RCTAppDelegate",
+            "React-RCTBlob",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTImage",
+            "React-RCTLinking",
+            "React-RCTNetwork",
+            "React-RCTSettings",
+            "React-RCTVibration",
+            "React-domnativemodule",
+            "React-featureflagsnativemodule",
+            "React-idlecallbacksnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-jserrorhandler",
+            "React-microtasksnativemodule",
+            "React-mutationobservernativemodule",
+            "React-viewtransitionnativemodule",
+            "React-webperformancenativemodule",
+            "ReactCodegen",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "ReactNativeDependencies",
+          "version": "0.86.3",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Core",
+            "React-Core-prebuilt",
+            "React-CoreModules",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-ImageManager",
+            "React-Mapbuffer",
+            "React-NativeModulesApple",
+            "React-RCTAnimation",
+            "React-RCTAppDelegate",
+            "React-RCTBlob",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RCTImage",
+            "React-RCTNetwork",
+            "React-RCTRuntime",
+            "React-RCTSettings",
+            "React-RCTVibration",
+            "React-RuntimeApple",
+            "React-RuntimeCore",
+            "React-RuntimeHermes",
+            "React-cxxreact",
+            "React-defaultsnativemodule",
+            "React-domnativemodule",
+            "React-featureflags",
+            "React-featureflagsnativemodule",
+            "React-graphics",
+            "React-hermes",
+            "React-idlecallbacksnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-jserrorhandler",
+            "React-jsi",
+            "React-jsiexecutor",
+            "React-jsinspector",
+            "React-jsinspectorcdp",
+            "React-jsinspectornetwork",
+            "React-jsinspectortracing",
+            "React-jsitooling",
+            "React-logger",
+            "React-microtasksnativemodule",
+            "React-mutationobservernativemodule",
+            "React-networking",
+            "React-perflogger",
+            "React-performancecdpmetrics",
+            "React-performancetimeline",
+            "React-rendererdebug",
+            "React-runtimeexecutor",
+            "React-runtimescheduler",
+            "React-utils",
+            "React-viewtransitionnativemodule",
+            "React-webperformancenativemodule",
+            "ReactCodegen",
+            "ReactCommon",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "podspec",
+            "url": "../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Podspec file (../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec); trunk going read-only does not affect it.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "RevenueCat",
+          "version": "5.95.0",
+          "subspecs": [],
+          "direct": false,
+          "requiredBy": [
+            "PurchasesHybridCommon"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "5.95.0",
+            "latestReleasedAt": "2026-10-12T11:39:25.000Z",
+            "lockedReleasedAt": "2026-10-12T11:39:25.000Z",
+            "behindTrunk": false
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/revenuecat/purchases-ios has a Package.swift on its default branch. It is also there at 5.95.0, the version you use.",
+            "repository": "https://github.com/revenuecat/purchases-ios",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "RNPurchases",
+          "version": "10.13.0",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native-purchases"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native-purchases); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "RNSentry",
+          "version": "7.11.0",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/@sentry/react-native"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/@sentry/react-native); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        },
+        {
+          "name": "Sentry",
+          "version": "8.58.0",
+          "subspecs": [
+            "HybridSDK"
+          ],
+          "direct": false,
+          "requiredBy": [
+            "RNSentry"
+          ],
+          "source": {
+            "kind": "trunk"
+          },
+          "updates": {
+            "status": "frozen-on-trunk",
+            "summary": "Published on trunk: no new versions after trunk goes read-only on 2026-12-02.",
+            "latestOnTrunk": "9.19.1",
+            "latestReleasedAt": "2026-07-01T20:53:27.000Z",
+            "lockedReleasedAt": "2026-01-09T13:25:03.000Z",
+            "behindTrunk": true
+          },
+          "swiftPackage": {
+            "status": "spm-available",
+            "summary": "https://github.com/getsentry/sentry-cocoa has a Package.swift on its default branch. It is also there at 8.58.0, the version you use.",
+            "repository": "https://github.com/getsentry/sentry-cocoa",
+            "atLockedVersion": true,
+            "via": "upstream"
+          }
+        },
+        {
+          "name": "Yoga",
+          "version": "0.0.0",
+          "subspecs": [],
+          "direct": true,
+          "requiredBy": [
+            "Expo",
+            "ExpoModulesCore",
+            "RNSentry",
+            "React-Core",
+            "React-Fabric",
+            "React-FabricComponents",
+            "React-FabricImage",
+            "React-RCTFBReactNativeSpec",
+            "React-RCTFabric",
+            "React-RCTText",
+            "React-defaultsnativemodule",
+            "React-domnativemodule",
+            "React-intersectionobservernativemodule",
+            "React-mutationobservernativemodule",
+            "React-viewtransitionnativemodule",
+            "lottie-react-native",
+            "react-native-maps"
+          ],
+          "source": {
+            "kind": "path",
+            "path": "../node_modules/react-native/ReactCommon/yoga"
+          },
+          "updates": {
+            "status": "not-affected",
+            "summary": "Local path (../node_modules/react-native/ReactCommon/yoga); updated with the package that provides it, not through trunk.",
+            "latestOnTrunk": null,
+            "latestReleasedAt": null,
+            "lockedReleasedAt": null,
+            "behindTrunk": null
+          },
+          "swiftPackage": {
+            "status": "not-checked",
+            "summary": "Local or private source; podexit does not look it up.",
+            "repository": null,
+            "atLockedVersion": null,
+            "via": null
+          }
+        }
+      ]
+    }
+  ]
+}

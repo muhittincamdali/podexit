@@ -1,0 +1,7 @@
+{
+  "url": "https://cdn.cocoapods.org/Specs/2/3/2/FirebaseRemoteConfigInterop/12.19.0/FirebaseRemoteConfigInterop.podspec.json",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:35:56.807Z",
+  "body": "{\n  \"name\": \"FirebaseRemoteConfigInterop\",\n  \"version\": \"12.19.0\",\n  \"summary\": \"Interfaces that allow other Firebase SDKs to use Remote Config functionality.\",\n  \"description\": \"Not for public use.\\nA set of protocols that other Firebase SDKs can use to interoperate with FirebaseRemoteConfig in a safe\\nand reliable manner.\",\n  \"homepage\": \"https://firebase.google.com\",\n  \"license\": {\n    \"type\": \"Apache-2.0\",\n    \"file\": \"LICENSE\"\n  },\n  \"authors\": \"Google, Inc.\",\n  \"source\": {\n    \"git\": \"https://github.com/firebase/firebase-ios-sdk.git\",\n    \"tag\": \"CocoaPods-12.19.0\"\n  },\n  \"swift_versions\": \"5.9\",\n  \"cocoapods_version\": \">= 1.12.0\",\n  \"prefix_header_file\": false,\n  \"social_media_url\": \"https://twitter.com/Firebase\",\n  \"platforms\": {\n    \"ios\": \"15.0\",\n    \"osx\": \"10.15\",\n    \"tvos\": \"15.0\",\n    \"watchos\": \"7.0\"\n  },\n  \"source_files\": \"FirebaseRemoteConfig/Interop/*.swift\",\n  \"swift_version\": \"5.9\"\n}\n"
+}

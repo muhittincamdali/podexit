@@ -1,0 +1,7 @@
+{
+  "url": "https://cdn.cocoapods.org/Specs/c/1/1/RecaptchaInterop/101.0.0/RecaptchaInterop.podspec.json",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:36:12.007Z",
+  "body": "{\n  \"name\": \"RecaptchaInterop\",\n  \"version\": \"101.0.0\",\n  \"summary\": \"Interfaces that allow Firebase SDKs to use RecaptchaEnterprise functionality.\",\n  \"description\": \"Not for public use.\\nA set of protocols that Firebase SDKs can use to interoperate with RecaptchaEnterprise in a safe\\nand reliable manner.\",\n  \"homepage\": \"https://cloud.google.com/recaptcha-enterprise\",\n  \"license\": {\n    \"type\": \"Apache-2.0\",\n    \"file\": \"LICENSE\"\n  },\n  \"authors\": \"Google, Inc.\",\n  \"source\": {\n    \"git\": \"https://github.com/google/interop-ios-for-google-sdks.git\",\n    \"tag\": \"CocoaPods-101.0.0\"\n  },\n  \"platforms\": {\n    \"ios\": \"11.0\"\n  },\n  \"source_files\": \"RecaptchaEnterprise/RecaptchaInterop/**/*.[hm]\",\n  \"public_header_files\": \"RecaptchaEnterprise/RecaptchaInterop/Public/RecaptchaInterop/*.h\"\n}\n"
+}

@@ -1,0 +1,41 @@
+podexit 0.0.0-snapshot · CocoaPods trunk goes read-only on 2026-12-02 (trial run 2026-11-01 to 2026-11-07)
+Builds keep working: pods already on trunk stay installable after December 2, 2026. Trunk only stops accepting new versions.
+
+flutter-app/ios/Podfile.lock  Flutter app · 29 pods, 10 in the Podfile
+
+  POD                            LOCKED     LATEST ON TRUNK  UPDATES               SWIFT PACKAGE   PULLED IN BY
+  Firebase                       12.19.0    12.19.0          capped at 12.x        yes (Firebase)  firebase_core +1
+  FirebaseAnalytics              12.19.0    12.19.0          capped at 12.x        yes (Firebase)  firebase_analytics
+  FirebaseCore                   12.19.0    12.19.0          capped at 12.x        yes (Firebase)  Firebase +3
+  FirebaseCoreInternal           12.19.0    12.19.0          capped with Firebase  yes             FirebaseCore
+  FirebaseInstallations          12.19.0    12.19.0          capped at 12.x        yes (Firebase)  FirebaseAnalytics +1
+  FirebaseMessaging              12.19.0    12.19.0          capped at 12.x        yes (Firebase)  Firebase
+  GoogleAdsOnDeviceConversion    3.7.0      3.7.0            capped with Firebase  unknown         GoogleAppMeasurement
+  GoogleAppMeasurement           12.19.0    12.19.0          capped with Firebase  unknown         FirebaseAnalytics
+  GoogleDataTransport            10.1.1     10.1.1           capped with Firebase  yes             FirebaseMessaging
+  GoogleUtilities                8.1.4      8.1.5            capped with Firebase  yes             AppCheckCore +7
+  nanopb                         3.30910.0  3.30910.0        capped with Firebase  yes             FirebaseAnalytics +4
+  PromisesObjC                   2.4.1      2.4.1            capped with Firebase  yes             AppCheckCore +3
+  AppAuth                        2.1.0      3.0.0            frozen after Dec 2    yes             GTMAppAuth +1
+  AppCheckCore                   11.3.2     11.3.2           frozen after Dec 2    yes             GoogleSignIn
+  GoogleSignIn                   9.2.0      10.0.0           frozen after Dec 2    yes             google_sign_in_ios
+  GTMAppAuth                     5.0.0      6.0.0            frozen after Dec 2    yes             GoogleSignIn
+  GTMSessionFetcher              3.5.0      5.3.1            frozen after Dec 2    yes             GTMAppAuth +2
+  PromisesSwift                  2.4.1      2.4.1            frozen after Dec 2    yes             AppCheckCore
+  RecaptchaInterop               101.0.0    101.0.0          frozen after Dec 2    yes             AppCheckCore
+  firebase_analytics             12.6.0                      not affected          -
+  firebase_core                  4.15.0                      not affected          -
+  firebase_messaging             16.7.0                      not affected          -
+  Flutter                        1.0.0                       not affected          -
+  google_sign_in_ios             0.0.1                       not affected          -
+  image_picker_ios               0.0.1                       not affected          -
+  shared_preferences_foundation  0.0.1                       not affected          -
+  sqflite_darwin                 0.0.4                       not affected          -
+  url_launcher_ios               0.0.1                       not affected          -
+  webview_flutter_wkwebview      0.0.1                       not affected          -
+
+  7 frozen on trunk · 12 capped by the publisher · 10 not affected
+  17 pods with a Swift package · 0 without · 2 unknown
+  Guide: https://github.com/muhittincamdali/podexit/blob/main/docs/guides/flutter.md
+
+Offline: answers come from the cache; missing ones show as unknown.

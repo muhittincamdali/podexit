@@ -1,0 +1,18 @@
+podexit 0.0.0-snapshot · CocoaPods trunk goes read-only on 2026-12-02 (trial run 2026-11-01 to 2026-11-07)
+Builds keep working: pods already on trunk stay installable after December 2, 2026. Trunk only stops accepting new versions.
+
+flutter-plugin/example/ios/Podfile.lock  Flutter plugin example app · 6 pods, 3 in the Podfile
+
+  POD                  LOCKED  LATEST ON TRUNK  UPDATES             SWIFT PACKAGE  PULLED IN BY
+  libwebp              1.6.0   1.6.0            frozen after Dec 2  no             SDWebImageWebPCoder
+  SDWebImage           5.21.7  5.21.7           frozen after Dec 2  yes            SDWebImageWebPCoder +1
+  SDWebImageWebPCoder  0.15.0  0.15.0           frozen after Dec 2  yes            image_cache_plugin
+  Flutter              1.0.0                    not affected        -
+  image_cache_plugin   0.0.1                    not affected        -
+  integration_test     0.0.1                    not affected        -
+
+  3 frozen on trunk · 0 capped by the publisher · 3 not affected
+  2 pods with a Swift package · 1 without · 0 unknown
+  Guide: https://github.com/muhittincamdali/podexit/blob/main/docs/guides/flutter.md
+
+Offline: answers come from the cache; missing ones show as unknown.

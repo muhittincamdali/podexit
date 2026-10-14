@@ -1,0 +1,7 @@
+{
+  "url": "https://cdn.cocoapods.org/Specs/3/7/4/TOCropViewController/2.8.0/TOCropViewController.podspec.json",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:36:12.458Z",
+  "body": "{\n  \"name\": \"TOCropViewController\",\n  \"version\": \"2.8.0\",\n  \"license\": {\n    \"type\": \"MIT\",\n    \"file\": \"LICENSE\"\n  },\n  \"summary\": \"A view controller that enables cropping and rotation of UIImage objects.\",\n  \"homepage\": \"https://github.com/TimOliver/TOCropViewController\",\n  \"authors\": \"Tim Oliver\",\n  \"source\": {\n    \"git\": \"https://github.com/TimOliver/TOCropViewController.git\",\n    \"tag\": \"2.8.0\"\n  },\n  \"platforms\": {\n    \"ios\": \"12.0\"\n  },\n  \"source_files\": \"Objective-C/TOCropViewController/**/*.{h,m}\",\n  \"exclude_files\": \"Objective-C/TOCropViewController/include/**/*.h\",\n  \"resource_bundles\": {\n    \"TOCropViewControllerBundle\": [\n      \"Objective-C/TOCropViewController/**/*.{lproj,xcprivacy}\"\n    ]\n  },\n  \"requires_arc\": true\n}\n"
+}

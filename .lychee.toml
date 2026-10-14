@@ -38,4 +38,7 @@ exclude_path = [
   ".build",
   "build",
   "Pods",
+  # Recorded reports: they link pod homepages and guides as podexit prints them, and the
+  # snapshot tests already fail when that output changes.
+  "test/__snapshots__",
 ]
