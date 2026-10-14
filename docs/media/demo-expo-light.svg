@@ -3,10 +3,10 @@
 <style>
 text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:13px;white-space:pre}
 .t{opacity:0;animation:show 0.01s linear forwards}
-.cursor{opacity:0;animation:blink 1.1s step-end infinite}
+.caret{opacity:0;animation:blink 1.1s step-end infinite}
 @keyframes show{to{opacity:1}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-@media (prefers-reduced-motion:reduce){.t{animation:none;opacity:1}.cursor{animation:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.t{animation:none;opacity:1}.caret{animation:none;opacity:1}}
 </style>
 <rect width="1011" height="454" fill="#FFFFFF"/>
 <rect x="0.5" y="0.5" width="1010" height="453" rx="10" fill="#F5F9FF" stroke="#D0E2F7"/>
@@ -34,5 +34,5 @@ text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",mo
 <text class="t" x="20" y="390" style="animation-delay:3.49s"></text>
 <text class="t" x="20" y="409" style="animation-delay:3.53s"><tspan fill="#5A6B80">Offline: answers come from the cache; missing ones show as unknown.</tspan></text>
 <text class="t" x="20" y="428" style="animation-delay:3.77s"><tspan fill="#0071E3" font-weight="700">$ </tspan></text>
-<rect class="cursor" x="35.66" y="416" width="7.83" height="16" fill="#0071E3" style="animation-delay:3.77s"/>
+<rect class="caret" x="35.66" y="416" width="7.83" height="16" fill="#0071E3" style="animation-delay:3.77s"/>
 </svg>
