@@ -51,7 +51,9 @@
     "prepack": "npm run build",
     "fixtures:record": "node scripts/record-fixtures.mjs",
     "demo": "npm run build && node scripts/demo.ts",
-    "docs": "npm --prefix docs/site run build"
+    "docs": "npm --prefix docs/site run build",
+    "smoke": "node scripts/smoke-pack.ts",
+    "data:check": "node scripts/check-data.ts"
   },
   "dependencies": {
     "commander": "15.0.0",

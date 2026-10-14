@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Homebrew formula > installs the npm tarball of the given version with Homebrew’s npm arguments 1`] = `
+"class Podexit < Formula
+  desc "Show which CocoaPods stop getting updates when trunk goes read-only"
+  homepage "https://github.com/muhittincamdali/podexit"
+  url "https://registry.npmjs.org/podexit/-/podexit-0.1.0.tgz"
+  sha256 "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  license "MIT"
+
+  depends_on "node"
+
+  def install
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin/*")
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/podexit --version")
+
+    (testpath/"Podfile.lock").write <<~EOS
+      PODS:
+        - AppCore (1.0.0)
+
+      DEPENDENCIES:
+        - AppCore (from \`../AppCore\`)
+
+      EXTERNAL SOURCES:
+        AppCore:
+          :path: "../AppCore"
+
+      COCOAPODS: 1.16.2
+    EOS
+    output = shell_output("#{bin}/podexit --offline --all --cache-dir #{testpath}/cache")
+    assert_match "not affected", output
+  end
+end
+"
+`;
