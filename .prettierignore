@@ -1,0 +1,11 @@
+# Generated or recorded files: kept exactly as produced.
+dist/
+coverage/
+site/
+fixtures/
+test/__snapshots__/
+.github/brand/
+docs/media/
+package-lock.json
+CHANGELOG.md
+README*.md

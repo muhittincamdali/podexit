@@ -1,0 +1,66 @@
+{
+  "name": "podexit",
+  "version": "0.1.0",
+  "description": "Shows which CocoaPods dependencies stop getting updates when CocoaPods trunk goes read-only on December 2, 2026, and which already ship a Swift package.",
+  "keywords": [
+    "cocoapods",
+    "swift-package-manager",
+    "swiftpm",
+    "podfile-lock",
+    "flutter",
+    "react-native",
+    "expo",
+    "ios",
+    "migration",
+    "cli"
+  ],
+  "homepage": "https://github.com/muhittincamdali/podexit#readme",
+  "bugs": "https://github.com/muhittincamdali/podexit/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhittincamdali/podexit.git"
+  },
+  "license": "MIT",
+  "author": "Muhittin Camdali",
+  "type": "module",
+  "bin": {
+    "podexit": "dist/cli/main.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "data/*.json",
+    "!dist/**/*.map"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "lint": "biome lint src test scripts && prettier --check .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "commander": "15.0.0",
+    "yaml": "2.9.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "24.19.2",
+    "@vitest/coverage-v8": "5.0.4",
+    "prettier": "3.9.10",
+    "typescript": "7.0.2",
+    "vitest": "5.0.4"
+  }
+}
