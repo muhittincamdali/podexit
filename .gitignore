@@ -5,7 +5,7 @@ coverage/
 *.tgz
 
 # Documentation site build
-site/
+/site/
 docs/site/node_modules/
 
 # lychee link checker cache (local runs of the links job)

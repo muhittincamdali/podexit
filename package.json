@@ -50,7 +50,8 @@
     "build": "tsc -p tsconfig.build.json",
     "prepack": "npm run build",
     "fixtures:record": "node scripts/record-fixtures.mjs",
-    "demo": "npm run build && node scripts/demo.ts"
+    "demo": "npm run build && node scripts/demo.ts",
+    "docs": "npm --prefix docs/site run build"
   },
   "dependencies": {
     "commander": "15.0.0",
