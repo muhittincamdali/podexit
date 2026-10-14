@@ -49,7 +49,8 @@
     "test:coverage": "vitest run --coverage",
     "build": "tsc -p tsconfig.build.json",
     "prepack": "npm run build",
-    "fixtures:record": "node scripts/record-fixtures.mjs"
+    "fixtures:record": "node scripts/record-fixtures.mjs",
+    "demo": "npm run build && node scripts/demo.ts"
   },
   "dependencies": {
     "commander": "15.0.0",
