@@ -15,6 +15,11 @@ export const Publisher = z.object({
   /** Month the last CocoaPods release is expected, `YYYY-MM`. */
   stoppedPublishing: z.string().regex(/^\d{4}-\d{2}$/),
   summary: z.string().min(1),
+  /**
+   * True when the source says the stop also covers the pods these pods depend on (Firebase:
+   * "all of the following pods and their subdependencies"). Those pods are then capped too.
+   */
+  includesSubdependencies: z.boolean().optional(),
   swiftPackage: z.object({ url: httpsUrl, note: z.string().min(1) }).optional(),
   source: httpsUrl,
   /** Date someone last read the source and confirmed the entry. */
