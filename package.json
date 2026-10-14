@@ -42,7 +42,7 @@
     "node": ">=22.12"
   },
   "scripts": {
-    "lint": "biome lint src test scripts && prettier --check .",
+    "lint": "biome lint --error-on-warnings src test scripts && prettier --check .",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
