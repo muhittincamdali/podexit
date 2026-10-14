@@ -173,6 +173,21 @@ describe('render', async () => {
     expect(tampered.lockfiles[0]?.pods.some((item) => item.name.includes('\u001b'))).toBe(true);
   });
 
+  it('replaces DEL and C1 controls in the JSON report, which JSON.stringify leaves raw', () => {
+    const tampered = structuredClone(report);
+    const pod = tampered.lockfiles[0]?.pods.find((item) => item.name === 'Stale');
+    if (!pod) throw new Error('Stale is missing from the sample report');
+    // U+009B is CSI and U+009D is OSC in their 8-bit form; U+009C ends the OSC.
+    pod.name = 'Stale\u009b2J\u009d52;c;cm0gLXJmIH4K\u009c\u007f\u001b[31m';
+    const text = render(tampered, 'json');
+    // biome-ignore lint/suspicious/noControlCharactersInRegex: looking for raw control characters.
+    expect(text).not.toMatch(/[\u0000-\u0009\u000b-\u001f\u007f-\u009f]/);
+    const parsed = JSON.parse(text) as Report;
+    expect(parsed.lockfiles[0]?.pods.map((item) => item.name)).toContain(
+      'Stale\ufffd2J\ufffd52;c;cm0gLXJmIH4K\ufffd\ufffd\ufffd[31m',
+    );
+  });
+
   it('writes the report object as JSON', () => {
     const parsed = JSON.parse(render(report, 'json')) as Report;
     expect(parsed).toEqual(JSON.parse(JSON.stringify(report)));

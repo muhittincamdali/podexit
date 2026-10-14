@@ -10,7 +10,6 @@ import {
   swiftPackageLabel,
   updatesLabel,
 } from './labels.js';
-import { withoutControlCharacters } from './escape.js';
 
 // GitHub needs `\|` inside table cells, code spans included.
 const escapeCell = (text: string) => text.replace(/\|/g, '\\|');
@@ -79,9 +78,11 @@ function lockfileSection(lockfile: LockfileReport): string[] {
   return lines;
 }
 
-/** GitHub-flavoured Markdown, for pull request comments, issues and MIGRATION notes. */
-export function renderMarkdown(input: Report): string {
-  const report = withoutControlCharacters(input);
+/**
+ * GitHub-flavoured Markdown, for pull request comments, issues and MIGRATION notes. Called through
+ * `render`, which has already replaced control characters in the report.
+ */
+export function renderMarkdown(report: Report): string {
   const { timeline } = report;
   const lines = [
     '# podexit report',

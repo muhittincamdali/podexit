@@ -9,7 +9,6 @@ import {
   swiftPackageLabel,
   updatesLabel,
 } from './labels.js';
-import { withoutControlCharacters } from './escape.js';
 
 export interface TtyOptions {
   /** ANSI colours; the CLI turns them on for terminals unless NO_COLOR is set. */
@@ -132,9 +131,11 @@ function lockfileSection(lockfile: LockfileReport, options: TtyOptions, paint: P
   return lines;
 }
 
-/** Plain-text table for terminals. Colours are optional; the text is the same either way. */
-export function renderTty(input: Report, options: TtyOptions): string {
-  const report = withoutControlCharacters(input);
+/**
+ * Plain-text table for terminals. Colours are optional; the text is the same either way. Called
+ * through `render`, which has already replaced control characters in the report.
+ */
+export function renderTty(report: Report, options: TtyOptions): string {
   const paint = painter(options.color);
   const { timeline } = report;
   const lines = [
