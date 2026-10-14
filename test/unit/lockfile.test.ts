@@ -128,7 +128,13 @@ describe('parseLockfile', () => {
 
   it('rejects files that are not a Podfile.lock', () => {
     expect(() => parseLockfile('name: my_app\nversion: 1.0.0\n')).toThrow(LockfileError);
-    expect(() => parseLockfile('PODS: [unclosed')).toThrow(/Not valid YAML/);
+    expect(() => parseLockfile('PODS: [unclosed')).toThrow(
+      /^This Podfile.lock is not valid YAML: /,
+    );
+    // Markdown is not YAML; the error should name the real problem, not the YAML parser's.
+    expect(() =>
+      parseLockfile('# My app\n\nRun it: `flutter run`\nSetup: see\n  docs: here\n'),
+    ).toThrow('This file has no PODS section, so it is not a Podfile.lock.');
     expect(() => parseLockfile('PODS:\n  - not an entry\n')).toThrow(/Unexpected PODS entry/);
     expect(() => parseLockfile('PODS: nope\n')).toThrow(/not a list/);
   });

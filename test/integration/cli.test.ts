@@ -172,6 +172,18 @@ describe('podexit', () => {
     );
   });
 
+  it('exits with 2 for a Markdown file that does not parse as YAML', async () => {
+    await writeFile(
+      join(root, 'README.md'),
+      '# App\n\nRun: `pod install`\nThen: open\n  it: now\n',
+    );
+    const { code, stderr } = await cli(['--offline', 'README.md']);
+    expect(code).toBe(EXIT.usage);
+    expect(stderr).toBe(
+      'podexit: README.md: This file has no PODS section, so it is not a Podfile.lock.\n',
+    );
+  });
+
   it('exits with 2 for an unknown format or option', async () => {
     const format = await cli(['--format', 'xml']);
     expect(format.code).toBe(EXIT.usage);

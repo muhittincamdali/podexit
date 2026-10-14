@@ -48,6 +48,9 @@ export class LockfileError extends Error {
   override name = 'LockfileError';
 }
 
+const NOT_A_LOCKFILE = 'This file has no PODS section, so it is not a Podfile.lock.';
+const PODS_KEY = /^PODS:/m;
+
 const TRUNK_REPOSITORIES = [
   /^trunk$/i,
   /^https?:\/\/(?:www\.)?github\.com\/cocoapods\/specs(?:\.git)?\/?$/i,
@@ -153,11 +156,13 @@ export function parseLockfile(text: string): Lockfile {
     // The failsafe schema keeps every scalar a string, so `COCOAPODS: 1.10` stays "1.10".
     document = parseYaml(text, { schema: 'failsafe' });
   } catch (error) {
-    throw new LockfileError(`Not valid YAML: ${(error as Error).message.split('\n')[0]}`);
+    // A README or a CI config often fails as YAML long before it would fail as a lockfile; the
+    // parser's message ("Implicit keys need to be on a single line") says nothing useful then.
+    if (!PODS_KEY.test(text)) throw new LockfileError(NOT_A_LOCKFILE);
+    const reason = (error as Error).message.split('\n')[0];
+    throw new LockfileError(`This Podfile.lock is not valid YAML: ${reason}`);
   }
-  if (!isRecord(document) || !('PODS' in document)) {
-    throw new LockfileError('This file has no PODS section, so it is not a Podfile.lock.');
-  }
+  if (!isRecord(document) || !('PODS' in document)) throw new LockfileError(NOT_A_LOCKFILE);
 
   const repos = specRepos(document['SPEC REPOS']);
   const external = externalSources(document['EXTERNAL SOURCES'], document['CHECKOUT OPTIONS']);
