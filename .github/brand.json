@@ -1,0 +1,19 @@
+{
+  "name": "podexit",
+  "repository": "muhittincamdali/podexit",
+  "tagline": {
+    "en": "Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."
+  },
+  "tags": {
+    "en": ["CocoaPods", "SwiftPM", "Flutter", "React Native"]
+  },
+  "motif": "code",
+  "buttons": ["start", "docs", "guides", "examples"],
+  "links": {
+    "docs": "https://muhittincamdali.github.io/podexit/",
+    "guides": "docs/guides/",
+    "examples": "examples/"
+  },
+  "languages": ["en", "tr", "zh-CN", "ja", "ko", "es", "de", "fr", "pt-BR", "ru"],
+  "socialTheme": "dark"
+}
