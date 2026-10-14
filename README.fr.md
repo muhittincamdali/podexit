@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@7ceb4474cd77c1aee9f660b00e3bfcb024123574 status=reviewed -->
+<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -36,7 +36,7 @@ CocoaPods trunk passera en lecture seule le 2 décembre 2026. Vos builds continu
 - **Deux réponses par pod** : s’il cesse de recevoir des mises à jour (figé sur trunk, plafonné plus tôt par son éditeur, ou non concerné) et si son dépôt amont contient un `Package.swift`.
 - **Attentif aux versions** : vérifie aussi le `Package.swift` au tag que vous avez verrouillé et signale quand le paquet Swift n’existe que dans des versions plus récentes.
 - **Plafond Firebase intégré** : les 20 pods listés par Firebase sont plafonnés à 12.x, ainsi que leurs sous-dépendances, à partir d’un fichier de données sourcé qui cite la page de Firebase.
-- **Natif, Flutter, React Native et Expo** : trouve `Podfile.lock`, `ios/Podfile.lock` ou `example/ios/Podfile.lock`, reconnaît le type de projet et renvoie vers le guide correspondant.
+- **Natif, Flutter, React Native et Expo** : trouve `Podfile.lock` dans le dossier ou dans `ios/`, `macos/`, `example/ios/` ou `example/macos/`, reconnaît le type de projet et renvoie vers le guide correspondant.
 - **Terminal, Markdown ou JSON** : un tableau pour vous, du Markdown pour une pull request, du JSON pour les scripts.
 - **Fonctionne hors ligne** : les réponses sont mises en cache 24 heures dans `~/.cache/podexit` ; `--offline` n’utilise que le cache.
 
@@ -98,6 +98,14 @@ podexit [paths...] [options]
 | `--concurrency <n>`     | Requêtes de pods en parallèle, de 1 à 64 (par défaut 8)                                 |
 
 Codes de sortie : `0` rapport écrit, `2` arguments invalides, aucun `Podfile.lock` trouvé ou fichier qui n’en est pas un, `1` tout le reste. podexit rapporte ; il ne fait pas échouer un build à cause de ce qu’il trouve.
+
+Sans chemin, podexit lit chaque lockfile trouvé parmi `Podfile.lock`, `ios/Podfile.lock`, `macos/Podfile.lock`, `example/ios/Podfile.lock` et `example/macos/Podfile.lock` ; un dossier passé comme chemin est parcouru de la même façon.
+
+| Variable d’environnement   | Effet                                                                        |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| `PODEXIT_CACHE_DIR`        | Dossier de cache quand `--cache-dir` n’est pas indiqué                       |
+| `GITHUB_TOKEN`, `GH_TOKEN` | Envoyé uniquement aux hôtes GitHub ; nécessaire pour les dépôts amont privés |
+| `NO_COLOR`, `FORCE_COLOR`  | Désactive ou active les couleurs du terminal                                 |
 
 ### Conserver un rapport Markdown avec le code
 

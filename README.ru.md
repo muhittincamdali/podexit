@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@7ceb4474cd77c1aee9f660b00e3bfcb024123574 status=reviewed -->
+<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -36,7 +36,7 @@
 - **Два ответа для каждого pod**: перестанет ли он получать обновления (заморожен на trunk, рано ограничен издателем или не затронут) и есть ли в его исходном репозитории `Package.swift`.
 - **Учитывает версии**: проверяет `Package.swift` и на зафиксированном у вас теге и сообщает, если Swift-пакет есть только в более новых версиях.
 - **Ограничение Firebase встроено**: 20 перечисленных Firebase pod и их подзависимости ограничены версией 12.x; данные берутся из файла с указанием источника, который ссылается на страницу Firebase.
-- **Нативные проекты, Flutter, React Native и Expo**: находит `Podfile.lock`, `ios/Podfile.lock` или `example/ios/Podfile.lock`, определяет тип проекта и даёт ссылку на подходящее руководство.
+- **Нативные проекты, Flutter, React Native и Expo**: находит `Podfile.lock` в самой папке или в `ios/`, `macos/`, `example/ios/` или `example/macos/`, определяет тип проекта и даёт ссылку на подходящее руководство.
 - **Терминал, Markdown или JSON**: таблица для вас, Markdown для pull request, JSON для скриптов.
 - **Работает офлайн**: ответы кэшируются на 24 часа в `~/.cache/podexit`; `--offline` использует только кэш.
 
@@ -98,6 +98,14 @@ podexit [paths...] [options]
 | `--concurrency <n>`     | Число параллельных запросов по pod, от 1 до 64 (по умолчанию 8)            |
 
 Коды завершения: `0` — отчёт записан, `2` — неверные аргументы, не найден ни один `Podfile.lock` или файл не является им, `1` — любая другая непредвиденная ошибка. podexit сообщает о находках, но не ломает сборку из-за них.
+
+Без путей podexit читает каждый lock-файл, который находит в `Podfile.lock`, `ios/Podfile.lock`, `macos/Podfile.lock`, `example/ios/Podfile.lock` и `example/macos/Podfile.lock`; папка, переданная как путь, просматривается так же.
+
+| Переменная окружения       | Что делает                                                                     |
+| -------------------------- | ------------------------------------------------------------------------------ |
+| `PODEXIT_CACHE_DIR`        | Папка кэша, если `--cache-dir` не указан                                       |
+| `GITHUB_TOKEN`, `GH_TOKEN` | Отправляется только на хосты GitHub; нужна для приватных исходных репозиториев |
+| `NO_COLOR`, `FORCE_COLOR`  | Выключает или включает цвета в терминале                                       |
 
 ### Храните Markdown-отчёт вместе с кодом
 

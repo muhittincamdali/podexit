@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@7ceb4474cd77c1aee9f660b00e3bfcb024123574 status=reviewed -->
+<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -36,7 +36,7 @@ CocoaPods trunk 将于 2026 年 12 月 2 日转为只读。你的构建仍可正
 - **每个 pod 两个结论**：它是否会停止获得更新（在 trunk 上已冻结、被发布方提前限制版本，或不受影响），以及其上游仓库是否有 `Package.swift`。
 - **感知版本**：同样会检查你锁定的 tag 上的 `Package.swift`，并在 Swift 包仅存在于较新版本时给出提示。
 - **内置 Firebase 版本上限**：Firebase 列出的 20 个 pod 及其子依赖都被限制在 12.x，数据来自一个引用了 Firebase 页面的、有来源出处的数据文件。
-- **原生、Flutter、React Native 和 Expo**：自动查找 `Podfile.lock`、`ios/Podfile.lock` 或 `example/ios/Podfile.lock`，识别项目类型，并链接到对应的指南。
+- **原生、Flutter、React Native 和 Expo**：在当前文件夹或 `ios/`、`macos/`、`example/ios/`、`example/macos/` 中自动查找 `Podfile.lock`，识别项目类型，并链接到对应的指南。
 - **终端、Markdown 或 JSON**：给你看的是表格，给 pull request 用的是 Markdown，给脚本用的是 JSON。
 - **可离线使用**：响应会在 `~/.cache/podexit` 中缓存 24 小时；`--offline` 只使用缓存。
 
@@ -98,6 +98,14 @@ podexit [paths...] [options]
 | `--concurrency <n>`     | 并行查询 pod 的数量，1 到 64（默认 8）                               |
 
 退出码：`0` 表示已写出报告；`2` 表示参数错误、未找到 `Podfile.lock`，或文件不是 `Podfile.lock`；`1` 表示其他任何意外情况。podexit 只负责报告，不会因为检查结果而让构建失败。
+
+不指定路径时，podexit 会读取在 `Podfile.lock`、`ios/Podfile.lock`、`macos/Podfile.lock`、`example/ios/Podfile.lock` 和 `example/macos/Podfile.lock` 找到的每个锁文件；作为路径传入的文件夹也按同样方式查找。
+
+| 环境变量                   | 作用                                           |
+| -------------------------- | ---------------------------------------------- |
+| `PODEXIT_CACHE_DIR`        | 未指定 `--cache-dir` 时使用的缓存文件夹        |
+| `GITHUB_TOKEN`, `GH_TOKEN` | 只发送给 GitHub 主机；查看私有的上游仓库时需要 |
+| `NO_COLOR`, `FORCE_COLOR`  | 关闭或开启终端颜色                             |
 
 ### 把 Markdown 报告和代码一起保存
 

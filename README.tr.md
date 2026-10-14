@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@7ceb4474cd77c1aee9f660b00e3bfcb024123574 status=reviewed -->
+<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -36,7 +36,7 @@ CocoaPods trunk 2 Aralık 2026'da salt okunur olacak. Derlemeleriniz çalışmay
 - **Her pod için iki yanıt**: güncelleme almayı bırakıp bırakmayacağı (trunk'ta donmuş, yayıncısı tarafından erkenden sınırlanmış ya da etkilenmiyor) ve upstream deposunda `Package.swift` olup olmadığı.
 - **Sürüm duyarlı**: kilitlediğiniz etiketteki `Package.swift` dosyasına da bakar ve Swift paketinin yalnızca daha yeni sürümlerde bulunduğu durumu belirtir.
 - **Firebase sınırı yerleşik**: Firebase'in listelenen 20 pod'u ve alt bağımlılıkları 12.x ile sınırlanır; bu bilgi, Firebase sayfasını kaynak gösteren bir veri dosyasından gelir.
-- **Yerel, Flutter, React Native ve Expo**: `Podfile.lock`, `ios/Podfile.lock` veya `example/ios/Podfile.lock` dosyasını bulur, proje türünü tanır ve ilgili rehbere bağlantı verir.
+- **Yerel, Flutter, React Native ve Expo**: `Podfile.lock` dosyasını klasörün kendisinde ya da `ios/`, `macos/`, `example/ios/` veya `example/macos/` altında bulur, proje türünü tanır ve ilgili rehbere bağlantı verir.
 - **Terminal, Markdown veya JSON**: sizin için bir tablo, pull request için Markdown, betikler için JSON.
 - **Çevrimdışı çalışır**: yanıtlar `~/.cache/podexit` içinde 24 saat önbellekte tutulur; `--offline` yalnızca önbelleği kullanır.
 
@@ -98,6 +98,14 @@ podexit [paths...] [options]
 | `--concurrency <n>`     | Paralel pod sorguları, 1 ile 64 arası (varsayılan 8)                            |
 
 Çıkış kodları: `0` rapor yazıldı, `2` hatalı argüman, `Podfile.lock` bulunamadı veya dosya `Podfile.lock` değil, `1` beklenmeyen her durum. podexit rapor verir; bulduklarından dolayı bir derlemeyi başarısız kılmaz.
+
+Yol verilmezse podexit `Podfile.lock`, `ios/Podfile.lock`, `macos/Podfile.lock`, `example/ios/Podfile.lock` ve `example/macos/Podfile.lock` konumlarında bulduğu her kilit dosyasını okur; yol olarak verilen bir klasör de aynı şekilde aranır.
+
+| Ortam değişkeni            | Ne yapar                                                                     |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| `PODEXIT_CACHE_DIR`        | `--cache-dir` verilmediğinde kullanılan önbellek klasörü                     |
+| `GITHUB_TOKEN`, `GH_TOKEN` | Yalnızca GitHub sunucularına gönderilir; özel upstream depoları için gerekir |
+| `NO_COLOR`, `FORCE_COLOR`  | Terminal renklerini kapatır veya açar                                        |
 
 ### Markdown raporunu kodla birlikte saklayın
 
