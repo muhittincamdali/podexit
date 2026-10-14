@@ -1,0 +1,7 @@
+{
+  "url": "https://cdn.cocoapods.org/Specs/1/f/6/SnapKit/5.7.1/SnapKit.podspec.json",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:35:59.466Z",
+  "body": "{\n  \"name\": \"SnapKit\",\n  \"version\": \"5.7.1\",\n  \"license\": \"MIT\",\n  \"summary\": \"Harness the power of auto layout with a simplified, chainable, and compile time safe syntax.\",\n  \"homepage\": \"https://github.com/SnapKit/SnapKit\",\n  \"authors\": {\n    \"Robert Payne\": \"robertpayne@me.com\"\n  },\n  \"social_media_url\": \"http://twitter.com/robertjpayne\",\n  \"source\": {\n    \"git\": \"https://github.com/SnapKit/SnapKit.git\",\n    \"tag\": \"5.7.1\"\n  },\n  \"platforms\": {\n    \"ios\": \"12.0\",\n    \"osx\": \"10.13\",\n    \"tvos\": \"12.0\"\n  },\n  \"source_files\": \"Sources/*.swift\",\n  \"libraries\": \"swiftCoreGraphics\",\n  \"xcconfig\": {\n    \"LIBRARY_SEARCH_PATHS\": \"$(SDKROOT)/usr/lib/swift\"\n  },\n  \"resource_bundles\": {\n    \"SnapKit_Privacy\": [\n      \"Sources/PrivacyInfo.xcprivacy\"\n    ]\n  },\n  \"swift_versions\": [\n    \"5.0\"\n  ],\n  \"swift_version\": \"5.0\"\n}\n"
+}

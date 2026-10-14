@@ -1,0 +1,7 @@
+{
+  "url": "https://trunk.cocoapods.org/api/v1/pods/AppCheckCore",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:36:11.438Z",
+  "body": "{\"versions\":[{\"name\":\"10.18.0\",\"created_at\":\"2023-11-13 21:31:01 UTC\"},{\"name\":\"10.18.1\",\"created_at\":\"2024-01-17 16:11:50 UTC\"},{\"name\":\"10.18.2\",\"created_at\":\"2024-04-03 15:33:18 UTC\"},{\"name\":\"10.19.0\",\"created_at\":\"2024-04-17 15:39:08 UTC\"},{\"name\":\"10.19.1\",\"created_at\":\"2024-05-13 15:42:50 UTC\"},{\"name\":\"10.19.2\",\"created_at\":\"2024-06-17 18:20:12 UTC\"},{\"name\":\"11.0.0\",\"created_at\":\"2024-07-12 14:51:10 UTC\"},{\"name\":\"11.1.0\",\"created_at\":\"2024-10-07 16:23:07 UTC\"},{\"name\":\"11.2.0\",\"created_at\":\"2024-10-21 15:21:27 UTC\"},{\"name\":\"11.3.0\",\"created_at\":\"2026-06-11 15:02:15 UTC\"},{\"name\":\"11.3.1\",\"created_at\":\"2026-07-08 16:12:36 UTC\"},{\"name\":\"11.3.2\",\"created_at\":\"2026-09-14 15:22:47 UTC\"}],\"owners\":[{\"created_at\":\"2015-04-27 18:21:12 UTC\",\"email\":\"cocoapods@google.com\",\"name\":\"Google\"}]}"
+}

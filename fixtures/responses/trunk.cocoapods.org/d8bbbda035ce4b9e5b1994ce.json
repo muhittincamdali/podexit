@@ -1,0 +1,7 @@
+{
+  "url": "https://trunk.cocoapods.org/api/v1/pods/RecaptchaInterop",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:36:12.745Z",
+  "body": "{\"versions\":[{\"name\":\"100.0.0\",\"created_at\":\"2023-08-16 13:39:20 UTC\"},{\"name\":\"101.0.0\",\"created_at\":\"2024-12-06 19:21:04 UTC\"},{\"name\":\"18.2.0\",\"created_at\":\"2023-05-01 12:16:04 UTC\"},{\"name\":\"18.2.1\",\"created_at\":\"2023-06-14 16:10:59 UTC\"}],\"owners\":[{\"created_at\":\"2022-10-31 19:10:02 UTC\",\"email\":\"walterjp@google.com\",\"name\":\"Walter\"},{\"created_at\":\"2023-07-12 20:50:09 UTC\",\"email\":\"icmota@google.com\",\"name\":\"Icaro Mota\"},{\"created_at\":\"2015-04-27 18:21:12 UTC\",\"email\":\"cocoapods@google.com\",\"name\":\"Google\"}]}"
+}

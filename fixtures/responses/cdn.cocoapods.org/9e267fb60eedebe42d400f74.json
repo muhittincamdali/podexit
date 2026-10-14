@@ -1,0 +1,7 @@
+{
+  "url": "https://cdn.cocoapods.org/Specs/4/7/f/FirebaseCoreExtension/12.19.0/FirebaseCoreExtension.podspec.json",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:35:56.106Z",
+  "body": "{\n  \"name\": \"FirebaseCoreExtension\",\n  \"version\": \"12.19.0\",\n  \"summary\": \"Extended FirebaseCore APIs for Firebase product SDKs\",\n  \"description\": \"Not for public use.\\nCommon FirebaseCore APIs for use in Firebase product SDKs.\\nWhen depending on `FirebaseCoreExtension`, also depend on `FirebaseCore` to\\navoid potential linker issues.\",\n  \"homepage\": \"https://firebase.google.com\",\n  \"license\": {\n    \"type\": \"Apache-2.0\",\n    \"file\": \"LICENSE\"\n  },\n  \"authors\": \"Google, Inc.\",\n  \"source\": {\n    \"git\": \"https://github.com/firebase/firebase-ios-sdk.git\",\n    \"tag\": \"CocoaPods-12.19.0\"\n  },\n  \"social_media_url\": \"https://twitter.com/Firebase\",\n  \"swift_versions\": \"5.9\",\n  \"platforms\": {\n    \"ios\": \"15.0\",\n    \"osx\": \"10.15\",\n    \"tvos\": \"15.0\",\n    \"watchos\": \"7.0\"\n  },\n  \"source_files\": \"FirebaseCore/Extension/*.[hm]\",\n  \"public_header_files\": \"FirebaseCore/Extension/*.h\",\n  \"resource_bundles\": {\n    \"FirebaseCoreExtension_Privacy\": \"FirebaseCore/Extension/Resources/PrivacyInfo.xcprivacy\"\n  },\n  \"pod_target_xcconfig\": {\n    \"DEFINES_MODULE\": \"YES\"\n  },\n  \"dependencies\": {\n    \"FirebaseCore\": [\n      \"~> 12.19.0\"\n    ]\n  },\n  \"swift_version\": \"5.9\"\n}\n"
+}

@@ -48,7 +48,8 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "build": "tsc -p tsconfig.build.json",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "fixtures:record": "node scripts/record-fixtures.mjs"
   },
   "dependencies": {
     "commander": "15.0.0",

@@ -1,0 +1,7 @@
+{
+  "url": "https://cdn.cocoapods.org/all_pods_versions_1_9_2.txt",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:36:05.973Z",
+  "body": "CCMediaFormatFactory/1.0.0/1.0.1/1.0.2\nDurexKit/1.0.0\nEcontentaLibrary/0.1.0/0.1.1\nLionRenderer2D/0.0.3\nLocalNotificationWrapper/0.1.0\nReklamupAdmobAdapter/1.0.0/1.1.0/1.2.0/1.3.0\nThunderhead-Test/6.1.2/6.1.3/6.1.4/6.1.5/6.1.6/6.1.7/6.1.8\nTweetSplitter/0.2.0\nVerisCapture/1.0.0/1.2.0/1.3.0\nWFYYModel/0.0.1\nXJWifiConfigCommonUI/1.1/1.2/1.3\nZujianTest/0.0.1/0.0.2\nlibtiff/4.6.2/4.6.2.1\nlibwebp/0.4.1/0.4.2/0.4.3/0.4.4/0.5.0/0.5.1/0.5.2/0.6.0/0.6.1/1.0.0/1.0.1/1.0.2/1.0.3/1.1.0/1.1.0-rc2/1.2.0/1.2.1/1.2.2/1.2.3/1.2.4/1.3.0/1.3.1/1.3.2/1.4.0/1.5.0/1.6.0\nmobile-ffmpeg-tvos-full-gpl/4.2.2/4.2.2.LTS/4.3/4.3.1/4.3.1.LTS/4.3.2/4.4/4.4.LTS\n"
+}

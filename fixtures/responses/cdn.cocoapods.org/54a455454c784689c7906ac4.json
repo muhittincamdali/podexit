@@ -1,0 +1,7 @@
+{
+  "url": "https://cdn.cocoapods.org/Specs/d/a/2/Alamofire/5.12.2/Alamofire.podspec.json",
+  "method": "GET",
+  "status": 200,
+  "fetchedAt": "2026-10-14T18:35:56.127Z",
+  "body": "{\n  \"name\": \"Alamofire\",\n  \"version\": \"5.12.2\",\n  \"license\": \"MIT\",\n  \"summary\": \"Elegant HTTP Networking in Swift\",\n  \"homepage\": \"https://github.com/Alamofire/Alamofire\",\n  \"authors\": {\n    \"Alamofire Software Foundation\": \"info@alamofire.org\"\n  },\n  \"source\": {\n    \"git\": \"https://github.com/Alamofire/Alamofire.git\",\n    \"tag\": \"5.12.2\"\n  },\n  \"documentation_url\": \"https://alamofire.github.io/Alamofire/\",\n  \"cocoapods_version\": \">= 1.13.0\",\n  \"platforms\": {\n    \"ios\": \"10.0\",\n    \"osx\": \"10.12\",\n    \"tvos\": \"10.0\",\n    \"visionos\": \"1.0\",\n    \"watchos\": \"3.0\"\n  },\n  \"swift_versions\": [\n    \"5\"\n  ],\n  \"source_files\": \"Source/**/*.swift\",\n  \"frameworks\": \"CFNetwork\",\n  \"resource_bundles\": {\n    \"Alamofire\": [\n      \"Source/PrivacyInfo.xcprivacy\"\n    ]\n  },\n  \"swift_version\": \"5\"\n}\n"
+}
