@@ -163,7 +163,7 @@ console.log(render(buildReport([lockfile], { policy, offline: false }), 'markdow
 | Приложение Flutter (FlutterFire, google_sign_in, …)           | [светлая](docs/media/demo-flutter-light.svg) · [тёмная](docs/media/demo-flutter-dark.svg) |
 | Приложение Expo SDK 57 (Sentry, RevenueCat, Lottie)           | [светлая](docs/media/demo-expo-light.svg) · [тёмная](docs/media/demo-expo-dark.svg)       |
 
-Замер на Mac (Apple silicon, M5 Max) с Node.js 25.9 от 14 октября 2026 года: первый запуск на нативной фикстуре (28 pod) сделал 112 запросов и занял от 6.6 до 7.1 секунды; второй запуск ответил из кэша за 0.3 секунды. Первое значение в основном определяется скоростью сети.
+Замер на Mac (Apple silicon, M5 Max) с Node.js 25.9 от 14 октября 2026 года: первый запуск на нативной фикстуре (28 pod) сделал 112 запросов и занял от 6,6 до 7,1 секунды; второй запуск ответил из кэша за 0,3 секунды. Первое значение в основном определяется скоростью сети.
 
 Чтобы записать их заново: `npm run demo`.
 

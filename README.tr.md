@@ -163,7 +163,7 @@ console.log(render(buildReport([lockfile], { policy, offline: false }), 'markdow
 | Flutter uygulaması (FlutterFire, google_sign_in, …)        | [açık](docs/media/demo-flutter-light.svg) · [koyu](docs/media/demo-flutter-dark.svg) |
 | Expo SDK 57 uygulaması (Sentry, RevenueCat, Lottie)        | [açık](docs/media/demo-expo-light.svg) · [koyu](docs/media/demo-expo-dark.svg)       |
 
-14 Ekim 2026'da Node.js 25.9 ile bir Mac'te (Apple silicon, M5 Max) ölçüldü: yerel fixture'da (28 pod) ilk çalıştırma 112 istek yaptı ve 6.6 ile 7.1 saniye sürdü; ikinci çalıştırma yanıtları önbellekten 0.3 saniyede verdi. İlk sürenin çoğunu ağ hızı belirler.
+14 Ekim 2026'da Node.js 25.9 ile bir Mac'te (Apple silicon, M5 Max) ölçüldü: yerel fixture'da (28 pod) ilk çalıştırma 112 istek yaptı ve 6,6 ile 7,1 saniye sürdü; ikinci çalıştırma yanıtları önbellekten 0,3 saniyede verdi. İlk sürenin çoğunu ağ hızı belirler.
 
 Kayıtları yeniden oluşturmak için: `npm run demo`.
 

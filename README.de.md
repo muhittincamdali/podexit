@@ -163,7 +163,7 @@ Die drei Aufnahmen stammen aus den [Fixtures](fixtures/README.md): echte Projekt
 | Flutter-App (FlutterFire, google_sign_in, …)         | [hell](docs/media/demo-flutter-light.svg) · [dunkel](docs/media/demo-flutter-dark.svg) |
 | Expo-SDK-57-App (Sentry, RevenueCat, Lottie)         | [hell](docs/media/demo-expo-light.svg) · [dunkel](docs/media/demo-expo-dark.svg)       |
 
-Gemessen auf einem Mac (Apple silicon, M5 Max) mit Node.js 25.9 am 14. Oktober 2026: Ein erster Lauf auf dem nativen Fixture (28 Pods) machte 112 Anfragen und dauerte 6.6 bis 7.1 Sekunden; ein zweiter Lauf antwortete in 0.3 Sekunden aus dem Cache. Die Netzwerkgeschwindigkeit bestimmt den größten Teil der ersten Zahl.
+Gemessen auf einem Mac (Apple silicon, M5 Max) mit Node.js 25.9 am 14. Oktober 2026: Ein erster Lauf auf dem nativen Fixture (28 Pods) machte 112 Anfragen und dauerte 6,6 bis 7,1 Sekunden; ein zweiter Lauf antwortete in 0,3 Sekunden aus dem Cache. Die Netzwerkgeschwindigkeit bestimmt den größten Teil der ersten Zahl.
 
 Zum erneuten Aufzeichnen: `npm run demo`.
 
