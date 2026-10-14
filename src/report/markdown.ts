@@ -9,6 +9,7 @@ import {
   summaryLines,
   swiftPackageLabel,
   updatesLabel,
+  withoutControlCharacters,
 } from './labels.js';
 
 // GitHub needs `\|` inside table cells, code spans included.
@@ -79,7 +80,8 @@ function lockfileSection(lockfile: LockfileReport): string[] {
 }
 
 /** GitHub-flavoured Markdown, for pull request comments, issues and MIGRATION notes. */
-export function renderMarkdown(report: Report): string {
+export function renderMarkdown(input: Report): string {
+  const report = withoutControlCharacters(input);
   const { timeline } = report;
   const lines = [
     '# podexit report',
