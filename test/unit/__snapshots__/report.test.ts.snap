@@ -1,0 +1,55 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`render > prints a plain terminal table without colour codes 1`] = `
+"podexit 0.1.0 · CocoaPods trunk goes read-only on 2026-12-02 (trial run 2026-11-01 to 2026-11-07)
+Builds keep working: pods already on trunk stay installable after December 2, 2026. Trunk only stops accepting new versions.
+
+ios/Podfile.lock  Flutter app · 6 pods, 5 in the Podfile
+
+  POD                LOCKED   LATEST ON TRUNK  UPDATES             SWIFT PACKAGE   PULLED IN BY
+  FirebaseAnalytics  11.15.0                   capped at 12.x      yes (Firebase)
+  FirebaseCore       11.15.0                   capped at 12.x      yes (Firebase)  FirebaseAnalytics
+  Alamofire          5.9.1    5.12.2           frozen after Dec 2  yes
+  Pipe|Pod           1.0.0                     frozen after Dec 2  unknown
+  Stale              0.4.0                     frozen after Dec 2  no
+
+  3 frozen on trunk · 2 capped by the publisher · 1 not affected
+  3 pods with a Swift package · 1 without · 1 unknown
+  1 more from local paths, git or private specs (not affected); --all lists them.
+  Guide: https://github.com/muhittincamdali/podexit/blob/main/docs/guides/flutter.md
+"
+`;
+
+exports[`render > writes GitHub Markdown with escaped table cells 1`] = `
+"# podexit report
+
+CocoaPods trunk goes read-only on **2026-12-02**, after a trial run from 2026-11-01 to 2026-11-07 ([announcement](https://blog.cocoapods.org/CocoaPods-Specs-Repo/)). Builds keep working: pods already on trunk stay installable after December 2, 2026. Trunk only stops accepting new versions.
+
+## \`ios/Podfile.lock\`
+
+Flutter app, 6 pods, 5 in the Podfile.
+
+- 3 frozen on trunk · 2 capped by the publisher · 1 not affected
+- 3 pods with a Swift package · 1 without · 1 unknown
+- Guide: [Flutter apps and plugins](https://github.com/muhittincamdali/podexit/blob/main/docs/guides/flutter.md)
+
+| Pod | Locked | Latest on trunk | Updates | Swift package | Pulled in by |
+| --- | --- | --- | --- | --- | --- |
+| \`FirebaseAnalytics\` | 11.15.0 |  | capped at 12.x | [yes (Firebase)](https://github.com/firebase/firebase-ios-sdk) |  |
+| \`FirebaseCore\` | 11.15.0 |  | capped at 12.x | [yes (Firebase)](https://github.com/firebase/firebase-ios-sdk) | \`FirebaseAnalytics\` |
+| \`Alamofire\` | 5.9.1 | 5.12.2 (2026-09-10) | frozen after Dec 2 | [yes](https://github.com/Alamofire/Alamofire) |  |
+| \`Pipe\\|Pod\` | 1.0.0 |  | frozen after Dec 2 | unknown |  |
+| \`Stale\` | 0.4.0 |  | frozen after Dec 2 | [no](https://github.com/acme/Stale) |  |
+
+<details>
+<summary>1 pod from local paths, git or private specs (not affected)</summary>
+
+| Pod | Locked | Latest on trunk | Updates | Swift package | Pulled in by |
+| --- | --- | --- | --- | --- | --- |
+| \`Flutter\` | 1.0.0 |  | not affected | - |  |
+
+</details>
+
+<sub>podexit 0.1.0, 2026-10-14, publisher data 2026.10.14</sub>
+"
+`;
