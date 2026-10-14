@@ -6,11 +6,11 @@ getting updates and whether it already ships a Swift package, for native iOS, Fl
 Native/Expo projects.
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 ```
 
 podexit is not on npm yet (publishing it there is planned), so `npx podexit` does not work for
-now. The command above runs the 0.1.0 release from GitHub; use it wherever these pages say
+now. The command above runs the 0.1.1 release from GitHub; use it wherever these pages say
 `npx podexit`.
 
 ## Guides

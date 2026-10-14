@@ -8,7 +8,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
-<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="Latest version: v0.1.0"></picture></a>
+<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="Latest version: v0.1.1"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/package.json"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg" alt="Language version: Node.js 22.12+"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg" alt="License: MIT"></picture></a>
 </p>
@@ -62,11 +62,11 @@ cd path/to/YourApp
 **2. Run podexit:**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 ```
 
 podexit is not on npm yet (publishing it there is planned), so `npx podexit` does not work for
-now. The command above runs the 0.1.0 release from GitHub; use it wherever this README says
+now. The command above runs the 0.1.1 release from GitHub; use it wherever this README says
 `npx podexit`.
 
 **3. Read the table.** Rows marked **capped** stop first (Firebase stops publishing to CocoaPods in
@@ -91,11 +91,11 @@ Read more in [What changes on December 2](docs/guides/what-changes.md).
 
 ## Installation
 
-podexit is not on npm yet; publishing it there is planned. Until then, run the 0.1.0 release
+podexit is not on npm yet; publishing it there is planned. Until then, run the 0.1.1 release
 from GitHub as shown above, or add it to a project:
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 npx podexit
 ```
 

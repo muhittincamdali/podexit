@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@b014c05397ff44788b1d848270e2b125a0e85870 status=reviewed -->
+<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -9,7 +9,7 @@
 
 <p align="center">
 <a href="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml"><img src="https://github.com/muhittincamdali/podexit/actions/workflows/ci.yml/badge.svg" alt="Статус CI"></a>
-<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="Последняя версия: v0.1.0"></picture></a>
+<a href="https://github.com/muhittincamdali/podexit/releases"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-version-light.svg" alt="Последняя версия: v0.1.1"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/package.json"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-language-light.svg" alt="Версия языка: Node.js 22.12+"></picture></a>
 <a href="https://github.com/muhittincamdali/podexit/blob/main/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/badge-license-light.svg" alt="Лицензия: MIT"></picture></a>
 </p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. Запустите podexit:**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 ```
 
-podexit пока нет в npm (публикация планируется), поэтому `npx podexit` пока не работает. Команда выше запускает релиз 0.1.0 с GitHub; используйте её везде, где в этом README написано `npx podexit`.
+podexit пока нет в npm (публикация планируется), поэтому `npx podexit` пока не работает. Команда выше запускает релиз 0.1.1 с GitHub; используйте её везде, где в этом README написано `npx podexit`.
 
 **3. Прочитайте таблицу.** Строки с пометкой **capped** останавливаются первыми (Firebase прекращает публикацию в CocoaPods в октябре 2026 года); строки с пометкой **frozen after Dec 2** не получат новых версий после 2 декабря. Если в столбце Swift package указано **yes**, pod можно переносить уже сейчас. Последняя строка содержит ссылку на руководство для вашего типа проекта.
 
@@ -72,10 +72,10 @@ podexit пока нет в npm (публикация планируется), п
 
 ## Установка
 
-podexit пока нет в npm; публикация там планируется. До тех пор запускайте релиз 0.1.0 с GitHub, как показано выше, или добавьте его в проект:
+podexit пока нет в npm; публикация там планируется. До тех пор запускайте релиз 0.1.1 с GitHub, как показано выше, или добавьте его в проект:
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
 npx podexit
 ```
 
