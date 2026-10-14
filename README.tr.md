@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
+<!-- i18n-source: README.md@b014c05397ff44788b1d848270e2b125a0e85870 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,8 +53,10 @@ cd path/to/YourApp
 **2. podexit'i çalıştırın:**
 
 ```sh
-npx podexit
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
 ```
+
+podexit henüz npm'de yok (yayımlanması planlanıyor), bu yüzden `npx podexit` şimdilik çalışmaz. Yukarıdaki komut 0.1.0 sürümünü GitHub'dan çalıştırır; bu README'de `npx podexit` geçen her yerde onu kullanın.
 
 **3. Tabloyu okuyun.** **capped** işaretli satırlar ilk önce durur (Firebase, CocoaPods'a yayımlamayı Ekim 2026'da bırakıyor); **frozen after Dec 2** işaretli satırlar 2 Aralık'tan sonra yeni sürüm almaz. Swift package sütununda **yes** yazıyorsa pod şimdiden taşınabilir. Son satır, proje türünüze uygun rehbere bağlantı verir.
 
@@ -70,7 +72,14 @@ Ayrıntılar için [2 Aralık'ta neler değişiyor](docs/guides/what-changes.md)
 
 ## Kurulum
 
-Kurulum gerekmez: `npx podexit` en son sürümü indirip çalıştırır. Bir projede veya CI'da sürümü sabitlemek için:
+podexit henüz npm'de yok; yayımlanması planlanıyor. O zamana kadar 0.1.0 sürümünü yukarıdaki gibi GitHub'dan çalıştırın ya da bir projeye ekleyin:
+
+```sh
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx podexit
+```
+
+podexit npm'e geldiğinde `npx podexit` hiçbir şey kurmadan en son sürümü indirip çalıştırır. Bir projede veya CI'da sürümü sabitlemek için:
 
 ```sh
 npm install --save-dev podexit
@@ -163,7 +172,7 @@ console.log(render(buildReport([lockfile], { policy, offline: false }), 'markdow
 | Flutter uygulaması (FlutterFire, google_sign_in, …)        | [açık](docs/media/demo-flutter-light.svg) · [koyu](docs/media/demo-flutter-dark.svg) |
 | Expo SDK 57 uygulaması (Sentry, RevenueCat, Lottie)        | [açık](docs/media/demo-expo-light.svg) · [koyu](docs/media/demo-expo-dark.svg)       |
 
-14 Ekim 2026'da Node.js 25.9 ile bir Mac'te (Apple silicon, M5 Max) ölçüldü: yerel fixture'da (28 pod) ilk çalıştırma 112 istek yaptı ve 6.6 ile 7.1 saniye sürdü; ikinci çalıştırma yanıtları önbellekten 0.3 saniyede verdi. İlk sürenin çoğunu ağ hızı belirler.
+14 Ekim 2026'da Node.js 25.9 ile bir Mac'te (Apple silicon, M5 Max) ölçüldü: yerel fixture'da (28 pod) ilk çalıştırma 112 istek yaptı ve 6,6 ile 7,1 saniye sürdü; ikinci çalıştırma yanıtları önbellekten 0,3 saniyede verdi. İlk sürenin çoğunu ağ hızı belirler.
 
 Kayıtları yeniden oluşturmak için: `npm run demo`.
 

@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
+<!-- i18n-source: README.md@b014c05397ff44788b1d848270e2b125a0e85870 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,8 +53,10 @@ cd path/to/YourApp
 **2. 运行 podexit：**
 
 ```sh
-npx podexit
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
 ```
+
+podexit 尚未发布到 npm（已计划发布），因此 `npx podexit` 目前还无法使用。上面的命令会从 GitHub 运行 0.1.0 版本；本 README 中凡是写 `npx podexit` 的地方，都请改用这条命令。
 
 **3. 阅读表格。** 标记为 **capped** 的行最先停止更新（Firebase 将在 2026 年 10 月停止向 CocoaPods 发布）；标记为 **frozen after Dec 2** 的行在 12 月 2 日之后不会再有新版本。Swift package 一列显示 **yes** 的 pod，现在就可以迁移。最后一行会链接到适合你项目类型的指南。
 
@@ -70,7 +72,14 @@ npx podexit
 
 ## 安装
 
-无需安装：`npx podexit` 会下载并运行最新版本。若要在项目或 CI 中固定版本：
+podexit 尚未发布到 npm（已计划发布）。在此之前，可以像上面那样从 GitHub 运行 0.1.0 版本，或将其添加到项目中：
+
+```sh
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx podexit
+```
+
+发布到 npm 后，`npx podexit` 无需安装即可下载并运行最新版本。若要在项目或 CI 中固定版本：
 
 ```sh
 npm install --save-dev podexit

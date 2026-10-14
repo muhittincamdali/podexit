@@ -62,8 +62,12 @@ cd path/to/YourApp
 **2. Run podexit:**
 
 ```sh
-npx podexit
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
 ```
+
+podexit is not on npm yet (publishing it there is planned), so `npx podexit` does not work for
+now. The command above runs the 0.1.0 release from GitHub; use it wherever this README says
+`npx podexit`.
 
 **3. Read the table.** Rows marked **capped** stop first (Firebase stops publishing to CocoaPods in
 October 2026); rows marked **frozen after Dec 2** get no new versions after December 2. Where the
@@ -87,8 +91,16 @@ Read more in [What changes on December 2](docs/guides/what-changes.md).
 
 ## Installation
 
-No installation is needed: `npx podexit` downloads and runs the latest version. To pin a version
-in a project or CI:
+podexit is not on npm yet; publishing it there is planned. Until then, run the 0.1.0 release
+from GitHub as shown above, or add it to a project:
+
+```sh
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx podexit
+```
+
+Once podexit is on npm, `npx podexit` downloads and runs the latest version without installing
+anything. To pin a version in a project or CI:
 
 ```sh
 npm install --save-dev podexit

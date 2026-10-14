@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@82702970a473d6fc63b191fcd2912d2ff9e89e87 status=reviewed -->
+<!-- i18n-source: README.md@b014c05397ff44788b1d848270e2b125a0e85870 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,8 +53,10 @@ cd path/to/YourApp
 **2. Запустите podexit:**
 
 ```sh
-npx podexit
+npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
 ```
+
+podexit пока нет в npm (публикация планируется), поэтому `npx podexit` пока не работает. Команда выше запускает релиз 0.1.0 с GitHub; используйте её везде, где в этом README написано `npx podexit`.
 
 **3. Прочитайте таблицу.** Строки с пометкой **capped** останавливаются первыми (Firebase прекращает публикацию в CocoaPods в октябре 2026 года); строки с пометкой **frozen after Dec 2** не получат новых версий после 2 декабря. Если в столбце Swift package указано **yes**, pod можно переносить уже сейчас. Последняя строка содержит ссылку на руководство для вашего типа проекта.
 
@@ -70,7 +72,14 @@ npx podexit
 
 ## Установка
 
-Установка не нужна: `npx podexit` скачивает и запускает последнюю версию. Чтобы зафиксировать версию в проекте или в CI:
+podexit пока нет в npm; публикация там планируется. До тех пор запускайте релиз 0.1.0 с GitHub, как показано выше, или добавьте его в проект:
+
+```sh
+npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.0/podexit-0.1.0.tgz
+npx podexit
+```
+
+Когда podexit появится в npm, `npx podexit` будет скачивать и запускать последнюю версию без установки. Чтобы зафиксировать версию в проекте или в CI:
 
 ```sh
 npm install --save-dev podexit
@@ -163,7 +172,7 @@ console.log(render(buildReport([lockfile], { policy, offline: false }), 'markdow
 | Приложение Flutter (FlutterFire, google_sign_in, …)           | [светлая](docs/media/demo-flutter-light.svg) · [тёмная](docs/media/demo-flutter-dark.svg) |
 | Приложение Expo SDK 57 (Sentry, RevenueCat, Lottie)           | [светлая](docs/media/demo-expo-light.svg) · [тёмная](docs/media/demo-expo-dark.svg)       |
 
-Замер на Mac (Apple silicon, M5 Max) с Node.js 25.9 от 14 октября 2026 года: первый запуск на нативной фикстуре (28 pod) сделал 112 запросов и занял от 6.6 до 7.1 секунды; второй запуск ответил из кэша за 0.3 секунды. Первое значение в основном определяется скоростью сети.
+Замер на Mac (Apple silicon, M5 Max) с Node.js 25.9 от 14 октября 2026 года: первый запуск на нативной фикстуре (28 pod) сделал 112 запросов и занял от 6,6 до 7,1 секунды; второй запуск ответил из кэша за 0,3 секунды. Первое значение в основном определяется скоростью сети.
 
 Чтобы записать их заново: `npm run demo`.
 
