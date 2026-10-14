@@ -30,6 +30,8 @@ describe('data/publisher-policy.json', () => {
       name: 'Firebase',
       lastMajorOnCocoaPods: 12,
       source: 'https://firebase.google.com/docs/ios/cocoapods-deprecation',
+      // "These changes impact all of the following pods and their subdependencies"
+      includesSubdependencies: true,
     });
     expect(publisherFor(policy, 'GoogleAppMeasurement')).toBeUndefined();
   });

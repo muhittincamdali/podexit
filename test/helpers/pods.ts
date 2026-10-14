@@ -28,6 +28,7 @@ export const POLICY: PublisherPolicy = {
       lastMajorOnCocoaPods: 12,
       stoppedPublishing: '2026-10',
       summary: 'Firebase 12 is the final major version published to CocoaPods.',
+      includesSubdependencies: true,
       swiftPackage: {
         url: 'https://github.com/firebase/firebase-ios-sdk',
         note: 'All Firebase libraries are products of the firebase-ios-sdk package.',

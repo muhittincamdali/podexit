@@ -28,6 +28,7 @@ export {
   type UpdatesReport,
 } from './analyze.js';
 export {
+  classifyLockfile,
   classifyUpdates,
   describeUpdates,
   type SwiftPackageStatus,

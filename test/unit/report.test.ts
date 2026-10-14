@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { analyzeLockfile, buildReport, type Report } from '../../src/analyze.js';
 import { podspecUrl, trunkPodUrl, versionsIndexUrl } from '../../src/net/cocoapods.js';
 import { render } from '../../src/report/index.js';
-import { orderPods, requiredByLabel, summaryLines } from '../../src/report/labels.js';
+import { orderPods, requiredByLabel, summaryLines, updatesLabel } from '../../src/report/labels.js';
 import { FakeFetcher, ok } from '../helpers/fake-fetcher.js';
 import { POLICY } from '../helpers/pods.js';
 
@@ -11,8 +11,10 @@ const LOCKFILE = `PODS:
   - Alamofire (5.9.1)
   - FirebaseAnalytics (11.15.0):
     - FirebaseCore (~> 11.15.0)
-  - FirebaseCore (11.15.0)
+  - FirebaseCore (11.15.0):
+    - nanopb (~> 3.30910.0)
   - Flutter (1.0.0)
+  - nanopb (3.30910.0)
   - Pipe|Pod (1.0.0)
   - Stale (0.4.0)
 
@@ -28,6 +30,7 @@ SPEC REPOS:
     - Alamofire
     - FirebaseAnalytics
     - FirebaseCore
+    - nanopb
     - Pipe|Pod
     - Stale
 
@@ -82,6 +85,7 @@ describe('labels', async () => {
     expect(orderPods(pods).map((pod) => pod.name)).toEqual([
       'FirebaseAnalytics',
       'FirebaseCore',
+      'nanopb',
       'Alamofire',
       'Pipe|Pod',
       'Stale',
@@ -97,9 +101,18 @@ describe('labels', async () => {
   it('pluralises the summary', () => {
     const summary = report.lockfiles[0]?.summary;
     expect(summary && summaryLines(summary)).toEqual([
-      '3 frozen on trunk · 2 capped by the publisher · 1 not affected',
-      '3 pods with a Swift package · 1 without · 1 unknown',
+      '3 frozen on trunk · 3 capped by the publisher · 1 not affected',
+      '3 pods with a Swift package · 1 without · 2 unknown',
     ]);
+  });
+
+  it('labels listed capped pods with the cap and subdependencies with the publisher', () => {
+    const labels = Object.fromEntries(pods.map((pod) => [pod.name, updatesLabel(pod)]));
+    expect(labels).toMatchObject({
+      FirebaseAnalytics: 'capped at 12.x',
+      nanopb: 'capped with Firebase',
+      Alamofire: 'frozen after Dec 2',
+    });
   });
 });
 

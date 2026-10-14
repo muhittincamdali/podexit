@@ -27,6 +27,8 @@ export type SwiftPackageStatus = 'spm-available' | 'no-spm' | 'unknown' | 'not-c
 export interface UpdateClassification {
   status: UpdateStatus;
   publisher?: Publisher;
+  /** For a pod capped as a subdependency: the listed pod that pulls it in. */
+  via?: string;
 }
 
 const NOT_AFFECTED: ReadonlySet<SourceKind> = new Set(['path', 'git', 'podspec', 'spec-repo']);
@@ -39,16 +41,48 @@ export function classifyUpdates(pod: LockedPod, policy: PublisherPolicy): Update
   return publisher ? { status: 'capped', publisher } : { status: 'frozen-on-trunk' };
 }
 
+/**
+ * Update status of every pod in a lockfile. Pods are classified one by one, then trunk pods that a
+ * capped pod depends on (directly or not) are capped too when the publisher's source says its
+ * stop covers subdependencies. Breadth-first from the listed pods, so `via` names the nearest one.
+ */
+export function classifyLockfile(
+  pods: readonly LockedPod[],
+  policy: PublisherPolicy,
+): Map<string, UpdateClassification> {
+  const result = new Map(pods.map((pod) => [pod.name, classifyUpdates(pod, policy)]));
+  const byName = new Map(pods.map((pod) => [pod.name, pod]));
+  const queue = pods
+    .filter((pod) => result.get(pod.name)?.publisher?.includesSubdependencies)
+    .map((pod) => ({ pod, root: pod.name }));
+  for (let next = queue.shift(); next; next = queue.shift()) {
+    const { pod, root } = next;
+    const publisher = result.get(root)?.publisher;
+    if (!publisher) continue;
+    for (const name of pod.dependencies) {
+      const dependency = byName.get(name);
+      if (!dependency || result.get(name)?.status !== 'frozen-on-trunk') continue;
+      result.set(name, { status: 'capped', publisher, via: root });
+      queue.push({ pod: dependency, root });
+    }
+  }
+  return result;
+}
+
 /** One sentence for each update status, used by every report format. */
 export function describeUpdates(
   status: UpdateStatus,
   pod: LockedPod,
   publisher?: Publisher,
+  via?: string,
 ): string {
   switch (status) {
     case 'frozen-on-trunk':
       return 'Published on trunk: no new versions after trunk goes read-only on 2026-12-02.';
     case 'capped':
+      if (publisher && via) {
+        return `Subdependency of ${via}: ${publisher.name} stops publishing its pods and their subdependencies to CocoaPods (${publisher.stoppedPublishing}).`;
+      }
       return publisher
         ? `${publisher.name} stopped at ${publisher.lastMajorOnCocoaPods}.x on CocoaPods (${publisher.stoppedPublishing}); newer versions ship through Swift Package Manager.`
         : 'The publisher stopped releasing to CocoaPods.';

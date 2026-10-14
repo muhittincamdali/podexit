@@ -9,6 +9,7 @@ export function updatesLabel(pod: PodReport): string {
     case 'frozen-on-trunk':
       return 'frozen after Dec 2';
     case 'capped':
+      if (pod.updates.via) return `capped with ${pod.updates.publisher?.name ?? '?'}`;
       return `capped at ${pod.updates.publisher?.lastMajorOnCocoaPods ?? '?'}.x`;
     case 'not-affected':
       return 'not affected';

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { classifyUpdates, describeUpdates } from '../../src/core/classify.js';
+import { classifyLockfile, classifyUpdates, describeUpdates } from '../../src/core/classify.js';
 import type { PodSource } from '../../src/core/lockfile.js';
 import { detectProjectKind } from '../../src/core/project.js';
 import { lockedPod, POLICY } from '../helpers/pods.js';
@@ -50,6 +50,63 @@ describe('classifyUpdates', () => {
   });
 });
 
+describe('classifyLockfile', () => {
+  // FirebaseAnalytics -> GoogleAppMeasurement -> GoogleUtilities; Alamofire stands alone.
+  const pods = [
+    lockedPod('Alamofire', { kind: 'trunk' }),
+    lockedPod('FirebaseAnalytics', { kind: 'trunk' }, { dependencies: ['GoogleAppMeasurement'] }),
+    lockedPod('GoogleAppMeasurement', { kind: 'trunk' }, { dependencies: ['GoogleUtilities'] }),
+    lockedPod('GoogleUtilities', { kind: 'trunk' }, { direct: false }),
+  ];
+
+  it('caps the trunk pods a capped pod depends on, directly or not', () => {
+    const result = classifyLockfile(pods, POLICY);
+    expect(result.get('FirebaseAnalytics')).toMatchObject({ status: 'capped' });
+    expect(result.get('FirebaseAnalytics')?.via).toBeUndefined();
+    expect(result.get('GoogleAppMeasurement')).toMatchObject({
+      status: 'capped',
+      via: 'FirebaseAnalytics',
+    });
+    expect(result.get('GoogleUtilities')).toMatchObject({
+      status: 'capped',
+      via: 'FirebaseAnalytics',
+    });
+    expect(result.get('Alamofire')?.status).toBe('frozen-on-trunk');
+  });
+
+  it('names the nearest listed pod as the one that pulls a dependency in', () => {
+    const result = classifyLockfile(
+      [
+        lockedPod('FirebaseAnalytics', { kind: 'trunk' }, { dependencies: ['FirebaseCore'] }),
+        lockedPod('FirebaseCore', { kind: 'trunk' }, { dependencies: ['FirebaseCoreInternal'] }),
+        lockedPod('FirebaseCoreInternal', { kind: 'trunk' }),
+      ],
+      POLICY,
+    );
+    // FirebaseCore is listed itself, so it is capped directly, not as a subdependency.
+    expect(result.get('FirebaseCore')?.via).toBeUndefined();
+    expect(result.get('FirebaseCoreInternal')?.via).toBe('FirebaseCore');
+  });
+
+  it('leaves dependencies from local paths, git and private specs alone', () => {
+    const result = classifyLockfile(
+      [
+        lockedPod('FirebaseAnalytics', { kind: 'trunk' }, { dependencies: ['Vendored'] }),
+        lockedPod('Vendored', { kind: 'path', path: '../Vendored' }),
+      ],
+      POLICY,
+    );
+    expect(result.get('Vendored')?.status).toBe('not-affected');
+  });
+
+  it('does not cap dependencies when the source does not cover them', () => {
+    const [firebase] = POLICY.publishers;
+    if (!firebase) throw new Error('POLICY has no publisher');
+    const policy = { ...POLICY, publishers: [{ ...firebase, includesSubdependencies: false }] };
+    expect(classifyLockfile(pods, policy).get('GoogleUtilities')?.status).toBe('frozen-on-trunk');
+  });
+});
+
 describe('describeUpdates', () => {
   it('never says a frozen pod breaks', () => {
     const text = describeUpdates('frozen-on-trunk', lockedPod('Alamofire', { kind: 'trunk' }));
@@ -61,6 +118,14 @@ describe('describeUpdates', () => {
     const publisher = POLICY.publishers[0];
     const text = describeUpdates('capped', lockedPod('FirebaseCore', { kind: 'trunk' }), publisher);
     expect(text).toContain('Firebase stopped at 12.x on CocoaPods');
+  });
+
+  it('names the listed pod for a capped subdependency', () => {
+    const [firebase] = POLICY.publishers;
+    const pod = lockedPod('GoogleUtilities', { kind: 'trunk' });
+    expect(describeUpdates('capped', pod, firebase, 'FirebaseAnalytics')).toBe(
+      'Subdependency of FirebaseAnalytics: Firebase stops publishing its pods and their subdependencies to CocoaPods (2026-10).',
+    );
   });
 
   it('names the source for pods outside trunk', () => {

@@ -185,6 +185,48 @@ describe('analyzeLockfile without a network', () => {
   });
 });
 
+describe('capped subdependencies', () => {
+  const lockfile = `PODS:
+  - FirebaseCore (12.4.0):
+    - GoogleUtilities/Environment (~> 8.1)
+  - GoogleUtilities/Environment (8.1.4)
+
+DEPENDENCIES:
+  - FirebaseCore
+
+SPEC REPOS:
+  trunk:
+    - FirebaseCore
+    - GoogleUtilities
+`;
+
+  it('caps them and looks up their own Swift package upstream', async () => {
+    const fetcher = new FakeFetcher({
+      [podspecUrl('GoogleUtilities', '8.1.4')]: ok({
+        name: 'GoogleUtilities',
+        version: '8.1.4',
+        source: { git: 'https://github.com/google/GoogleUtilities.git', tag: '8.1.4' },
+      }),
+      [raw('google/GoogleUtilities')]: { status: 200, body: '' },
+      [raw('google/GoogleUtilities', '8.1.4')]: { status: 200, body: '' },
+    });
+    const report = await analyzeLockfile(lockfile, 'Podfile.lock', { fetcher, policy: POLICY });
+    const utilities = report.pods.find(({ name }) => name === 'GoogleUtilities');
+    expect(utilities?.updates).toMatchObject({
+      status: 'capped',
+      via: 'FirebaseCore',
+      publisher: { id: 'firebase' },
+    });
+    expect(utilities?.swiftPackage).toMatchObject({
+      status: 'spm-available',
+      via: 'upstream',
+      repository: 'https://github.com/google/GoogleUtilities',
+      atLockedVersion: true,
+    });
+    expect(report.summary).toMatchObject({ capped: 2, frozenOnTrunk: 0 });
+  });
+});
+
 describe('buildReport', () => {
   it('always carries the builds-keep-working note and the timeline', () => {
     const report = buildReport([], {

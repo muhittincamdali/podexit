@@ -1,6 +1,7 @@
 import {
-  classifyUpdates,
+  classifyLockfile,
   describeUpdates,
+  type UpdateClassification,
   type SwiftPackageStatus,
   type UpdateStatus,
 } from './core/classify.js';
@@ -31,6 +32,8 @@ export interface UpdatesReport {
   lockedReleasedAt: string | null;
   /** True when trunk has a newer release than the locked version. */
   behindTrunk: boolean | null;
+  /** For a pod capped as a subdependency: the listed pod that pulls it in. */
+  via?: string;
   publisher?: Pick<Publisher, 'id' | 'name' | 'lastMajorOnCocoaPods' | 'source'>;
 }
 
@@ -123,19 +126,19 @@ async function trunkFacts(fetcher: Fetcher, pod: LockedPod): Promise<TrunkFacts>
 
 function updatesReport(
   pod: LockedPod,
-  policy: PublisherPolicy,
+  { status, publisher, via }: UpdateClassification,
   facts: TrunkFacts | null,
 ): UpdatesReport {
-  const { status, publisher } = classifyUpdates(pod, policy);
   const latest = facts?.latest ?? null;
   const report: UpdatesReport = {
     status,
-    summary: describeUpdates(status, pod, publisher),
+    summary: describeUpdates(status, pod, publisher, via),
     latestOnTrunk: latest,
     latestReleasedAt: latest ? (facts?.dates?.get(latest) ?? null) : null,
     lockedReleasedAt: facts?.dates?.get(pod.version) ?? null,
     behindTrunk: latest ? compareVersions(pod.version, latest) < 0 : null,
   };
+  if (via) report.via = via;
   if (publisher) {
     const { id, name, lastMajorOnCocoaPods, source } = publisher;
     report.publisher = { id, name, lastMajorOnCocoaPods, source };
@@ -195,11 +198,11 @@ async function upstreamPackage(
 async function swiftPackageReport(
   fetcher: Fetcher,
   pod: LockedPod,
-  policy: PublisherPolicy,
+  { publisher, via }: UpdateClassification,
   facts: TrunkFacts | null,
 ): Promise<SwiftPackageReport> {
-  const { publisher } = classifyUpdates(pod, policy);
-  if (publisher?.swiftPackage) {
+  // Subdependencies are separate projects (GoogleUtilities, nanopb), so they are looked up upstream.
+  if (publisher?.swiftPackage && !via) {
     return {
       status: 'spm-available',
       summary: `${publisher.swiftPackage.note} (${publisher.source})`,
@@ -237,8 +240,12 @@ async function swiftPackageReport(
   return { status: 'unknown', summary, repository: null, atLockedVersion: null, via: null };
 }
 
-async function analyzePod(pod: LockedPod, options: AnalyzeOptions): Promise<PodReport> {
-  const facts = pod.source.kind === 'trunk' ? await trunkFacts(options.fetcher, pod) : null;
+async function analyzePod(
+  pod: LockedPod,
+  classification: UpdateClassification,
+  fetcher: Fetcher,
+): Promise<PodReport> {
+  const facts = pod.source.kind === 'trunk' ? await trunkFacts(fetcher, pod) : null;
   return {
     name: pod.name,
     version: pod.version,
@@ -246,8 +253,8 @@ async function analyzePod(pod: LockedPod, options: AnalyzeOptions): Promise<PodR
     direct: pod.direct,
     requiredBy: pod.requiredBy,
     source: pod.source,
-    updates: updatesReport(pod, options.policy, facts),
-    swiftPackage: await swiftPackageReport(options.fetcher, pod, options.policy, facts),
+    updates: updatesReport(pod, classification, facts),
+    swiftPackage: await swiftPackageReport(fetcher, pod, classification, facts),
   };
 }
 
@@ -291,8 +298,9 @@ export async function analyzeLockfile(
   options: AnalyzeOptions,
 ): Promise<LockfileReport> {
   const lockfile = parseLockfile(text);
+  const classifications = classifyLockfile(lockfile.pods, options.policy);
   const pods = await mapLimit(lockfile.pods, options.concurrency ?? 8, (pod) =>
-    analyzePod(pod, options),
+    analyzePod(pod, classifications.get(pod.name) ?? { status: 'unknown' }, options.fetcher),
   );
   const project = detectProjectKind(lockfile.pods, path);
   return {
