@@ -139,7 +139,7 @@ jobs:
       id-token: write
     environment:
       name: npm
-      url: https://www.npmjs.com/package/podexit/v/${{ needs.verify.outputs.version }}
+      url: https://www.npmjs.com/package/@mcamdali/podexit/v/${{ needs.verify.outputs.version }}
     steps:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
@@ -157,7 +157,7 @@ jobs:
         run: |
           tag="latest"
           case "$VERSION" in *-*) tag="next" ;; esac
-          npm publish "release/podexit-$VERSION.tgz" --provenance --access public --tag "$tag"
+          npm publish "release/mcamdali-podexit-$VERSION.tgz" --provenance --access public --tag "$tag"
 
   homebrew:
     name: Homebrew formula
@@ -183,7 +183,7 @@ jobs:
         env:
           VERSION: ${{ needs.verify.outputs.version }}
         run: |
-          url="https://registry.npmjs.org/podexit/-/podexit-$VERSION.tgz"
+          url="https://registry.npmjs.org/@mcamdali/podexit/-/podexit-$VERSION.tgz"
           for attempt in $(seq 1 20); do
             if curl -fsSL -o "$RUNNER_TEMP/podexit.tgz" "$url"; then break; fi
             if [ "$attempt" = 20 ]; then echo "::error::$url is not available"; exit 1; fi
@@ -226,4 +226,4 @@ jobs:
           git push origin "$branch"
           gh pr create --repo muhittincamdali/homebrew-tap --head "$branch" \
             --title "podexit $VERSION" \
-            --body "Updates Formula/podexit.rb to podexit $VERSION (https://www.npmjs.com/package/podexit/v/$VERSION)."
+            --body "Updates Formula/podexit.rb to podexit $VERSION (https://www.npmjs.com/package/@mcamdali/podexit/v/$VERSION)."
