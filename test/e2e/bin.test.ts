@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-// The compiled entry point, as `npx podexit` runs it (test/setup/build.ts builds it first).
+// The compiled entry point, as `npx @mcamdali/podexit` runs it (test/setup/build.ts builds it first).
 const BIN = fileURLToPath(new URL('../../dist/cli/main.js', import.meta.url));
 const PACKAGE = fileURLToPath(new URL('../../package.json', import.meta.url));
 

@@ -3,7 +3,7 @@
  * `schemaVersion` 0 and may change before 1.0.
  *
  * ```ts
- * import { analyzeLockfile, buildReport, CachedFetcher, HttpFetcher, loadPublisherPolicy, render } from 'podexit';
+ * import { analyzeLockfile, buildReport, CachedFetcher, HttpFetcher, loadPublisherPolicy, render } from '@mcamdali/podexit';
  *
  * const policy = loadPublisherPolicy();
  * const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), { directory: '.cache' });

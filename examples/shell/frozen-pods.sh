@@ -6,7 +6,7 @@
 #   sh examples/shell/frozen-pods.sh fixtures/flutter-plugin --offline --cache-dir fixtures/responses
 set -eu
 
-npx --yes podexit --format json "$@" | jq -r '
+npx --yes @mcamdali/podexit --format json "$@" | jq -r '
   .lockfiles[]
   | .path as $lockfile
   | .pods[]

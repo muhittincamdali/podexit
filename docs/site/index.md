@@ -6,12 +6,10 @@ getting updates and whether it already ships a Swift package, for native iOS, Fl
 Native/Expo projects.
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-podexit is not on npm yet (publishing it there is planned), so `npx podexit` does not work for
-now. The command above runs the 0.1.1 release from GitHub; use it wherever these pages say
-`npx podexit`.
+The npm package is `@mcamdali/podexit`; the command it installs is `podexit`.
 
 ## Guides
 
@@ -28,7 +26,7 @@ The command line is a thin layer over the package's exports, so the same analysi
 JavaScript:
 
 ```ts
-import { analyzeLockfile, buildReport, CachedFetcher, HttpFetcher, loadPublisherPolicy, render } from 'podexit';
+import { analyzeLockfile, buildReport, CachedFetcher, HttpFetcher, loadPublisherPolicy, render } from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), { directory: '.cache' });

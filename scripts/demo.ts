@@ -33,7 +33,7 @@ export function record(demo: Demo): Session {
   return {
     title: demo.title,
     comment: `# fixtures/${demo.fixture}: real lockfile, trunk and GitHub answers recorded 2026-10-14`,
-    command: 'npx podexit --offline --cache-dir ../responses',
+    command: 'npx @mcamdali/podexit --offline --cache-dir ../responses',
     output,
   };
 }
