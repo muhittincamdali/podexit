@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
+<!-- i18n-source: README.md@1c83a153cf8713f20722fb4899b14a3a0509ab39 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. podexit'i çalıştırın:**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-podexit henüz npm'de yok (yayımlanması planlanıyor), bu yüzden `npx podexit` şimdilik çalışmaz. Yukarıdaki komut 0.1.1 sürümünü GitHub'dan çalıştırır; bu README'de `npx podexit` geçen her yerde onu kullanın.
+npm paketi `@mcamdali/podexit`tir (npm kapsamsız adı reddetti); kurduğu komut hâlâ `podexit`'tir.
 
 **3. Tabloyu okuyun.** **capped** işaretli satırlar ilk önce durur (Firebase, CocoaPods'a yayımlamayı Ekim 2026'da bırakıyor); **frozen after Dec 2** işaretli satırlar 2 Aralık'tan sonra yeni sürüm almaz. Swift package sütununda **yes** yazıyorsa pod şimdiden taşınabilir. Son satır, proje türünüze uygun rehbere bağlantı verir.
 
@@ -72,21 +72,21 @@ Ayrıntılar için [2 Aralık'ta neler değişiyor](docs/guides/what-changes.md)
 
 ## Kurulum
 
-podexit henüz npm'de yok; yayımlanması planlanıyor. O zamana kadar 0.1.1 sürümünü yukarıdaki gibi GitHub'dan çalıştırın ya da bir projeye ekleyin:
+Kurmadan çalıştırın ya da sürümü sabitlemek için bir projeye ekleyin:
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
-npx podexit
+npm install --save-dev @mcamdali/podexit
+npx @mcamdali/podexit
 ```
 
-podexit npm'e geldiğinde `npx podexit` hiçbir şey kurmadan en son sürümü indirip çalıştırır. Bir projede veya CI'da sürümü sabitlemek için:
+Komutu genel olarak kurmak için:
 
 ```sh
-npm install --save-dev podexit
-npx podexit
+npm i -g @mcamdali/podexit
+podexit
 ```
 
-ya da `npm install --global podexit` ile genel olarak kurun. `muhittincamdali/tap` için bir Homebrew formülü sürüm iş akışı tarafından hazırlanır (tap'in ilk sürümüyle birlikte planlanıyor).
+Homebrew kullananlar, GitHub'daki sürüm arşivini kuran `brew install muhittincamdali/tap/podexit` komutunu çalıştırabilir.
 
 ## Kullanım
 
@@ -119,7 +119,7 @@ Yol verilmezse podexit `Podfile.lock`, `ios/Podfile.lock`, `macos/Podfile.lock`,
 ### Markdown raporunu kodla birlikte saklayın
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 Markdown sürümünde aynı tablolar, yayın tarihleri ve her Swift paketi deposuna bağlantılar bulunur; yerel yol ve git kaynaklı pod'lar bir `<details>` bloğunda toplanır.
@@ -127,7 +127,7 @@ Markdown sürümünde aynı tablolar, yayın tarihleri ve her Swift paketi depos
 ### JSON raporunu betiklerde kullanın
 
 ```sh
-npx podexit --format json > podexit.json
+npx @mcamdali/podexit --format json > podexit.json
 ```
 
 Her pod; `updates.status`, `swiftPackage.status`, trunk'taki son sürümü ve tarihini, ayrıca her yanıtı açıklayan bir cümle taşır. Şema `schemaVersion` 0'dır ve 1.0'dan önce değişebilir. [examples/shell/frozen-pods.sh](examples/shell/frozen-pods.sh) bunu `jq` ile süzer.
@@ -150,7 +150,7 @@ import {
   HttpFetcher,
   loadPublisherPolicy,
   render,
-} from 'podexit';
+} from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), {

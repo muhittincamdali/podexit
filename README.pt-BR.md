@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
+<!-- i18n-source: README.md@1c83a153cf8713f20722fb4899b14a3a0509ab39 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. Execute o podexit:**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-O podexit ainda não está no npm (a publicação está prevista), então `npx podexit` ainda não funciona. O comando acima executa a versão 0.1.1 a partir do GitHub; use-o sempre que este README disser `npx podexit`.
+O pacote do npm se chama `@mcamdali/podexit` (o npm recusou o nome sem escopo); o comando que ele instala continua sendo `podexit`.
 
 **3. Leia a tabela.** As linhas marcadas como **capped** são as primeiras a parar (o Firebase deixa de publicar no CocoaPods em outubro de 2026); as marcadas como **frozen after Dec 2** não recebem novas versões depois de 2 de dezembro. Onde a coluna Swift package mostra **yes**, o pod já pode ser migrado. A última linha aponta o guia do seu tipo de projeto.
 
@@ -72,21 +72,21 @@ Saiba mais em [O que muda em 2 de dezembro](docs/guides/what-changes.md).
 
 ## Instalação
 
-O podexit ainda não está no npm; a publicação lá está prevista. Até lá, execute a versão 0.1.1 a partir do GitHub como mostrado acima ou adicione-a a um projeto:
+Execute sem instalar, ou adicione a um projeto para fixar uma versão:
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
-npx podexit
+npm install --save-dev @mcamdali/podexit
+npx @mcamdali/podexit
 ```
 
-Quando o podexit estiver no npm, `npx podexit` vai baixar e executar a versão mais recente sem instalar nada. Para fixar uma versão em um projeto ou no CI:
+Para instalar o comando globalmente:
 
 ```sh
-npm install --save-dev podexit
-npx podexit
+npm i -g @mcamdali/podexit
+podexit
 ```
 
-ou instale globalmente com `npm install --global podexit`. O workflow de release prepara uma fórmula do Homebrew para `muhittincamdali/tap` (prevista para o primeiro release do tap).
+Com o Homebrew, `brew install muhittincamdali/tap/podexit` instala o tarball do release publicado no GitHub.
 
 ## Uso
 
@@ -119,7 +119,7 @@ Sem caminhos, o podexit lê cada lockfile que encontrar em `Podfile.lock`, `ios/
 ### Mantenha um relatório em Markdown junto com o código
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 A versão em Markdown tem as mesmas tabelas, as datas de lançamento e os links para o repositório de cada pacote Swift; pods de caminhos locais e de git ficam agrupados em um bloco `<details>`.
@@ -127,7 +127,7 @@ A versão em Markdown tem as mesmas tabelas, as datas de lançamento e os links 
 ### Use o relatório JSON em scripts
 
 ```sh
-npx podexit --format json > podexit.json
+npx @mcamdali/podexit --format json > podexit.json
 ```
 
 Cada pod traz `updates.status`, `swiftPackage.status`, a versão mais recente no trunk com a data e uma frase que explica cada resposta. O formato é `schemaVersion` 0 e pode mudar antes da 1.0. [examples/shell/frozen-pods.sh](examples/shell/frozen-pods.sh) o filtra com `jq`.
@@ -150,7 +150,7 @@ import {
   HttpFetcher,
   loadPublisherPolicy,
   render,
-} from 'podexit';
+} from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), {

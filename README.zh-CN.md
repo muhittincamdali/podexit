@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
+<!-- i18n-source: README.md@1c83a153cf8713f20722fb4899b14a3a0509ab39 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. 运行 podexit：**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-podexit 尚未发布到 npm（已计划发布），因此 `npx podexit` 目前还无法使用。上面的命令会从 GitHub 运行 0.1.1 版本；本 README 中凡是写 `npx podexit` 的地方，都请改用这条命令。
+npm 包名为 `@mcamdali/podexit`（npm 拒绝了不带作用域的名称）；它安装的命令仍然是 `podexit`。
 
 **3. 阅读表格。** 标记为 **capped** 的行最先停止更新（Firebase 将在 2026 年 10 月停止向 CocoaPods 发布）；标记为 **frozen after Dec 2** 的行在 12 月 2 日之后不会再有新版本。Swift package 一列显示 **yes** 的 pod，现在就可以迁移。最后一行会链接到适合你项目类型的指南。
 
@@ -72,21 +72,21 @@ podexit 尚未发布到 npm（已计划发布），因此 `npx podexit` 目前�
 
 ## 安装
 
-podexit 尚未发布到 npm（已计划发布）。在此之前，可以像上面那样从 GitHub 运行 0.1.1 版本，或将其添加到项目中：
+无需安装即可直接运行，或将其添加到项目中以固定版本：
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
-npx podexit
+npm install --save-dev @mcamdali/podexit
+npx @mcamdali/podexit
 ```
 
-发布到 npm 后，`npx podexit` 无需安装即可下载并运行最新版本。若要在项目或 CI 中固定版本：
+若要全局安装该命令：
 
 ```sh
-npm install --save-dev podexit
-npx podexit
+npm i -g @mcamdali/podexit
+podexit
 ```
 
-也可以用 `npm install --global podexit` 全局安装。`muhittincamdali/tap` 的 Homebrew formula 由发布工作流准备（计划随 tap 的首个版本一同提供）。
+Homebrew 用户可以运行 `brew install muhittincamdali/tap/podexit`，它会安装 GitHub 上的发布压缩包。
 
 ## 使用方法
 
@@ -119,7 +119,7 @@ podexit [paths...] [options]
 ### 把 Markdown 报告和代码一起保存
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 Markdown 版本包含相同的表格、发布日期和指向各 Swift 包仓库的链接；来自本地路径和 git 的 pod 会折叠在一个 `<details>` 块中。
@@ -127,7 +127,7 @@ Markdown 版本包含相同的表格、发布日期和指向各 Swift 包仓库�
 ### 在脚本中使用 JSON 报告
 
 ```sh
-npx podexit --format json > podexit.json
+npx @mcamdali/podexit --format json > podexit.json
 ```
 
 每个 pod 都带有 `updates.status`、`swiftPackage.status`、trunk 上的最新版本及其日期，以及一句解释每个结论的话。其结构为 `schemaVersion` 0，在 1.0 之前可能发生变化。[examples/shell/frozen-pods.sh](examples/shell/frozen-pods.sh) 用 `jq` 对其进行过滤。
@@ -150,7 +150,7 @@ import {
   HttpFetcher,
   loadPublisherPolicy,
   render,
-} from 'podexit';
+} from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), {

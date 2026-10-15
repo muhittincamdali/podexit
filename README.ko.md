@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
+<!-- i18n-source: README.md@1c83a153cf8713f20722fb4899b14a3a0509ab39 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. podexit을 실행합니다.**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-podexit은 아직 npm에 없어서(게시 예정) `npx podexit`은 아직 동작하지 않습니다. 위 명령은 GitHub에서 0.1.1 릴리스를 실행합니다. 이 README에서 `npx podexit`이라고 적힌 곳에서는 이 명령을 사용하세요.
+npm 패키지 이름은 `@mcamdali/podexit`입니다(npm이 스코프 없는 이름을 거부했습니다). 설치되는 명령은 여전히 `podexit`입니다.
 
 **3. 표를 읽습니다.** **capped**로 표시된 행이 가장 먼저 멈춥니다(Firebase는 2026년 10월에 CocoaPods 게시를 중단합니다). **frozen after Dec 2**로 표시된 행은 12월 2일 이후 새 버전을 받지 못합니다. Swift package 열이 **yes**이면 그 pod는 지금 옮길 수 있습니다. 마지막 줄에는 프로젝트 종류에 맞는 가이드 링크가 표시됩니다.
 
@@ -72,21 +72,21 @@ podexit은 아직 npm에 없어서(게시 예정) `npx podexit`은 아직 동작
 
 ## 설치
 
-podexit은 아직 npm에 없습니다(게시 예정). 그때까지는 위와 같이 GitHub에서 0.1.1 릴리스를 실행하거나 프로젝트에 추가합니다.
+설치 없이 실행하거나, 버전을 고정하려면 프로젝트에 추가합니다.
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
-npx podexit
+npm install --save-dev @mcamdali/podexit
+npx @mcamdali/podexit
 ```
 
-npm에 게시되면 `npx podexit`이 설치 없이 최신 버전을 내려받아 실행합니다. 프로젝트나 CI에서 버전을 고정하려면 다음과 같이 합니다.
+명령을 전역으로 설치하려면 다음과 같이 합니다.
 
 ```sh
-npm install --save-dev podexit
-npx podexit
+npm i -g @mcamdali/podexit
+podexit
 ```
 
-또는 `npm install --global podexit`으로 전역 설치할 수도 있습니다. `muhittincamdali/tap`용 Homebrew formula는 릴리스 워크플로가 준비합니다(tap의 첫 릴리스와 함께 제공할 계획).
+Homebrew 사용자는 `brew install muhittincamdali/tap/podexit`을 실행할 수 있으며, GitHub의 릴리스 tarball이 설치됩니다.
 
 ## 사용법
 
@@ -119,7 +119,7 @@ podexit [paths...] [options]
 ### Markdown 보고서를 코드와 함께 보관하기
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 Markdown 버전에도 같은 표, 릴리스 날짜, 각 Swift 패키지 저장소로 가는 링크가 들어 있습니다. 로컬 경로와 git의 pod는 `<details>` 블록으로 접힙니다.
@@ -127,7 +127,7 @@ Markdown 버전에도 같은 표, 릴리스 날짜, 각 Swift 패키지 저장�
 ### 스크립트에서 JSON 보고서 사용하기
 
 ```sh
-npx podexit --format json > podexit.json
+npx @mcamdali/podexit --format json > podexit.json
 ```
 
 각 pod에는 `updates.status`, `swiftPackage.status`, trunk의 최신 버전과 그 날짜, 그리고 각 답을 설명하는 문장이 담겨 있습니다. 구조는 `schemaVersion` 0이며 1.0 이전에 바뀔 수 있습니다. [examples/shell/frozen-pods.sh](examples/shell/frozen-pods.sh)는 `jq`로 이를 걸러 냅니다.
@@ -150,7 +150,7 @@ import {
   HttpFetcher,
   loadPublisherPolicy,
   render,
-} from 'podexit';
+} from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), {
