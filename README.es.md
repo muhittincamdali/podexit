@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
+<!-- i18n-source: README.md@1c83a153cf8713f20722fb4899b14a3a0509ab39 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. Ejecuta podexit:**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-podexit aún no está en npm (su publicación está prevista), así que `npx podexit` todavía no funciona. El comando de arriba ejecuta la versión 0.1.1 desde GitHub; úsalo donde este README diga `npx podexit`.
+El paquete de npm es `@mcamdali/podexit` (npm rechazó el nombre sin ámbito); el comando que instala sigue siendo `podexit`.
 
 **3. Lee la tabla.** Las filas marcadas como **capped** son las primeras en detenerse (Firebase deja de publicar en CocoaPods en octubre de 2026); las marcadas como **frozen after Dec 2** no reciben versiones nuevas después del 2 de diciembre. Donde la columna Swift package dice **yes**, el pod se puede migrar ya. La última línea enlaza la guía para tu tipo de proyecto.
 
@@ -72,21 +72,21 @@ Más información en [Qué cambia el 2 de diciembre](docs/guides/what-changes.md
 
 ## Instalación
 
-podexit aún no está en npm; su publicación está prevista. Mientras tanto, ejecuta la versión 0.1.1 desde GitHub como se muestra arriba o añádela a un proyecto:
+Ejecútalo sin instalar, o añádelo a un proyecto para fijar una versión:
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
-npx podexit
+npm install --save-dev @mcamdali/podexit
+npx @mcamdali/podexit
 ```
 
-Cuando podexit esté en npm, `npx podexit` descargará y ejecutará la última versión sin instalar nada. Para fijar una versión en un proyecto o en CI:
+Para instalar el comando de forma global:
 
 ```sh
-npm install --save-dev podexit
-npx podexit
+npm i -g @mcamdali/podexit
+podexit
 ```
 
-o instálalo de forma global con `npm install --global podexit`. El flujo de publicación prepara una fórmula de Homebrew para `muhittincamdali/tap` (prevista con la primera publicación del tap).
+Con Homebrew puedes ejecutar `brew install muhittincamdali/tap/podexit`, que instala el tarball de la versión publicada en GitHub.
 
 ## Uso
 
@@ -119,7 +119,7 @@ Sin rutas, podexit lee cada lockfile que encuentra en `Podfile.lock`, `ios/Podfi
 ### Guarda un informe en Markdown junto al código
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 La versión en Markdown tiene las mismas tablas, las fechas de publicación y los enlaces al repositorio de cada paquete de Swift; los pods de rutas locales y de git se agrupan en un bloque `<details>`.
@@ -127,7 +127,7 @@ La versión en Markdown tiene las mismas tablas, las fechas de publicación y lo
 ### Usa el informe JSON en scripts
 
 ```sh
-npx podexit --format json > podexit.json
+npx @mcamdali/podexit --format json > podexit.json
 ```
 
 Cada pod incluye `updates.status`, `swiftPackage.status`, la última versión en trunk con su fecha y una frase que explica cada respuesta. El formato es `schemaVersion` 0 y puede cambiar antes de la 1.0. [examples/shell/frozen-pods.sh](examples/shell/frozen-pods.sh) lo filtra con `jq`.
@@ -150,7 +150,7 @@ import {
   HttpFetcher,
   loadPublisherPolicy,
   render,
-} from 'podexit';
+} from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), {

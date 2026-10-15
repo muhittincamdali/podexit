@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 export interface FormulaInput {
   version: string;
-  /** SHA-256 of https://registry.npmjs.org/podexit/-/podexit-<version>.tgz */
+  /** SHA-256 of https://registry.npmjs.org/@mcamdali/podexit/-/podexit-<version>.tgz */
   sha256: string;
 }
 
@@ -21,7 +21,7 @@ export function formula({ version, sha256 }: FormulaInput): string {
   return `class Podexit < Formula
   desc "${DESCRIPTION}"
   homepage "https://github.com/muhittincamdali/podexit"
-  url "https://registry.npmjs.org/podexit/-/podexit-${version}.tgz"
+  url "https://registry.npmjs.org/@mcamdali/podexit/-/podexit-${version}.tgz"
   sha256 "${sha256}"
   license "MIT"
 

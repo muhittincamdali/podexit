@@ -4,7 +4,7 @@ exports[`Homebrew formula > installs the npm tarball of the given version with H
 "class Podexit < Formula
   desc "Show which CocoaPods stop getting updates when trunk goes read-only"
   homepage "https://github.com/muhittincamdali/podexit"
-  url "https://registry.npmjs.org/podexit/-/podexit-0.1.0.tgz"
+  url "https://registry.npmjs.org/@mcamdali/podexit/-/podexit-0.1.0.tgz"
   sha256 "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
   license "MIT"
 

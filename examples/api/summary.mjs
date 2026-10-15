@@ -4,10 +4,15 @@
 //
 // Without arguments it reads the five fixtures offline, from the answers recorded in
 // fixtures/responses, so it works without a network. In your own project, install podexit
-// (`npm install --save-dev podexit`), pass your lockfile, and swap OfflineFetcher for HttpFetcher.
+// (`npm install --save-dev @mcamdali/podexit`), pass your lockfile, and swap OfflineFetcher for HttpFetcher.
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { analyzeLockfile, CachedFetcher, loadPublisherPolicy, OfflineFetcher } from 'podexit';
+import {
+  analyzeLockfile,
+  CachedFetcher,
+  loadPublisherPolicy,
+  OfflineFetcher,
+} from '@mcamdali/podexit';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const lockfiles = process.argv.slice(2);

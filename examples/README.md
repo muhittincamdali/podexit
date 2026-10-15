@@ -13,5 +13,5 @@ node examples/api/summary.mjs
 sh examples/shell/frozen-pods.sh fixtures/flutter-plugin --offline --cache-dir fixtures/responses
 ```
 
-`summary.mjs` imports `podexit` by name; inside this repository that resolves to the package
+`summary.mjs` imports `@mcamdali/podexit` by name; inside this repository that resolves to the package
 itself, so it runs the code you just built. CI runs it on every change.

@@ -7,6 +7,12 @@ All notable changes to podexit are listed here. The format follows
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-10-15
+
+### Changed
+
+- The npm package is published as @mcamdali/podexit (the registry rejected the unscoped name); the command is still podexit.
+
 ## [0.1.1] - 2026-10-15
 
 ### Fixed
@@ -47,6 +53,7 @@ All notable changes to podexit are listed here. The format follows
 - Guides for native iOS, Flutter, React Native and Expo, Firebase and pod authors, and an API
   reference site.
 
-[Unreleased]: https://github.com/muhittincamdali/podexit/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/muhittincamdali/podexit/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/muhittincamdali/podexit/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/muhittincamdali/podexit/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/muhittincamdali/podexit/releases/tag/v0.1.0

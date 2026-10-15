@@ -62,12 +62,11 @@ cd path/to/YourApp
 **2. Run podexit:**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-podexit is not on npm yet (publishing it there is planned), so `npx podexit` does not work for
-now. The command above runs the 0.1.1 release from GitHub; use it wherever this README says
-`npx podexit`.
+The npm package is `@mcamdali/podexit` (npm rejected the unscoped name); the command it installs
+is still `podexit`.
 
 **3. Read the table.** Rows marked **capped** stop first (Firebase stops publishing to CocoaPods in
 October 2026); rows marked **frozen after Dec 2** get no new versions after December 2. Where the
@@ -91,25 +90,22 @@ Read more in [What changes on December 2](docs/guides/what-changes.md).
 
 ## Installation
 
-podexit is not on npm yet; publishing it there is planned. Until then, run the 0.1.1 release
-from GitHub as shown above, or add it to a project:
+Run it without installing, or add it to a project to pin a version:
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
-npx podexit
+npm install --save-dev @mcamdali/podexit
+npx @mcamdali/podexit
 ```
 
-Once podexit is on npm, `npx podexit` downloads and runs the latest version without installing
-anything. To pin a version in a project or CI:
+To install the command globally:
 
 ```sh
-npm install --save-dev podexit
-npx podexit
+npm i -g @mcamdali/podexit
+podexit
 ```
 
-or install it globally with `npm install --global podexit`. A Homebrew formula for
-`muhittincamdali/tap` is prepared by the release workflow (planned with the first release of the
-tap).
+With Homebrew, `brew install muhittincamdali/tap/podexit` installs the release tarball from
+GitHub.
 
 ## Usage
 
@@ -145,7 +141,7 @@ as a path is searched the same way.
 ### Keep a Markdown report with the code
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 The Markdown version has the same tables, release dates and links to each Swift package
@@ -154,7 +150,7 @@ repository; pods from local paths and git are folded into a `<details>` block.
 ### Use the JSON report in scripts
 
 ```sh
-npx podexit --format json > podexit.json
+npx @mcamdali/podexit --format json > podexit.json
 ```
 
 Each pod carries `updates.status`, `swiftPackage.status`, the latest version on trunk and its
@@ -182,7 +178,7 @@ import {
   HttpFetcher,
   loadPublisherPolicy,
   render,
-} from 'podexit';
+} from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), {

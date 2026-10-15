@@ -23,7 +23,7 @@ therefore remove its trunk pods; run podexit again after upgrading.
 ## Steps
 
 ```sh
-npx podexit            # in the app folder; reads ios/Podfile.lock
+npx @mcamdali/podexit            # in the app folder; reads ios/Podfile.lock
 ```
 
 1. For each trunk pod, look at "Pulled in by" to find the React Native library that needs it.

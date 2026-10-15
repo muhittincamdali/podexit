@@ -12,7 +12,7 @@ with Flutter 3.41.5 and CocoaPods 1.16.2 on 14 October 2026.
 ## Apps
 
 ```sh
-npx podexit            # in the app folder; reads ios/Podfile.lock and macos/Podfile.lock
+npx @mcamdali/podexit            # in the app folder; reads ios/Podfile.lock and macos/Podfile.lock
 ```
 
 The "Pulled in by" column names the plugin pod that brings each SDK in, for example
@@ -29,7 +29,7 @@ CocoaPods while any plugin in the project does not support it. So the work is:
 2. If you turned Swift Package Manager off earlier, turn it back on:
    `flutter config --enable-swift-package-manager` (or remove `enable-swift-package-manager: false`
    from the `flutter: config:` section of `pubspec.yaml`).
-3. Run `npx podexit` again. What is left are plugins still on CocoaPods; check their issue
+3. Run `npx @mcamdali/podexit` again. What is left are plugins still on CocoaPods; check their issue
    trackers for Swift Package Manager support.
 4. When every plugin supports it, follow the Flutter documentation to remove CocoaPods
    integration (`pod deintegrate`, then delete `ios/Podfile`, `ios/Podfile.lock`, `ios/Pods/` and
@@ -44,7 +44,7 @@ latest FlutterFire moves the Apple side to Swift Package Manager automatically.
 Run podexit on the example app, which is where a plugin's lockfile lives:
 
 ```sh
-npx podexit            # in the plugin folder; reads example/ios/Podfile.lock
+npx @mcamdali/podexit            # in the plugin folder; reads example/ios/Podfile.lock
 ```
 
 The [flutter-plugin fixture](../../fixtures/flutter-plugin/ios/image_cache_plugin.podspec)

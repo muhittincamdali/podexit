@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
+<!-- i18n-source: README.md@1c83a153cf8713f20722fb4899b14a3a0509ab39 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. podexit を実行します。**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-podexit はまだ npm に公開されていないため（公開予定）、`npx podexit` は現時点では動きません。上のコマンドは GitHub から 0.1.1 リリースを実行します。この README で `npx podexit` と書かれている箇所では、このコマンドを使ってください。
+npm パッケージ名は `@mcamdali/podexit` です（npm がスコープなしの名前を拒否したため）。インストールされるコマンドは今までどおり `podexit` です。
 
 **3. 表を読みます。** **capped** と表示された行が最初に止まります（Firebase は 2026年10月に CocoaPods への公開を終了します）。**frozen after Dec 2** と表示された行は、12月2日以降は新しいバージョンが出ません。Swift package 列が **yes** の pod は、今すぐ移行できます。最後の行には、お使いのプロジェクトの種類に合ったガイドへのリンクが表示されます。
 
@@ -72,21 +72,21 @@ podexit はまだ npm に公開されていないため（公開予定）、`npx
 
 ## インストール
 
-podexit はまだ npm に公開されていません（公開予定）。それまでは、上のように GitHub から 0.1.1 リリースを実行するか、プロジェクトに追加します。
+インストールせずに実行するか、バージョンを固定するためにプロジェクトに追加します。
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
-npx podexit
+npm install --save-dev @mcamdali/podexit
+npx @mcamdali/podexit
 ```
 
-npm に公開されたら、`npx podexit` はインストールなしで最新バージョンをダウンロードして実行します。プロジェクトや CI でバージョンを固定するには、次のようにします。
+コマンドをグローバルにインストールするには、次のようにします。
 
 ```sh
-npm install --save-dev podexit
-npx podexit
+npm i -g @mcamdali/podexit
+podexit
 ```
 
-または `npm install --global podexit` でグローバルにインストールすることもできます。`muhittincamdali/tap` 用の Homebrew formula はリリースワークフローが準備します（tap の最初のリリースと合わせて公開予定）。
+Homebrew を使う場合は `brew install muhittincamdali/tap/podexit` を実行します。GitHub のリリース tarball がインストールされます。
 
 ## 使い方
 
@@ -119,7 +119,7 @@ podexit [paths...] [options]
 ### Markdown レポートをコードと一緒に保存する
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 Markdown 版にも同じ表、リリース日、各 Swift パッケージのリポジトリへのリンクが含まれます。ローカルパスや git の pod は `<details>` ブロックにまとめられます。
@@ -127,7 +127,7 @@ Markdown 版にも同じ表、リリース日、各 Swift パッケージのリ�
 ### JSON レポートをスクリプトで使う
 
 ```sh
-npx podexit --format json > podexit.json
+npx @mcamdali/podexit --format json > podexit.json
 ```
 
 各 pod には、`updates.status`、`swiftPackage.status`、trunk 上の最新バージョンとその日付、そして各答えを説明する一文が含まれます。レイアウトは `schemaVersion` 0 で、1.0 より前に変更される可能性があります。[examples/shell/frozen-pods.sh](examples/shell/frozen-pods.sh) は `jq` でこれを絞り込みます。
@@ -150,7 +150,7 @@ import {
   HttpFetcher,
   loadPublisherPolicy,
   render,
-} from 'podexit';
+} from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), {

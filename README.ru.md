@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
+<!-- i18n-source: README.md@1c83a153cf8713f20722fb4899b14a3a0509ab39 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. Запустите podexit:**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-podexit пока нет в npm (публикация планируется), поэтому `npx podexit` пока не работает. Команда выше запускает релиз 0.1.1 с GitHub; используйте её везде, где в этом README написано `npx podexit`.
+Пакет в npm называется `@mcamdali/podexit` (npm отклонил имя без scope); команда, которую он устанавливает, по-прежнему `podexit`.
 
 **3. Прочитайте таблицу.** Строки с пометкой **capped** останавливаются первыми (Firebase прекращает публикацию в CocoaPods в октябре 2026 года); строки с пометкой **frozen after Dec 2** не получат новых версий после 2 декабря. Если в столбце Swift package указано **yes**, pod можно переносить уже сейчас. Последняя строка содержит ссылку на руководство для вашего типа проекта.
 
@@ -72,21 +72,21 @@ podexit пока нет в npm (публикация планируется), п
 
 ## Установка
 
-podexit пока нет в npm; публикация там планируется. До тех пор запускайте релиз 0.1.1 с GitHub, как показано выше, или добавьте его в проект:
+Запускайте без установки или добавьте в проект, чтобы зафиксировать версию:
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
-npx podexit
+npm install --save-dev @mcamdali/podexit
+npx @mcamdali/podexit
 ```
 
-Когда podexit появится в npm, `npx podexit` будет скачивать и запускать последнюю версию без установки. Чтобы зафиксировать версию в проекте или в CI:
+Чтобы установить команду глобально:
 
 ```sh
-npm install --save-dev podexit
-npx podexit
+npm i -g @mcamdali/podexit
+podexit
 ```
 
-или установите его глобально командой `npm install --global podexit`. Формулу Homebrew для `muhittincamdali/tap` готовит релизный workflow (планируется вместе с первым релизом tap).
+С Homebrew достаточно `brew install muhittincamdali/tap/podexit`: он ставит архив релиза с GitHub.
 
 ## Использование
 
@@ -119,7 +119,7 @@ podexit [paths...] [options]
 ### Храните Markdown-отчёт вместе с кодом
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 В Markdown-версии те же таблицы, даты выходов и ссылки на репозиторий каждого Swift-пакета; pod из локальных путей и git сворачиваются в блок `<details>`.
@@ -127,7 +127,7 @@ npx podexit --format markdown --output podexit.md
 ### Используйте JSON-отчёт в скриптах
 
 ```sh
-npx podexit --format json > podexit.json
+npx @mcamdali/podexit --format json > podexit.json
 ```
 
 Для каждого pod указаны `updates.status`, `swiftPackage.status`, последняя версия на trunk с датой и предложение, объясняющее каждый ответ. Структура — `schemaVersion` 0, до версии 1.0 она может измениться. [examples/shell/frozen-pods.sh](examples/shell/frozen-pods.sh) фильтрует его с помощью `jq`.
@@ -150,7 +150,7 @@ import {
   HttpFetcher,
   loadPublisherPolicy,
   render,
-} from 'podexit';
+} from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), {

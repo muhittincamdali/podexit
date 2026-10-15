@@ -18,7 +18,7 @@
   "customCss": "./theme.css",
   "navigationLinks": {
     "GitHub": "https://github.com/muhittincamdali/podexit",
-    "npm": "https://www.npmjs.com/package/podexit"
+    "npm": "https://www.npmjs.com/package/@mcamdali/podexit"
   },
   "sourceLinkTemplate": "https://github.com/muhittincamdali/podexit/blob/{gitRevision}/{path}#L{line}",
   "excludePrivate": true,

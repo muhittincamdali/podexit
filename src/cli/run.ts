@@ -50,10 +50,10 @@ Environment:
   NO_COLOR, FORCE_COLOR   turn terminal colours off or on
 
 Examples:
-  npx podexit                         looks for Podfile.lock, ios/Podfile.lock, example/ios/Podfile.lock
-  npx podexit ios/Podfile.lock --format markdown --output podexit.md
-  npx podexit --format json > podexit.json
-  npx podexit --offline               answers only from the cache
+  npx @mcamdali/podexit               looks for Podfile.lock, ios/Podfile.lock, example/ios/Podfile.lock
+  npx @mcamdali/podexit ios/Podfile.lock --format markdown --output podexit.md
+  npx @mcamdali/podexit --format json > podexit.json
+  npx @mcamdali/podexit --offline     answers only from the cache
 
 Docs: ${REPOSITORY_URL}#readme`;
 
@@ -105,7 +105,7 @@ function fetcherFor(options: Options, io: CliEnvironment): Fetcher {
   const inner = options.offline
     ? new OfflineFetcher()
     : new HttpFetcher({
-        userAgent: `podexit/${VERSION} (+${REPOSITORY_URL})`,
+        userAgent: `@mcamdali/podexit/${VERSION} (+${REPOSITORY_URL})`,
         githubToken: io.env.GITHUB_TOKEN || io.env.GH_TOKEN || undefined,
       });
   const directory = resolve(io.cwd, options.cacheDir ?? defaultCacheDirectory(io.env));

@@ -63,8 +63,8 @@ so: moving to the Swift package also means moving to a newer version.
 
 ## What to do, in order
 
-1. Run `npx podexit` in the project and keep the Markdown report with the code:
-   `npx podexit --format markdown --output podexit.md`.
+1. Run `npx @mcamdali/podexit` in the project and keep the Markdown report with the code:
+   `npx @mcamdali/podexit --format markdown --output podexit.md`.
 2. Start with **capped** pods: they stop first. See [Firebase after version 12](firebase.md).
 3. Move **frozen** pods that have a Swift package. The guides for
    [native iOS](native-ios.md), [Flutter](flutter.md) and [React Native and Expo](react-native-expo.md)

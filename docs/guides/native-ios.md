@@ -7,7 +7,7 @@ For an app with a `Podfile` next to its Xcode project. The example rows come fro
 ## 1. See what you have
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 Each trunk pod gets a row like these:

@@ -26,7 +26,7 @@ describe('parseAnsi', () => {
 });
 
 describe('terminalSvg', () => {
-  const session = { title: 'demo', command: 'npx podexit', output: 'a <b> & c\n' };
+  const session = { title: 'demo', command: 'npx @mcamdali/podexit', output: 'a <b> & c\n' };
 
   it('escapes text and carries no scripts or external references', () => {
     const svg = terminalSvg(session, 'dark');

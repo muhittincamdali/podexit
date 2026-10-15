@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@6b52e4ff2b2559a02d15a2812908fb01983dac2d status=reviewed -->
+<!-- i18n-source: README.md@1c83a153cf8713f20722fb4899b14a3a0509ab39 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/podexit/main/.github/brand/banner-light.svg" alt="podexit: Which of your pods stop getting updates when CocoaPods trunk goes read-only, and which already ship a Swift package."></picture></p>
@@ -53,10 +53,10 @@ cd path/to/YourApp
 **2. Starte podexit:**
 
 ```sh
-npx https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
+npx @mcamdali/podexit
 ```
 
-podexit ist noch nicht auf npm (die Veröffentlichung ist geplant), deshalb funktioniert `npx podexit` noch nicht. Der Befehl oben führt das Release 0.1.1 von GitHub aus; nutze ihn überall, wo in dieser README `npx podexit` steht.
+Das npm-Paket heißt `@mcamdali/podexit` (npm hat den Namen ohne Scope abgelehnt); der Befehl, den es installiert, heißt weiterhin `podexit`.
 
 **3. Lies die Tabelle.** Zeilen mit **capped** hören zuerst auf (Firebase veröffentlicht ab Oktober 2026 nicht mehr auf CocoaPods); Zeilen mit **frozen after Dec 2** bekommen nach dem 2. Dezember keine neuen Versionen. Wo die Spalte Swift package **yes** zeigt, lässt sich der Pod schon jetzt umstellen. Die letzte Zeile verlinkt die Anleitung für deine Projektart.
 
@@ -72,21 +72,21 @@ Mehr dazu in [Was sich am 2. Dezember ändert](docs/guides/what-changes.md).
 
 ## Installation
 
-podexit ist noch nicht auf npm; die Veröffentlichung dort ist geplant. Bis dahin führst du das Release 0.1.1 wie oben gezeigt direkt von GitHub aus oder fügst es einem Projekt hinzu:
+Führe es ohne Installation aus oder füge es einem Projekt hinzu, um die Version festzulegen:
 
 ```sh
-npm install --save-dev https://github.com/muhittincamdali/podexit/releases/download/v0.1.1/podexit-0.1.1.tgz
-npx podexit
+npm install --save-dev @mcamdali/podexit
+npx @mcamdali/podexit
 ```
 
-Sobald podexit auf npm ist, lädt `npx podexit` ohne Installation die neueste Version herunter und führt sie aus. So legst du die Version in einem Projekt oder in CI fest:
+So installierst du den Befehl global:
 
 ```sh
-npm install --save-dev podexit
-npx podexit
+npm i -g @mcamdali/podexit
+podexit
 ```
 
-Oder installiere es global mit `npm install --global podexit`. Eine Homebrew-Formel für `muhittincamdali/tap` bereitet der Release-Workflow vor (geplant mit dem ersten Release des Taps).
+Mit Homebrew genügt `brew install muhittincamdali/tap/podexit`; das installiert das Release-Tarball von GitHub.
 
 ## Verwendung
 
@@ -119,7 +119,7 @@ Ohne Pfade liest podexit jede Lockfile, die es unter `Podfile.lock`, `ios/Podfil
 ### Einen Markdown-Bericht beim Code aufbewahren
 
 ```sh
-npx podexit --format markdown --output podexit.md
+npx @mcamdali/podexit --format markdown --output podexit.md
 ```
 
 Die Markdown-Version enthält dieselben Tabellen, Veröffentlichungsdaten und Links zum Repository jedes Swift-Packages; Pods aus lokalen Pfaden und git werden in einem `<details>`-Block zusammengefasst.
@@ -127,7 +127,7 @@ Die Markdown-Version enthält dieselben Tabellen, Veröffentlichungsdaten und Li
 ### Den JSON-Bericht in Skripten verwenden
 
 ```sh
-npx podexit --format json > podexit.json
+npx @mcamdali/podexit --format json > podexit.json
 ```
 
 Jeder Pod enthält `updates.status`, `swiftPackage.status`, die neueste Version auf trunk mit Datum und einen Satz, der jede Antwort erklärt. Das Layout ist `schemaVersion` 0 und kann sich vor 1.0 ändern. [examples/shell/frozen-pods.sh](examples/shell/frozen-pods.sh) filtert ihn mit `jq`.
@@ -150,7 +150,7 @@ import {
   HttpFetcher,
   loadPublisherPolicy,
   render,
-} from 'podexit';
+} from '@mcamdali/podexit';
 
 const policy = loadPublisherPolicy();
 const fetcher = new CachedFetcher(new HttpFetcher({ userAgent: 'my-tool' }), {
